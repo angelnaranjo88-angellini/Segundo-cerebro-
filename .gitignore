@@ -1,0 +1,16 @@
+# Obsidian: estado local, no compartible
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Secretos: nunca deben llegar aquí
+.env
+.env.*
+*.key
+*.pem
+credenciales*
