@@ -10,6 +10,32 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-05] sintesis | Ruta de prospección a pie: Periférico Oriente → Culhuacán → Coapa
+
+Escrita [[Ruta-Prospeccion-Periferico-Culhuacan-Coapa]]: 50 negocios en tres jornadas
+caminables (Av. Tláhuac en Iztapalapa, Av. Carlota Armero en CTM Culhuacán, Calz. del Hueso y
+Canal de Miramontes en Coapa), más ~20 suplentes.
+
+Método: búsqueda web contra agregadores. **Ningún dominio de directorio se pudo abrir
+directamente** —Facebook, Instagram, Fresha, Booksy y Doctoralia están bloqueados por el proxy
+de red—, así que todo sale de resultados de búsqueda y queda marcado como verificable en calle.
+12 entradas quedan *(sin nombre público)*: el agregador publica dirección y giro pero oculta el
+nombre comercial.
+
+Hallazgo aprovechable: **estar listado en Fresha/Booksy/AgendaPro segmenta el pitch.** Quien ya
+paga una app de citas no compra agendamiento; compra WhatsApp que contesta y recordatorios
+([[Seguimiento-por-Sondeo]]). Quien no aparece en ningún lado compra presencia antes que
+automatización ([[Pipeline-de-Contenido-Social]]).
+
+Correlación con el portafolio: la Jornada 1 recorre la misma avenida donde ya opera
+[[Lefranm-Cosmeticos]] (Av. Tláhuac 4746). El caso de referencia está a pie de ruta, y hay un
+caso propio para cada giro objetivo: estética → [[Make-Lefranm-Citas]], escuela →
+[[Asistente-Chavarria]], dental → [[Sonrisas-Para-Todos-Nosotros]].
+
+Contradicción abierta y sin resolver: la numeración de Av. Tláhuac es coherente en el tramo
+4746→3431, pero varios agregadores ubican las mismas colonias en números de 3 y 4 cifras
+menores. Esos cuatro registros quedaron fuera de la secuencia hasta verificarlos en calle.
+
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 
 40 páginas, 37 destinos de enlace distintos. **Cero enlaces rotos** y cero páginas huérfanas

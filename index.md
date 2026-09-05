@@ -38,6 +38,7 @@ actualizado: 2026-09-05
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
+| [[Ruta-Prospeccion-Periferico-Culhuacan-Coapa]] | 50 negocios a pie: Av. Tláhuac, CTM Culhuacán y Coapa | activo |
 
 ## Automatizaciones
 
