@@ -19,6 +19,7 @@ actualizado: 2026-09-05
 Cada jornada es **una sola avenida**, para caminar en línea recta tocando puerta tras puerta
 sin regresar sobre tus pasos. Los números de las paradas van en el orden en que te los vas a
 encontrar. No es una lista de "los mejores negocios": es una lista de **puertas contiguas**.
+Para abrirla en el celular, salta a [Abrir la ruta en Google Maps](#abrir-la-ruta-en-google-maps).
 
 > [!warning] Verificar en calle antes de confiar
 > Las direcciones vienen de agregadores públicos (Fresha, AgendaPro, Rappi, Doctoralia,
@@ -124,52 +125,99 @@ sostiene a las fondas y estéticas de la zona: úsalo como argumento de volumen.
 
 ---
 
-## Jornada 3 — Coapa: Calzada del Hueso + ramal Canal de Miramontes
+## Jornada 3 — Coapa: Calzada del Hueso, luego norte por Canal de Miramontes
 
-**Coyoacán / Tlalpan. ~2.5 km sobre Calz. del Hueso, más un ramal perpendicular.**
+**Coyoacán / Tlalpan. ~2.5 km sobre Calz. del Hueso + ~1.5 km sobre Miramontes.**
 
-Es la zona de mayor poder adquisitivo de la ruta y la de mayor densidad de estética y dental
-por metro de banqueta. Caminas Calz. del Hueso de **poniente a oriente** (la numeración sube:
-126 → 990) y cierras con el ramal de Canal de Miramontes.
+Es la zona de mayor poder adquisitivo de la ruta y la de mayor densidad de estética y dental por
+metro de banqueta. Caminas Calz. del Hueso de **oriente a poniente** (la numeración baja:
+990 → 126) y al llegar a Canal de Miramontes **giras al norte** (3160 → 2706). Así los dos
+tramos se encadenan sin regresar sobre tus pasos.
+
+> [!warning] Inferencia sin verificar
+> Este orden lo deduje de la numeración y de las colonias de cada dirección, no de un trazo
+> medido. Es coherente —Miramontes cruza Calz. del Hueso por la zona de Ex Hacienda Coapa, y
+> hacia el norte los números bajan—, pero confírmalo en el mapa antes de salir.
 
 | # | Negocio | Dirección | Giro |
 |---|---|---|---|
-| 33 | *(sin nombre público)* | Calz. del Hueso 126, Ex Hacienda Coapa | Cafetería + pizzas y crepas, café tostado ahí |
-| 34 | NailClipp Coapa | Calz. del Hueso 160, Ex Hacienda Coapa | Uñas |
-| 35 | Mariscos Don Chava | Calz. del Hueso 349, Granjas Coapa | **Marisquería** |
-| 36 | Nailkery Coapa | Calz. del Hueso 453, Local 14, Girasoles | Uñas |
-| 37 | Cire Coapa | Calz. del Hueso 453, Local 19, 1er piso, Girasoles III | Depilación / estética |
-| 38 | CM Innovando La Belleza | Calz. del Hueso 519, Acoxpa (Galerías Coapa) | Estética |
-| 39 | Aesthetics and Sharm Podología | Calz. del Hueso 670, Los Sauces | Estética + podología |
-| 40 | Fénix Café | Calz. del Hueso 701 | Cafetería temática |
-| 41 | Spa by Dan | Calz. del Hueso 828, Hacienda de Coyoacán | **Spa** |
-| 42 | NailClipp Calzada del Hueso | Calz. del Hueso 846, Hacienda de Coyoacán | Uñas |
-| 43 | Estética Rafaello Extasis | Calz. del Hueso 921, Granjas Coapa | Estética |
-| 44 | Dentalay | Calz. del Hueso 921, Local 48, Granjas Coapa | **Clínica dental** (55 8502 6298) |
-| 45 | M+ Coffee Shop | Calz. del Hueso 940, El Mirador | Cafetería de especialidad + brunch |
-| 46 | SUA Salón Estilistas | Calz. del Hueso 990, El Mirador | Salón |
-| 47 | Silk Skin Coapa | Canal de Miramontes 125, Acoxpa | Estética |
-| 48 | Cautiva Lashes | Canal de Miramontes 125, Acoxpa | Pestañas — *mismo edificio que el 47* |
-| 49 | Zona Dental | Canal de Miramontes 2706, Coyoacán | **Clínica dental** (56 2478 4925) |
-| 50 | Star Dental Protect | Canal de Miramontes 2733, Jardines de Coyoacán | **Clínica dental** |
+| 33 | SUA Salón Estilistas | Calz. del Hueso 990, El Mirador | Salón |
+| 34 | M+ Coffee Shop | Calz. del Hueso 940, El Mirador | Cafetería de especialidad + brunch |
+| 35 | Estética Rafaello Extasis | Calz. del Hueso 921, Granjas Coapa | Estética |
+| 36 | Dentalay | Calz. del Hueso 921, Local 48, Granjas Coapa | **Clínica dental** (55 8502 6298) |
+| 37 | NailClipp Calzada del Hueso | Calz. del Hueso 846, Hacienda de Coyoacán | Uñas |
+| 38 | Spa by Dan | Calz. del Hueso 828, Hacienda de Coyoacán | **Spa** |
+| 39 | Fénix Café | Calz. del Hueso 701 | Cafetería temática |
+| 40 | Aesthetics and Sharm Podología | Calz. del Hueso 670, Los Sauces | Estética + podología |
+| 41 | CM Innovando La Belleza | Calz. del Hueso 519, Acoxpa (Galerías Coapa) | Estética |
+| 42 | Cire Coapa | Calz. del Hueso 453, Local 19, 1er piso, Girasoles III | Depilación / estética |
+| 43 | Nailkery Coapa | Calz. del Hueso 453, Local 14, Girasoles | Uñas — *mismo predio que el 42* |
+| 44 | Mariscos Don Chava | Calz. del Hueso 349, Granjas Coapa | **Marisquería** |
+| 45 | NailClipp Coapa | Calz. del Hueso 160, Ex Hacienda Coapa | Uñas |
+| 46 | *(sin nombre público)* | Calz. del Hueso 126, Ex Hacienda Coapa | Cafetería + pizzas y crepas, café tostado ahí |
+| — | *giras al norte sobre Canal de Miramontes* | | |
+| 47 | Colegio Alejandro Guillot | Canal de Miramontes 3160, Ex Hacienda Coapa | **Kínder y primaria privada** |
+| 48 | Predio Miramontes 2769 — **3 puertas** | Consultorio Odontológico Coyoacán (int. 2) · Salud Dental Miramontes (103) · SR Studio (local B) | 2 dentales + 1 estética en un solo edificio |
+| 49 | Star Dental Protect | Canal de Miramontes 2733, Jardines de Coyoacán | **Clínica dental** |
+| 50 | Zona Dental | Canal de Miramontes 2706, Coyoacán | **Clínica dental** (56 2478 4925) |
 
-**Banca de suplentes de Coapa** — si un día rinde más de lo esperado, todas están a menos de
-15 minutos a pie del tramo anterior:
+**Banca de suplentes de Coapa** — todas caen dentro o al borde del mismo recorrido:
 
-- **Dental, en un solo predio (Miramontes 2769):** Consultorio Odontológico Coyoacán (int. 2) ·
-  Salud Dental Miramontes (103) · SR Studio (local B, estética). Tres puertas, un edificio.
-- **Estética:** BelCorpo (Miramontes 2352, Avante) · Vanity House (Miramontes 2600, local 13,
-  Plaza Zapamundi) · Loyan Salón Uñas y SPA (Miramontes 7620, local 7, Villa Coapa) ·
-  Cosmética Salud y Belleza (Prol. Canal de Miramontes 131, local 8).
-- **Escuelas privadas:** Colegio Alejandro Guillot (Canal de Miramontes 3160, Ex Hacienda
-  Coapa) · Colegio St. Paul (Pedro Sainz de Baranda 211, Cipreses, 55 1476 0656) ·
-  Liceo Acoxpa de Coapa (Abrevadero 21, Coapa Super 8).
+- **Sigue 3 cuadras más al norte sobre Miramontes:** Vanity House (2600, local 13, Plaza
+  Zapamundi) · BelCorpo (2352, Avante).
+- **Espolón sur, a un lado del extremo poniente de Calz. del Hueso:** Silk Skin Coapa y
+  Cautiva Lashes (los dos en Canal de Miramontes 125, Acoxpa) · Cosmética Salud y Belleza
+  (Prol. Canal de Miramontes 131, local 8) · Loyan Salón Uñas y SPA (Miramontes 7620, local 7,
+  Villa Coapa).
+- **Escuelas privadas fuera de línea:** Colegio St. Paul (Pedro Sainz de Baranda 211, Cipreses,
+  55 1476 0656) · Liceo Acoxpa de Coapa (Abrevadero 21, Coapa Super 8).
 - **Comida:** Marisquero Buffet (Calz. del Hueso 100-m1) · Pizzas Plaza (Av. Cafetales 1726) ·
   Cafetales 1704 (Av. Cafetales 1704, Hacienda de Coyoacán).
 - **Plazas para barrer en una hora:** Gran Terraza Coapa (Calz. Acoxpa 610) y Paseo Acoxpa
   (Av. Acoxpa 430). Ojo: dentro son casi puras cadenas —Sushi Roll, Hooters, Porfirio's, La
   Casa de Toño— que **no deciden en sucursal**. Los que sí sirven ahí son los locales chicos:
   Banein (uñas) y Leonora Studio (estética).
+
+---
+
+## Abrir la ruta en Google Maps
+
+Tres formas, de la más rápida a la más completa.
+
+### 1. Ruta a pie, tramo por tramo
+
+Google Maps solo acepta 9 escalas por enlace, así que cada jornada va partida en dos.
+Ábrelos en el celular: cada uno traza la caminata completa con las paradas en orden.
+
+| Tramo | De | A | Abrir |
+|---|---|---|---|
+| **Jornada 1 · Tramo A** | Metro Periferico Oriente, Linea 12, Iztapalapa | Av. Tlahuac 3843, San Andres Tomatlan, Iztapalapa | [Ruta a pie](https://www.google.com/maps/dir/?api=1&origin=Metro+Periferico+Oriente%2C+Linea+12%2C+Iztapalapa%2C+CDMX&destination=Av.+Tlahuac+3843%2C+San+Andres+Tomatlan%2C+Iztapalapa%2C+CDMX&travelmode=walking&waypoints=Av.%20Tlahuac%204746%2C%20Granjas%20Estrella%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%204409%2C%20Lomas%20Estrella%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%204344%2C%20Lomas%20Estrella%201ra%20Seccion%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%204340%2C%20Lomas%20Estrella%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%204337%2C%20Lomas%20Estrella%202da%20Seccion%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%204027%2C%20Santa%20Maria%20Tomatlan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%204005%2C%20San%20Andres%20Tomatlan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX) |
+| **Jornada 1 · Tramo B** | Av. Tlahuac 3843, San Andres Tomatlan, Iztapalapa | Metro Culhuacan, Linea 12, Iztapalapa | [Ruta a pie](https://www.google.com/maps/dir/?api=1&origin=Av.+Tlahuac+3843%2C+San+Andres+Tomatlan%2C+Iztapalapa%2C+CDMX&destination=Metro+Culhuacan%2C+Linea+12%2C+Iztapalapa%2C+CDMX&travelmode=walking&waypoints=El%20Oyamel%2C%20Av.%20Tlahuac%2C%20Santa%20Maria%20Tomatlan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CConsultorio%20Dental%20Militar%2C%20Av.%20Tlahuac%2C%20Santa%20Maria%20Tomatlan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%203636%2C%20Culhuacan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CMaG%20Dental%20Kids%2C%20Av.%20Tlahuac%203632%2C%20Culhuacan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Tlahuac%203443%2C%20Los%20Reyes%20Culhuacan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CColegio%20Cervantes%2C%20Av.%20Tlahuac%203431%2C%20Los%20Reyes%20Culhuacan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Arneses%2024%2C%20Los%20Reyes%20Culhuacan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCallejon%20de%20la%20Manzana%204%2C%20Los%20Reyes%20Culhuacan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7C3a%20Cerrada%20Iturbide%2046%2C%20Culhuacan%2C%20Iztapalapa%2C%20Ciudad%20de%20Mexico%2C%20CDMX) |
+| **Jornada 2 · Tramo A** | Av. Carlota Armero 5, Culhuacan CTM VII, Coyoacan | Av. Carlota Armero 416, Culhuacan CTM V, Coyoacan | [Ruta a pie](https://www.google.com/maps/dir/?api=1&origin=Av.+Carlota+Armero+5%2C+Culhuacan+CTM+VII%2C+Coyoacan%2C+Ciudad+de+Mexico%2C+CDMX&destination=Av.+Carlota+Armero+416%2C+Culhuacan+CTM+V%2C+Coyoacan%2C+Ciudad+de+Mexico%2C+CDMX&travelmode=walking&waypoints=Av.%20Carlota%20Armero%2042%2C%20Culhuacan%20CTM%20V%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Carlota%20Armero%20150%2C%20Culhuacan%20CTM%20VI%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Carlota%20Armero%20152%2C%20Culhuacan%20CTM%20VI%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Carlota%20Armero%20158%2C%20Culhuacan%20CTM%20VI%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CSushi%20Sakura%2C%20Carlota%20Armero%20177%2C%20Culhuacan%20CTM%20VI%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Carlota%20Armero%20193%2C%20Culhuacan%20CTM%20VI%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Carlota%20Armero%20285%2C%20Culhuacan%20CTM%20V%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX) |
+| **Jornada 2 · Tramo B** | Av. Carlota Armero 416, Culhuacan CTM V, Coyoacan | 1er Retorno de Canal Nacional 71, Culhuacan CTM VII, Coyoacan | [Ruta a pie](https://www.google.com/maps/dir/?api=1&origin=Av.+Carlota+Armero+416%2C+Culhuacan+CTM+V%2C+Coyoacan%2C+Ciudad+de+Mexico%2C+CDMX&destination=1er+Retorno+de+Canal+Nacional+71%2C+Culhuacan+CTM+VII%2C+Coyoacan%2C+Ciudad+de+Mexico%2C+CDMX&travelmode=walking&waypoints=Av.%20Carlota%20Armero%20esquina%20Cahitas%2C%20Culhuacan%20CTM%20V%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CManuela%20Canizares%2C%20Culhuacan%20CTM%20VI%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CAv.%20Canal%20Nacional%20260%2C%20Culhuacan%20CTM%20VII%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX) |
+| **Jornada 3 · Tramo A** | Calzada del Hueso 990, El Mirador, Coyoacan | Mariscos Don Chava, Calzada del Hueso 349, Granjas Coapa | [Ruta a pie](https://www.google.com/maps/dir/?api=1&origin=Calzada+del+Hueso+990%2C+El+Mirador%2C+Coyoacan%2C+Ciudad+de+Mexico%2C+CDMX&destination=Mariscos+Don+Chava%2C+Calzada+del+Hueso+349%2C+Granjas+Coapa%2C+Ciudad+de+Mexico%2C+CDMX&travelmode=walking&waypoints=M%2B%20Coffee%20Shop%2C%20Calzada%20del%20Hueso%20940%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCalzada%20del%20Hueso%20921%2C%20Granjas%20Coapa%2C%20Tlalpan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCalzada%20del%20Hueso%20846%2C%20Hacienda%20de%20Coyoacan%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCalzada%20del%20Hueso%20828%2C%20Hacienda%20de%20Coyoacan%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CFenix%20Cafe%2C%20Calzada%20del%20Hueso%20701%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCalzada%20del%20Hueso%20670%2C%20Los%20Sauces%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCalzada%20del%20Hueso%20519%2C%20Acoxpa%2C%20Tlalpan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCalzada%20del%20Hueso%20453%2C%20Girasoles%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX) |
+| **Jornada 3 · Tramo B** | Mariscos Don Chava, Calzada del Hueso 349, Granjas Coapa | Canal de Miramontes 2706, Coyoacan | [Ruta a pie](https://www.google.com/maps/dir/?api=1&origin=Mariscos+Don+Chava%2C+Calzada+del+Hueso+349%2C+Granjas+Coapa%2C+Ciudad+de+Mexico%2C+CDMX&destination=Canal+de+Miramontes+2706%2C+Coyoacan%2C+Ciudad+de+Mexico%2C+CDMX&travelmode=walking&waypoints=Calzada%20del%20Hueso%20160%2C%20Ex%20Hacienda%20Coapa%2C%20Tlalpan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCalzada%20del%20Hueso%20126%2C%20Ex%20Hacienda%20Coapa%2C%20Tlalpan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CColegio%20Alejandro%20Guillot%2C%20Canal%20de%20Miramontes%203160%2C%20Ex%20Hacienda%20Coapa%2C%20Tlalpan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCanal%20de%20Miramontes%202769%2C%20Jardines%20de%20Coyoacan%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX%7CCanal%20de%20Miramontes%202733%2C%20Jardines%20de%20Coyoacan%2C%20Coyoacan%2C%20Ciudad%20de%20Mexico%2C%20CDMX) |
+
+### 2. Un pin por negocio
+
+La columna `Maps` del CSV de al lado trae el enlace directo de cada parada.
+
+### 3. Tu propio mapa guardado (Google My Maps)
+
+Es lo más cercano a "la ruta guardada en Maps", y queda en tu cuenta:
+
+1. Entra a [google.com/mymaps](https://www.google.com/mymaps) → **Crear un mapa nuevo**.
+2. **Importar** → sube `Ruta-Prospeccion-Periferico-Culhuacan-Coapa.csv` (está junto a esta página).
+3. Columna de ubicación: **Direccion**. Columna de título: **Negocio**.
+4. Estilo → **Agrupar lugares por: Jornada**. Te pinta los tres corredores en tres colores.
+5. El mapa se abre en la app de Google Maps: menú → *Tus sitios* → *Mapas*.
+
+> [!warning] Los pines caen aproximados
+> Maps geocodifica desde la dirección de texto, y esas direcciones vienen de agregadores
+> sin verificar (ver advertencia al inicio). Espera que **algunos pines caigan a media cuadra
+> o en el número equivocado**, y que la importación del CSV marque 2 o 3 filas como no
+> localizadas. No es un error del archivo: es el estado real del dato. Corrige el pin en My
+> Maps cuando pases por ahí y el mapa se vuelve tuyo de verdad.
 
 ---
 
@@ -220,6 +268,7 @@ Eso no es ruido, es segmentación gratis:
 - [ ] Confirmar nombre comercial de las 12 entradas *(sin nombre público)* al pasar por ahí.
 - [ ] Verificar en Google Maps las direcciones de Av. Tláhuac antes de Jornada 1.
 - [ ] Resolver la conexión de transporte Av. Tláhuac → CTM Culhuacán.
+- [ ] Corregir en My Maps los pines que caigan mal, y volver a exportar el CSV desde ahí.
 - [ ] Registros con numeración de Av. Tláhuac **contradictoria** frente al resto del corredor
   (aparecen colonias que no corresponden a esos números): AMO Mariscos Culhuacán (Av. Tláhuac
   481) · Cantina Salón Florida (825) · Dental Loto (1138, Granjas Estrella) · Centro de Belleza

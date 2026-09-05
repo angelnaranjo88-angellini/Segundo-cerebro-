@@ -10,6 +10,24 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-05] decision | La ruta ahora se abre en Google Maps, y la Jornada 3 cambió de sentido
+
+Añadidos a [[Ruta-Prospeccion-Periferico-Culhuacan-Coapa]]: seis enlaces de ruta a pie de
+Google Maps (dos por jornada; el formato de URL solo admite 9 escalas) y un CSV hermano,
+`Ruta-Prospeccion-Periferico-Culhuacan-Coapa.csv`, importable a Google My Maps con una columna
+de enlace por parada.
+
+**Decisión de trazo:** invertí la Jornada 3. Iba de poniente a oriente sobre Calz. del Hueso y
+dejaba el ramal de Canal de Miramontes como apéndice suelto. Ahora va de oriente a poniente
+(990 → 126) y gira al norte sobre Miramontes (3160 → 2706), que es donde la numeración sigue
+bajando: los dos tramos se encadenan sin regresar sobre los pasos. Entraron a la secuencia el
+Colegio Alejandro Guillot y el predio Miramontes 2769 (dos dentales y una estética en un solo
+edificio); salieron a suplentes Silk Skin, Cautiva Lashes y Vanity House.
+
+El trazo es **inferencia a partir de numeración y colonias**, no un recorrido medido. Queda
+marcado como tal en la página, junto con la advertencia de que Maps geocodifica desde texto y
+algunos pines caerán a media cuadra.
+
 ## [2026-09-05] sintesis | Ruta de prospección a pie: Periférico Oriente → Culhuacán → Coapa
 
 Escrita [[Ruta-Prospeccion-Periferico-Culhuacan-Coapa]]: 50 negocios en tres jornadas
