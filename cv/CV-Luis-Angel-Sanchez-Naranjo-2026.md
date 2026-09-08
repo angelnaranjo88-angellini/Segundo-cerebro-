@@ -8,7 +8,8 @@ actualizado: 2026-09-08
 
 # CV — Luis Ángel Sánchez Naranjo (versión 2026)
 
-> Texto listo para vaciar en la plantilla de Canva. Reemplaza la versión anterior
+> Contenido del CV. La maquetación vive en `plantilla-cv.html`; para generar el PDF de una
+> hoja: `./cv/generar-pdf.sh "<tu teléfono>"`. Reemplaza la versión anterior
 > (`Currículum Vitae CV de Mujer Minimalista Azul.pdf`, sin fecha).
 > Los `[corchetes]` son datos que faltan y solo tú puedes llenar.
 > El teléfono se deja como marcador a propósito: no metemos datos de contacto directo al repo.
