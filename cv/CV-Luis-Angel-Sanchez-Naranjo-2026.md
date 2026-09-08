@@ -33,13 +33,11 @@ Lic. Relaciones Internacionales
 ## Perfil profesional
 
 Licenciado en Relaciones Internacionales por la UNAM, especializado en automatización de
-procesos comerciales con inteligencia artificial. Fundador de **Chaos Ctrl**, donde diseño,
-construyo y opero agentes conversacionales de WhatsApp, embudos de captación y sistemas de
-seguimiento para instituciones educativas y negocios de salud, bienestar y servicios.
-Cartera de **5 clientes**,
-con **7 automatizaciones en producción** y más de **6 000 ejecuciones acumuladas**
-(corte: septiembre 2026). Trabajo con herramientas a la medida: cuando la plataforma no
-alcanza, construyo la pieza que falta.
+procesos comerciales con inteligencia artificial. Al frente de **Chaos Ctrl**, diseño y opero
+agentes conversacionales de WhatsApp, embudos de captación y sistemas de seguimiento para
+instituciones educativas y negocios de servicio. Cartera de **5 clientes**, con
+**7 automatizaciones en producción** y más de **6 000 ejecuciones acumuladas**
+(corte: septiembre 2026). Cuando la plataforma no alcanza, construyo la pieza que falta.
 
 ## Experiencia laboral
 
@@ -105,8 +103,8 @@ Colegio del Aire, Escuela Militar de Aviación · 2017 – 2019 (trunca)
 
 ## Competencias
 
-Comunicación asertiva · Escucha proactiva · Resolución de problemas · Trabajo en equipo ·
-Liderazgo · Tolerancia al estrés
+Comunicación asertiva · Resolución de problemas · Trabajo en equipo · Liderazgo ·
+Tolerancia al estrés
 
 ## Idiomas
 
@@ -128,6 +126,7 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
 | El perfil dejó de ser una lista de adjetivos | "Honesto, responsable, resiliente" no distingue a nadie. Ahora la primera línea dice qué haces y con qué resultados. |
 | Habilidades separadas en técnicas y blandas | Un reclutador busca las técnicas primero; antes estaban revueltas con hobbies y paquetería. |
 | Se quitaron los hobbies | Espacio para proyectos. Si sobra hoja, se pueden regresar en una línea. |
+| Tipografía: Source Sans 3 a 10 pt (barra lateral a 9.3 pt) | Ver la nota de tipografía abajo. La versión anterior estaba a 8.5 pt: cabía todo, pero se leía apretada. |
 | Se conservan la fotografía y la estructura del diseño original | Banda superior con foto circular, barra lateral azul y columna principal. Solo cambió el contenido, no la forma. |
 | Las barras de nivel de Paquetería Office se volvieron una línea de texto | Las barras sin escala declarada no dicen nada verificable, y ese espacio lo ocupan ahora las habilidades técnicas. |
 | Educación en orden cronológico inverso | Lo más reciente y relevante arriba. |
@@ -149,6 +148,29 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
    Una foto tomada de frente con luz de ventana y fondo liso, desde el celular, ya sería mejor.
 5. Decide si conservas el Colegio del Aire. Es distintivo y explica la disciplina, pero es una
    carrera trunca de hace 9 años: si el CV se sale de una hoja, es lo primero que se recorta.
+
+## Nota de tipografía
+
+**Arial 12 no es el estándar de un CV.** Los 12 pt vienen del valor por omisión de Word para
+documentos de texto corrido; en un CV de una hoja, el cuerpo profesional va entre **10 y
+11 pt**, y 9 pt es el piso absoluto. Con 12 pt el contenido de esta hoja se iría a dos, y una
+segunda hoja con cuatro líneas pesa más en contra que una letra un punto más chica.
+
+La elección es **Source Sans 3 a 10 pt**, con la barra lateral a 9.3 pt:
+
+- Es una **humanista**, diseñada por Adobe para leerse en tamaños chicos. Arial es una
+  grotesca de 1982 pensada para rótulos: sus letras se parecen entre sí (la I mayúscula, la l
+  minúscula y el 1 son casi el mismo trazo), y eso cansa en párrafos densos.
+- Es **más estrecha** que Arial con la misma altura de x, así que a 10 pt entra más texto y se
+  ve más grande. Ganas legibilidad y espacio a la vez.
+- El PDF lleva la fuente incrustada, así que se ve igual en cualquier computadora, y el texto
+  sigue siendo texto seleccionable: los filtros automáticos de reclutamiento lo leen sin
+  problema.
+- Licencia SIL Open Font, libre para uso comercial. El archivo vive en `cv/fonts/`.
+
+Alternativas igual de válidas si esta no te convence: **Lato**, **Open Sans** o **Calibri**
+(esta última si necesitas entregar en Word). Si te piden expresamente Arial, usa
+**Liberation Sans**, que tiene las mismas medidas.
 
 ## Notas de verificación
 

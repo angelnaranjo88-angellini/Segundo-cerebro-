@@ -25,14 +25,21 @@ fi
 
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 
-TELEFONO="$TELEFONO" FOTO="$FOTO" PLANTILLA="$BASE/plantilla-cv.html" DESTINO="$TMP/cv.html" \
+TELEFONO="$TELEFONO" FOTO="$FOTO" FUENTE="$BASE/fonts/SourceSans3.ttf" \
+PLANTILLA="$BASE/plantilla-cv.html" DESTINO="$TMP/cv.html" \
 python3 - <<'PY'
 import base64, mimetypes, os, pathlib
-foto = pathlib.Path(os.environ['FOTO'])
-mime = mimetypes.guess_type(foto.name)[0] or 'image/png'
-uri  = f"data:{mime};base64," + base64.b64encode(foto.read_bytes()).decode()
+
+def data_uri(ruta, mime=None):
+    ruta = pathlib.Path(ruta)
+    mime = mime or mimetypes.guess_type(ruta.name)[0] or 'application/octet-stream'
+    return f"data:{mime};base64," + base64.b64encode(ruta.read_bytes()).decode()
+
 html = pathlib.Path(os.environ['PLANTILLA']).read_text()
-html = html.replace('__FOTO__', uri).replace('__TELEFONO__', os.environ['TELEFONO'])
+html = (html
+        .replace('__FOTO__',     data_uri(os.environ['FOTO']))
+        .replace('__FUENTE__',   data_uri(os.environ['FUENTE'], 'font/ttf'))
+        .replace('__TELEFONO__', os.environ['TELEFONO']))
 pathlib.Path(os.environ['DESTINO']).write_text(html)
 PY
 
