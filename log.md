@@ -10,6 +10,24 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-08] decision | CV 2026: se retira preparatoria, entra el diplomado de IA y el negocio propio
+
+Revisión del CV vigente (PDF de Canva, una hoja). Cambios acordados:
+
+- **Fuera la preparatoria**: con licenciatura terminada no aporta.
+- **Entra el diplomado** "Inteligencia Artificial Aplicada en la Creación y Administración de
+  Negocios Nacionales e Internacionales", mayo 2025 – enero 2026. Falta la institución.
+- **Entra el negocio de automatizaciones como experiencia laboral.** El CV anterior terminaba
+  en junio 2024: un hueco de más de dos años. Las afirmaciones ("herramientas a medida", "IA
+  avanzada") quedan respaldadas con datos del wiki: 7 escenarios en producción, 3 clientes,
+  más de 6 000 ejecuciones al corte 2026-09-05. Ver [[Correlacion-de-Proyectos]] y
+  [[Stack-Tecnologico]].
+- El perfil pasa de lista de adjetivos a una frase con resultados; habilidades técnicas
+  separadas de blandas; hobbies fuera.
+
+Resultado en `cv/CV-Luis-Angel-Sanchez-Naranjo-2026.md`. El teléfono queda como marcador:
+no entran datos de contacto directo al repo.
+
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 
 40 páginas, 37 destinos de enlace distintos. **Cero enlaces rotos** y cero páginas huérfanas
