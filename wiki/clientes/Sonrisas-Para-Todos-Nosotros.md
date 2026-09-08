@@ -3,7 +3,7 @@ titulo: Sonrisas para todos nosotros
 tipo: cliente
 estado: prototipo
 tags: [salud, dental, landing]
-actualizado: 2026-09-05
+actualizado: 2026-09-08
 ---
 
 # Sonrisas para todos nosotros
@@ -28,6 +28,10 @@ frecuentes y cierre.
 > El repositorio se llama `Nuevo-Proyecto-Marista` pero su único commit
 > (`92789f4`, 2026-09-04) publica la landing de "Sonrisas para todos nosotros", una clínica
 > dental. O el repo se reutilizó para otro cliente, o falta el proyecto Marista. Sin resolver.
+>
+> **Actualización 2026-09-08**: el dueño confirma que **Universidad Marista es cliente activo**
+> de **Chaos Ctrl** (el negocio). Así que el nombre del repo no era un error: falta el proyecto Marista en
+> el wiki, no sobra el nombre. Queda pendiente ingerir qué se le construyó y si sigue vivo.
 
 ## Correlaciones
 

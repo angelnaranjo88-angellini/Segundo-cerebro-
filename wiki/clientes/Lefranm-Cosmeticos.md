@@ -3,7 +3,7 @@ titulo: Lefranm Cosméticos
 tipo: cliente
 estado: activo
 tags: [cosmetica, estetica, iztapalapa, cdmx]
-actualizado: 2026-09-05
+actualizado: 2026-09-08
 ---
 
 # Lefranm Cosméticos
@@ -46,6 +46,13 @@ Fuente del catálogo: `Lista-de-Precios-Cosmetologas-y-Esteticas.pdf` en Drive
 - [[Make-Lefranm-Seguimiento-Cosmeticos]]
 
 ## Notas operativas
+
+> [!warning] Contradicción de nombre — sin resolver
+> Al revisar el CV (2026-09-08), el dueño nombra a este cliente **"Lefranm Quiropráctico"**.
+> Todo lo documentado aquí —catálogo de ~52 SKUs, registro COFEPRIS, servicios de cabina de
+> reductivo, microdermoabrasión, presoterapia y spa de manos— corresponde a **cosmética y
+> estética**, no a quiropráctica. O el negocio cambió de giro o de razón social, o abrió una
+> línea nueva, o son dos marcas del mismo dueño. Falta ingerir la fuente que lo aclare.
 
 - Es el cliente **más caro con diferencia**: ~90% del consumo de créditos de Make del entorno
   completo (corte 2026-09-05). Ver [[Riesgos-y-Deuda-Tecnica]].

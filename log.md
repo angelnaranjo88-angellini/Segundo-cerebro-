@@ -10,23 +10,47 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
-## [2026-09-08] decision | CV 2026: se retira preparatoria, entra el diplomado de IA y el negocio propio
+## [2026-09-08] decision | CV 2026: fuera la preparatoria, entran el diplomado, Chaos Ctrl y cinco clientes
 
-Revisión del CV vigente (PDF de Canva, una hoja). Cambios acordados:
+Revisión del CV vigente (PDF de Canva, una hoja). Resultado en
+`cv/CV-Luis-Angel-Sanchez-Naranjo-2026.md`.
+
+**Cambios acordados**
 
 - **Fuera la preparatoria**: con licenciatura terminada no aporta.
 - **Entra el diplomado** "Inteligencia Artificial Aplicada en la Creación y Administración de
-  Negocios Nacionales e Internacionales", mayo 2025 – enero 2026. Falta la institución.
-- **Entra el negocio de automatizaciones como experiencia laboral.** El CV anterior terminaba
-  en junio 2024: un hueco de más de dos años. Las afirmaciones ("herramientas a medida", "IA
-  avanzada") quedan respaldadas con datos del wiki: 7 escenarios en producción, 3 clientes,
-  más de 6 000 ejecuciones al corte 2026-09-05. Ver [[Correlacion-de-Proyectos]] y
-  [[Stack-Tecnologico]].
+  Negocios Nacionales e Internacionales", **UNAM — FES Aragón**, mayo 2025 – enero 2026.
+  Misma institución que la licenciatura: verificable de inmediato.
+- **Entra Chaos Ctrl como experiencia laboral.** El CV anterior terminaba en junio de 2024:
+  un hueco de más de dos años. Las afirmaciones ("herramientas a medida", "IA avanzada")
+  quedan respaldadas con datos del wiki: 7 escenarios en producción y más de 6 000 ejecuciones
+  al corte 2026-09-05. Ver [[Correlacion-de-Proyectos]] y [[Stack-Tecnologico]].
 - El perfil pasa de lista de adjetivos a una frase con resultados; habilidades técnicas
   separadas de blandas; hobbies fuera.
 
-Resultado en `cv/CV-Luis-Angel-Sanchez-Naranjo-2026.md`. El teléfono queda como marcador:
-no entran datos de contacto directo al repo.
+**Datos nuevos que el wiki no tenía**
+
+Nombre comercial del negocio: **Chaos Ctrl**. Cartera declarada de **cinco clientes**:
+
+| Cliente | ¿Documentado en el wiki? |
+|---|---|
+| Centro Universitario Trilingüe | Sí, bajo [[Colegio-Maria-Chavarria-Vital]] |
+| Lefranm Quiropráctico | Sí, pero como **Lefranm Cosméticos** — contradicción |
+| Universidad Marista | **No** |
+| Apcon — Escuela de Mecánica Automotriz | **No** |
+| Salones de Belleza Manuel | **No** |
+
+Y a la inversa: [[Sonrisas-Para-Todos-Nosotros]], que sí tiene página, no aparece en la lista.
+
+**Contradicciones marcadas, no resueltas**
+
+1. *Lefranm Quiropráctico* vs. *Lefranm Cosméticos* → advertencia en [[Lefranm-Cosmeticos]].
+2. El repositorio `Nuevo-Proyecto-Marista` no era un error de nombre: falta el proyecto
+   Marista → advertencia actualizada en [[Sonrisas-Para-Todos-Nosotros]].
+
+**Pendiente de ingesta**: Marista, Apcon y Salones de Belleza Manuel. Hasta entonces, las
+cifras duras del CV solo respaldan a tres clientes; los otros dos suman a la cartera, no a los
+números. El teléfono queda como marcador: no entran datos de contacto directo al repo.
 
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 

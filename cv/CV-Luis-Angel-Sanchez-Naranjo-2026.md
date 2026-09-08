@@ -2,7 +2,7 @@
 titulo: CV Luis Ángel Sánchez Naranjo — versión 2026
 tipo: fuente
 estado: activo
-tags: [cv, curriculum, personal]
+tags: [cv, curriculum, personal, chaos-ctrl]
 actualizado: 2026-09-08
 ---
 
@@ -30,26 +30,35 @@ Lic. en Relaciones Internacionales · Automatización con IA para negocios
 ## Perfil profesional
 
 Licenciado en Relaciones Internacionales por la UNAM, especializado en automatización de
-procesos comerciales con inteligencia artificial. Diseño, construyo y opero agentes
-conversacionales de WhatsApp, embudos de captación y sistemas de seguimiento para negocios
-locales. Actualmente mantengo **7 automatizaciones en producción para 3 clientes**, con más
-de **6,000 ejecuciones acumuladas** (corte: septiembre 2026). Trabajo con herramientas a la
-medida: cuando la plataforma no alcanza, construyo la pieza que falta.
+procesos comerciales con inteligencia artificial. Fundador de **Chaos Ctrl**, donde diseño,
+construyo y opero agentes conversacionales de WhatsApp, embudos de captación y sistemas de
+seguimiento para instituciones educativas y negocios de servicio. Cartera de **5 clientes**,
+con **7 automatizaciones en producción** y más de **6 000 ejecuciones acumuladas**
+(corte: septiembre 2026). Trabajo con herramientas a la medida: cuando la plataforma no
+alcanza, construyo la pieza que falta.
 
 ## Experiencia laboral
 
-### `[Nombre comercial de tu negocio]` — Automatización con IA para negocios
+### Chaos Ctrl — Automatización con IA para negocios
 **Fundador y consultor** · Ciudad de México · Mayo 2025 – Actualidad
 
+Clientes: **Universidad Marista**, **Centro Universitario Trilingüe**,
+**Apcon — Escuela de Mecánica Automotriz**, **Lefranm Quiropráctico** y
+**Salones de Belleza Manuel**.
+
 - Diseño y operación de **agentes conversacionales de WhatsApp Business Cloud con IA**
-  (clasificación de intención, extracción de datos estructurados y respuesta automática) para
-  tres negocios: cosmética profesional, institución educativa y clínica dental.
-- **Sistema de agendamiento automático integrado con Google Calendar**: alta, consulta,
-  reprogramación y cancelación de citas sin intervención humana.
-- **Embudo completo de captación de prospectos**: Meta Ads → WhatsApp → Airtable →
-  seguimiento automatizado cada 30 minutos, con **0% de errores** en la capa de seguimiento.
+  (clasificación de intención, extracción de datos estructurados y respuesta automática) que
+  atienden ventas, inscripciones y agendamiento sin intervención humana.
+- **Sistema de agendamiento automático integrado con Google Calendar** para Lefranm: alta,
+  consulta, reprogramación y cancelación de citas end to end.
+- **Embudo completo de captación de prospectos** para el Centro Universitario Trilingüe:
+  Meta Ads → WhatsApp → Airtable → seguimiento automatizado cada 30 minutos, con **0% de
+  errores** en la capa de seguimiento; operado durante el cierre de inscripciones del ciclo.
 - **Pipeline de publicación diaria** de contenido en Facebook e Instagram con generación de
   texto publicitario asistida por IA a partir de imágenes.
+- `[Qué construiste para Universidad Marista — una línea]`
+- `[Qué construiste para Apcon, Escuela de Mecánica Automotriz — una línea]`
+- `[Qué construiste para Salones de Belleza Manuel — una línea]`
 - **Desarrollo de herramientas a la medida**: integración de APIs REST y webhooks (Make,
   WhatsApp Cloud API, Google Workspace, Airtable, Meta), construcción de landing pages y uso
   avanzado de asistentes de IA (Claude / Claude Code, OpenAI) para desarrollo y operación.
@@ -71,13 +80,15 @@ medida: cuando la plataforma no alcanza, construyo la pieza que falta.
 ## Educación
 
 **Diplomado en Inteligencia Artificial Aplicada en la Creación y Administración de Negocios
-Nacionales e Internacionales** — `[Institución que lo imparte]` · Mayo 2025 – Enero 2026
+Nacionales e Internacionales**
+Universidad Nacional Autónoma de México — Facultad de Estudios Superiores Aragón ·
+Mayo 2025 – Enero 2026
 
-**Licenciatura en Relaciones Internacionales** — Facultad de Estudios Superiores Aragón,
-UNAM · 2019 – 2023
+**Licenciatura en Relaciones Internacionales**
+Universidad Nacional Autónoma de México — Facultad de Estudios Superiores Aragón · 2019 – 2023
 
-**Licenciatura en Administración Militar / Piloto Aviador** — Colegio del Aire, Escuela
-Militar de Aviación · 2017 – 2019 (trunca)
+**Licenciatura en Administración Militar / Piloto Aviador**
+Colegio del Aire, Escuela Militar de Aviación · 2017 – 2019 (trunca)
 
 ## Habilidades técnicas
 
@@ -105,8 +116,10 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
 | Cambio | Por qué |
 |---|---|
 | Se eliminó la preparatoria (No. 5 "José Vasconcelos") | Con licenciatura terminada, la prepa ya no aporta y ocupa espacio. |
-| Se agregó el diplomado de IA (may 2025 – ene 2026) | Es el puente entre la formación en RI y lo que haces hoy. Falta la institución. |
-| Se agregó el negocio propio como experiencia laboral | Tapaba un hueco de más de dos años (jun 2024 → hoy) que es la peor señal de un CV. |
+| Se agregó el diplomado de IA por la FES Aragón, UNAM (may 2025 – ene 2026) | Es el puente entre la formación en RI y lo que haces hoy, y viene de la misma institución que tu licenciatura: eso lo hace verificable de inmediato. |
+| Se agregó **Chaos Ctrl** como experiencia laboral | Tapaba un hueco de más de dos años (jun 2024 → hoy) que es la peor señal de un CV. |
+| Se nombran los cinco clientes | Nombres de instituciones reconocibles valen más que "una institución educativa". Ver el pendiente 1. |
+| El perfil dice "5 clientes" y "7 automatizaciones", no "7 automatizaciones para 5 clientes" | Solo tres clientes tienen escenarios verificables en Make al corte. Juntar las dos cifras en una sola frase diría algo que los datos no sostienen. |
 | El perfil dejó de ser una lista de adjetivos | "Honesto, responsable, resiliente" no distingue a nadie. Ahora la primera línea dice qué haces y con qué resultados. |
 | Habilidades separadas en técnicas y blandas | Un reclutador busca las técnicas primero; antes estaban revueltas con hobbies y paquetería. |
 | Se quitaron los hobbies | Espacio para proyectos. Si sobra hoja, se pueden regresar en una línea. |
@@ -115,13 +128,40 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
 
 ## Pendientes tuyos
 
-1. **Institución del diplomado.** Un diplomado sin institución levanta sospecha; con ella,
-   suma. Si además hay constancia con folio, menciónala.
-2. **¿El negocio tiene nombre comercial o está constituido?** Si está dado de alta, usa el
-   nombre y "Fundador". Si no, usa "Consultor independiente en automatización con IA" — es
-   igual de válido y no exagera.
-3. **¿Puedes nombrar a tus clientes?** Nombrarlos da credibilidad, pero conviene pedirles
-   permiso. La versión de arriba los describe por giro, que es la opción segura.
+1. **Permiso de los clientes.** Nombrar a los cinco da credibilidad, pero conviene avisarles.
+   Si alguno prefiere que no, se sustituye por el giro ("una universidad privada en CDMX")
+   sin perder fuerza.
+2. **Qué hiciste para Marista, Apcon y Salones de Belleza Manuel.** Son los tres clientes sin
+   entregable descrito; quedaron bullets en corchetes. Con una línea de cada uno el bloque de
+   experiencia queda cerrado. Ninguno tiene página en el wiki — ver la advertencia abajo.
+3. **El nombre correcto de Lefranm.** Ver la contradicción abajo antes de imprimir.
 4. **LinkedIn y portafolio.** Hoy el CV no tiene ningún enlace donde comprobar lo que dice.
 5. Decide si conservas el Colegio del Aire. Es distintivo y explica la disciplina, pero es una
    carrera trunca de hace 9 años: si el CV se sale de una hoja, es lo primero que se recorta.
+
+## Contradicciones con el wiki
+
+> [!warning] "Lefranm Quiropráctico" vs. "Lefranm Cosméticos"
+> El wiki documenta a este cliente como **Lefranm Cosméticos**: cosmética profesional con
+> catálogo de ~52 SKUs y servicios de cabina (reductivo, microdermoabrasión, presoterapia,
+> spa de manos). No aparece quiropráctica por ningún lado. O el negocio cambió de nombre o
+> de giro, o abrió una línea nueva, o son dos razones sociales del mismo dueño.
+> **No se resuelve solo: dime cuál va en el CV.** Ver [[Lefranm-Cosmeticos]].
+
+> [!warning] Tres de los cinco clientes no existen en el wiki
+> **Universidad Marista**, **Apcon (Escuela de Mecánica Automotriz)** y **Salones de Belleza
+> Manuel** son cartera activa de Chaos Ctrl según tú, pero ninguno tiene página de cliente,
+> proyecto ni escenario asociado. Los únicos clientes documentados al corte 2026-09-05 son
+> [[Lefranm-Cosmeticos]], [[Colegio-Maria-Chavarria-Vital]] y
+> [[Sonrisas-Para-Todos-Nosotros]] —y este último, que sí tiene página, no aparece en tu
+> lista—. La única huella de Marista es el repositorio `Nuevo-Proyecto-Marista`, que contiene
+> una landing de clínica dental.
+> **Consecuencia práctica**: las cifras duras del CV (7 escenarios, 6 000 ejecuciones) solo
+> respaldan a tres clientes. Los otros dos suman a la cartera, no a los números. Falta
+> ingerirlos.
+
+> [!warning] El Centro Universitario Trilingüe no es un cliente suelto
+> En el wiki el cliente es **Colegio María Chavarría Vital A.C.**, que opera dos marcas: el
+> Bachillerato Centro Trilingüe y el **Centro Universitario Trilingüe (CUT), sede Tláhuac**.
+> Para el CV, nombrar al CUT está bien y es exacto. Solo tenlo claro si en una entrevista te
+> preguntan quién firma el contrato. Ver [[Colegio-Maria-Chavarria-Vital]].
