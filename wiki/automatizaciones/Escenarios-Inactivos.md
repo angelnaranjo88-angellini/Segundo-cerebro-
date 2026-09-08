@@ -3,7 +3,7 @@ titulo: Escenarios inactivos de Make
 tipo: automatizacion
 estado: archivado
 plataforma: make
-clientes: [Colegio-Maria-Chavarria-Vital, Lefranm-Cosmeticos]
+clientes: [Colegio-Maria-Chavarria-Vital, Lefranm-Quiropractico]
 tags: [deuda-tecnica, prototipos, limpieza]
 actualizado: 2026-09-05
 ---

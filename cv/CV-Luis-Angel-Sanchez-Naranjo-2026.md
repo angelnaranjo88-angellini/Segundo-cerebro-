@@ -32,7 +32,8 @@ Lic. en Relaciones Internacionales · Automatización con IA para negocios
 Licenciado en Relaciones Internacionales por la UNAM, especializado en automatización de
 procesos comerciales con inteligencia artificial. Fundador de **Chaos Ctrl**, donde diseño,
 construyo y opero agentes conversacionales de WhatsApp, embudos de captación y sistemas de
-seguimiento para instituciones educativas y negocios de servicio. Cartera de **5 clientes**,
+seguimiento para instituciones educativas y negocios de salud, bienestar y servicios.
+Cartera de **5 clientes**,
 con **7 automatizaciones en producción** y más de **6 000 ejecuciones acumuladas**
 (corte: septiembre 2026). Trabajo con herramientas a la medida: cuando la plataforma no
 alcanza, construyo la pieza que falta.
@@ -133,35 +134,26 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
    sin perder fuerza.
 2. **Qué hiciste para Marista, Apcon y Salones de Belleza Manuel.** Son los tres clientes sin
    entregable descrito; quedaron bullets en corchetes. Con una línea de cada uno el bloque de
-   experiencia queda cerrado. Ninguno tiene página en el wiki — ver la advertencia abajo.
-3. **El nombre correcto de Lefranm.** Ver la contradicción abajo antes de imprimir.
-4. **LinkedIn y portafolio.** Hoy el CV no tiene ningún enlace donde comprobar lo que dice.
-5. Decide si conservas el Colegio del Aire. Es distintivo y explica la disciplina, pero es una
+   experiencia queda cerrado. Están construidos en otra plataforma, fuera de Make —
+   ver la nota abajo.
+3. **LinkedIn y portafolio.** Hoy el CV no tiene ningún enlace donde comprobar lo que dice.
+4. Decide si conservas el Colegio del Aire. Es distintivo y explica la disciplina, pero es una
    carrera trunca de hace 9 años: si el CV se sale de una hoja, es lo primero que se recorta.
 
-## Contradicciones con el wiki
+## Notas de verificación
 
-> [!warning] "Lefranm Quiropráctico" vs. "Lefranm Cosméticos"
-> El wiki documenta a este cliente como **Lefranm Cosméticos**: cosmética profesional con
-> catálogo de ~52 SKUs y servicios de cabina (reductivo, microdermoabrasión, presoterapia,
-> spa de manos). No aparece quiropráctica por ningún lado. O el negocio cambió de nombre o
-> de giro, o abrió una línea nueva, o son dos razones sociales del mismo dueño.
-> **No se resuelve solo: dime cuál va en el CV.** Ver [[Lefranm-Cosmeticos]].
+> [!info] Nombre del cliente — resuelto
+> El cliente se llama **Lefranm Quiropráctico**, confirmado por el dueño el 2026-09-08. El
+> wiki lo tenía como *Lefranm Cosméticos* porque la primera fuente ingerida fue el catálogo
+> de precios. La página se renombró a [[Lefranm-Quiropractico]] y la anterior quedó archivada
+> como redirección. Sigue pendiente ingerir la línea de quiropráctica: hoy el wiki solo
+> documenta la cosmética y los servicios de cabina.
 
-> [!warning] Tres de los cinco clientes no existen en el wiki
+> [!warning] Tres clientes reales que el wiki no ve
 > **Universidad Marista**, **Apcon (Escuela de Mecánica Automotriz)** y **Salones de Belleza
-> Manuel** son cartera activa de Chaos Ctrl según tú, pero ninguno tiene página de cliente,
-> proyecto ni escenario asociado. Los únicos clientes documentados al corte 2026-09-05 son
-> [[Lefranm-Cosmeticos]], [[Colegio-Maria-Chavarria-Vital]] y
-> [[Sonrisas-Para-Todos-Nosotros]] —y este último, que sí tiene página, no aparece en tu
-> lista—. La única huella de Marista es el repositorio `Nuevo-Proyecto-Marista`, que contiene
-> una landing de clínica dental.
-> **Consecuencia práctica**: las cifras duras del CV (7 escenarios, 6 000 ejecuciones) solo
-> respaldan a tres clientes. Los otros dos suman a la cartera, no a los números. Falta
-> ingerirlos.
-
-> [!warning] El Centro Universitario Trilingüe no es un cliente suelto
-> En el wiki el cliente es **Colegio María Chavarría Vital A.C.**, que opera dos marcas: el
-> Bachillerato Centro Trilingüe y el **Centro Universitario Trilingüe (CUT), sede Tláhuac**.
-> Para el CV, nombrar al CUT está bien y es exacto. Solo tenlo claro si en una entrevista te
-> preguntan quién firma el contrato. Ver [[Colegio-Maria-Chavarria-Vital]].
+> Manuel** son clientes confirmados, pero sus proyectos se construyeron **en otra plataforma,
+> fuera de Make**, y por eso no aparecieron en el inventario del 2026-09-05.
+> **Consecuencia para el CV**: las cifras duras (7 escenarios, 6 000 ejecuciones) provienen
+> solo de Make y cubren a dos clientes. Por eso el perfil dice "cartera de 5 clientes" y las
+> cifras aparte, en lugar de juntarlas en una sola frase. Cuando sepamos qué plataforma es y
+> qué corre ahí, esas cifras pueden crecer con respaldo.

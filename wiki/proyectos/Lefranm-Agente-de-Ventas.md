@@ -2,7 +2,7 @@
 titulo: Lefranm — Agente de ventas
 tipo: proyecto
 estado: activo
-clientes: [Lefranm-Cosmeticos]
+clientes: [Lefranm-Quiropractico]
 tags: [whatsapp, agente-ia, airtable, ventas]
 inicio: 2026-07-06
 actualizado: 2026-09-05

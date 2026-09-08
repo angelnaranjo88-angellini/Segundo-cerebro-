@@ -4,7 +4,7 @@ tipo: automatizacion
 estado: activo
 plataforma: make
 id_escenario: 5645150
-clientes: [Lefranm-Cosmeticos]
+clientes: [Lefranm-Quiropractico]
 tags: [whatsapp, calendar, data-store, agente-ia]
 actualizado: 2026-09-05
 ---

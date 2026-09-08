@@ -2,7 +2,7 @@
 titulo: Índice
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-09-08
 ---
 
 # Índice
@@ -25,7 +25,8 @@ actualizado: 2026-09-05
 | Página | Una línea | Estado |
 |---|---|---|
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
-| [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
+| [[Lefranm-Quiropractico]] | Salud y bienestar en Iztapalapa: quiropráctica, cosmética y estética; 90% del volumen | activo |
+| [[Lefranm-Cosmeticos]] | Nombre anterior del cliente; solo redirige | archivado |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
 
 ## Proyectos
@@ -97,5 +98,5 @@ Todo lo de un cliente:
 ```dataview
 TABLE tipo, estado
 FROM "wiki"
-WHERE contains(clientes, "Lefranm-Cosmeticos")
+WHERE contains(clientes, "Lefranm-Quiropractico")
 ```

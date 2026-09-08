@@ -3,7 +3,7 @@ titulo: Stack tecnológico
 tipo: concepto
 estado: activo
 tags: [stack, herramientas, inventario]
-actualizado: 2026-09-05
+actualizado: 2026-09-08
 ---
 
 # Stack tecnológico
@@ -50,6 +50,17 @@ Ver la tensión entre los dos primeros en [[Persistencia-Airtable-vs-Data-Store]
 - **Vercel** — cuenta `angelnaranjo88-3229's projects`, plan hobby, **sin proyectos
   desplegados** al corte.
 - **GitHub** — 2 repositorios: `Segundo-cerebro-` (este wiki) y `Nuevo-Proyecto-Marista`.
+
+## Lo que el inventario NO ve
+
+> [!warning] Hay una segunda plataforma sin inventariar
+> El 2026-09-08 el dueño confirmó tres clientes más —**Universidad Marista**, **Apcon
+> (Escuela de Mecánica Automotriz)** y **Salones de Belleza Manuel**— cuyos proyectos están
+> construidos **fuera de Make**, en otra plataforma todavía sin nombrar. Todo este inventario
+> se levantó desde la API de Make (ver [[Fuente-Inventario-Make]]), así que la frase de arriba
+> —"es el centro de gravedad, todo vive aquí"— es cierta solo para lo que Make alcanza a ver.
+> Falta ingerir esa plataforma: sin ella, el wiki subestima el portafolio y no puede decir
+> cuánto del negocio depende de un único proveedor.
 
 ## Lo que llama la atención del inventario
 

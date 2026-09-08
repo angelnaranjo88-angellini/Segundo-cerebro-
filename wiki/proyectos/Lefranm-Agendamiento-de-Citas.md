@@ -2,7 +2,7 @@
 titulo: Lefranm — Agendamiento de citas
 tipo: proyecto
 estado: activo
-clientes: [Lefranm-Cosmeticos]
+clientes: [Lefranm-Quiropractico]
 tags: [whatsapp, agente-ia, calendar, data-store, mcp]
 inicio: 2026-07-13
 actualizado: 2026-09-05

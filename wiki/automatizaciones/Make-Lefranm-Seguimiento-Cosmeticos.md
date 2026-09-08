@@ -4,7 +4,7 @@ tipo: automatizacion
 estado: activo
 plataforma: make
 id_escenario: 5866647
-clientes: [Lefranm-Cosmeticos]
+clientes: [Lefranm-Quiropractico]
 tags: [seguimiento, airtable, whatsapp]
 actualizado: 2026-09-05
 ---

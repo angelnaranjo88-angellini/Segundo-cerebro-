@@ -49,13 +49,13 @@ de captación se comprime en las semanas previas — eso explica el pico de acti
 ## Notas operativas
 
 - La persistencia de este cliente vive en **Airtable** (no en Data Store de Make), a diferencia
-  de la mitad de [[Lefranm-Cosmeticos]]. Ver la contradicción documentada en
+  de la mitad de [[Lefranm-Quiropractico]]. Ver la contradicción documentada en
   [[Persistencia-Airtable-vs-Data-Store]].
 - Es el **único cliente con inversión publicitaria pagada** conectada (Meta Ads). Lefranm no
   tiene cuenta publicitaria en este entorno.
 
 ## Correlaciones
 
-Comparte con [[Lefranm-Cosmeticos]] el patrón completo de
+Comparte con [[Lefranm-Quiropractico]] el patrón completo de
 [[Agente-Conversacional-de-WhatsApp]] y el de [[Seguimiento-por-Sondeo]] — literalmente los
 mismos módulos de Make, cambiando la tabla destino. Ver [[Correlacion-de-Proyectos]].

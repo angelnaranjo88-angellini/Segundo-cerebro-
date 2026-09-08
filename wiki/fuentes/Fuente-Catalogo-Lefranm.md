@@ -40,7 +40,7 @@ por WhatsApp. El catálogo ya está estructurado como lo necesita el agente.
 
 ## Qué páginas actualizó esta ingesta
 
-[[Lefranm-Cosmeticos]], [[Lefranm-Agente-de-Ventas]], [[Riesgos-y-Deuda-Tecnica]].
+[[Lefranm-Quiropractico]], [[Lefranm-Agente-de-Ventas]], [[Riesgos-y-Deuda-Tecnica]].
 
 ## Preguntas que abre
 

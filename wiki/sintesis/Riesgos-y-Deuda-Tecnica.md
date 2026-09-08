@@ -32,7 +32,7 @@ sin copia de seguridad ni control de versiones.
 | [[Make-CUT-Creacion-de-Contenido-Sheets]] | ~63 | 0.2% |
 | **Total** | **~35 677** | 100% |
 
-Por cliente: **[[Lefranm-Cosmeticos]] 90.7%**, [[Colegio-Maria-Chavarria-Vital]] 9.3%.
+Por cliente: **[[Lefranm-Quiropractico]] 90.7%**, [[Colegio-Maria-Chavarria-Vital]] 9.3%.
 
 **El riesgo**: si Lefranm se va, el 90% del consumo se apaga de golpe — y con él, casi todo lo
 que has aprendido en producción. Toda tu operación depende de un cliente.

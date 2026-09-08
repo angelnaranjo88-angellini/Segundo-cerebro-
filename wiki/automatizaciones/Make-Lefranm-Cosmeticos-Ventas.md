@@ -4,7 +4,7 @@ tipo: automatizacion
 estado: activo
 plataforma: make
 id_escenario: 5587862
-clientes: [Lefranm-Cosmeticos]
+clientes: [Lefranm-Quiropractico]
 tags: [whatsapp, airtable, agente-ia, ventas]
 actualizado: 2026-09-05
 ---
