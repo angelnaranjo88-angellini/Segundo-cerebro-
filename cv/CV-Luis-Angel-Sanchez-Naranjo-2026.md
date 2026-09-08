@@ -57,9 +57,8 @@ Clientes: **Universidad Marista**, **Centro Universitario Trilingüe**,
   errores** en la capa de seguimiento; operado durante el cierre de inscripciones del ciclo.
 - **Pipeline de publicación diaria** de contenido en Facebook e Instagram con generación de
   texto publicitario asistida por IA a partir de imágenes.
-- `[Qué construiste para Universidad Marista — una línea]`
-- `[Qué construiste para Apcon, Escuela de Mecánica Automotriz — una línea]`
-- `[Qué construiste para Salones de Belleza Manuel — una línea]`
+- **Aplicaciones web y flujos de automatización a la medida** para Universidad Marista, Apcon
+  y Salones de Belleza Manuel, construidos con n8n, Bolt y Vercel.
 - **Desarrollo de herramientas a la medida**: integración de APIs REST y webhooks (Make,
   WhatsApp Cloud API, Google Workspace, Airtable, Meta), construcción de landing pages y uso
   avanzado de asistentes de IA (Claude / Claude Code, OpenAI) para desarrollo y operación.
@@ -93,11 +92,12 @@ Colegio del Aire, Escuela Militar de Aviación · 2017 – 2019 (trunca)
 
 ## Habilidades técnicas
 
-- **Automatización e IA**: Make (22 escenarios construidos, 7 en producción), agentes con
-  LLM, ingeniería de prompts, Claude y Claude Code (nivel avanzado), OpenAI API, RAG.
+- **Automatización e IA**: Make (22 escenarios construidos, 7 en producción) y n8n; agentes
+  con LLM, ingeniería de prompts, Claude y Claude Code (nivel avanzado), OpenAI API, RAG.
+- **Desarrollo web**: Bolt y Vercel para aplicaciones y sitios; HTML / CSS / JavaScript;
+  integración de APIs REST y webhooks; GitHub.
 - **Plataformas**: WhatsApp Business Cloud API, Meta Ads, Airtable, Google Workspace
-  (Calendar, Sheets, Drive), Vercel, GitHub.
-- **Desarrollo**: HTML / CSS / JavaScript, landing pages, integración de APIs REST y webhooks.
+  (Calendar, Sheets, Drive).
 - **Ofimática y diseño**: Excel, Word, PowerPoint, Adobe Illustrator.
 
 ## Competencias
@@ -149,11 +149,19 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
 > como redirección. Sigue pendiente ingerir la línea de quiropráctica: hoy el wiki solo
 > documenta la cosmética y los servicios de cabina.
 
-> [!warning] Tres clientes reales que el wiki no ve
+> [!warning] Las cifras cubren dos de los cinco clientes
 > **Universidad Marista**, **Apcon (Escuela de Mecánica Automotriz)** y **Salones de Belleza
-> Manuel** son clientes confirmados, pero sus proyectos se construyeron **en otra plataforma,
-> fuera de Make**, y por eso no aparecieron en el inventario del 2026-09-05.
+> Manuel** son clientes confirmados, con aplicaciones y automatizaciones construidas en
+> **n8n, Bolt y Vercel** — fuera de Make. El inventario del 2026-09-05 se levantó desde la API
+> de Make, así que nunca los vio.
 > **Consecuencia para el CV**: las cifras duras (7 escenarios, 6 000 ejecuciones) provienen
-> solo de Make y cubren a dos clientes. Por eso el perfil dice "cartera de 5 clientes" y las
-> cifras aparte, en lugar de juntarlas en una sola frase. Cuando sepamos qué plataforma es y
-> qué corre ahí, esas cifras pueden crecer con respaldo.
+> solo de Make y respaldan a dos clientes. Por eso el perfil declara la cartera y las cifras
+> por separado, en lugar de juntarlas en una frase que los datos no sostienen. Cuando
+> inventariemos n8n, Bolt y Vercel, esas cifras crecen con respaldo.
+
+> [!info] Cómo hacer más fuerte el bloque de Chaos Ctrl
+> Los tres clientes nuevos entraron con un bullet compartido —"aplicaciones web y flujos de
+> automatización a la medida"— que es cierto pero genérico. Un dato concreto por cliente
+> (cuántos trámites se automatizaron, cuánto bajó el tiempo de respuesta, cuántas citas o
+> inscripciones pasan por el sistema) vale más que tres bullets bien redactados. No bloquea
+> nada: el CV ya se sostiene sin eso.

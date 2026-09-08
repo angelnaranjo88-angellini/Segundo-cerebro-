@@ -28,6 +28,9 @@ actualizado: 2026-09-08
 | [[Lefranm-Quiropractico]] | Salud y bienestar en Iztapalapa: quiropráctica, cosmética y estética; 90% del volumen | activo |
 | [[Lefranm-Cosmeticos]] | Nombre anterior del cliente; solo redirige | archivado |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
+| [[Universidad-Marista]] | Institución de nivel superior; app y flujos en n8n/Bolt, sin inventariar | activo |
+| [[Apcon-Escuela-de-Mecanica-Automotriz]] | Escuela de mecánica automotriz; app y flujos en n8n/Bolt, sin inventariar | activo |
+| [[Salones-de-Belleza-Manuel]] | Salones de belleza; app y flujos en n8n/Bolt, sin inventariar | activo |
 
 ## Proyectos
 
