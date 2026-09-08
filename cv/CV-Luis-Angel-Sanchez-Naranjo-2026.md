@@ -21,7 +21,7 @@ actualizado: 2026-09-08
 ## Encabezado
 
 **LUIS ÁNGEL SÁNCHEZ NARANJO**
-Lic. en Relaciones Internacionales · Automatización con IA para negocios
+Lic. Relaciones Internacionales
 
 ## Contacto
 
@@ -43,8 +43,8 @@ alcanza, construyo la pieza que falta.
 
 ## Experiencia laboral
 
-### Chaos Ctrl — Automatización con IA para negocios
-**Fundador y consultor** · Ciudad de México · Mayo 2025 – Actualidad
+### Consultor independiente en automatización con IA para microempresas
+**Chaos Ctrl** · Ciudad de México · Mayo 2025 – Actualidad
 
 Clientes: **Universidad Marista**, **Centro Universitario Trilingüe**,
 **Apcon — Escuela de Mecánica Automotriz**, **Lefranm Quiropráctico** y
@@ -121,6 +121,7 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
 |---|---|
 | Se eliminó la preparatoria (No. 5 "José Vasconcelos") | Con licenciatura terminada, la prepa ya no aporta y ocupa espacio. |
 | Se agregó el diplomado de IA por la FES Aragón, UNAM (may 2025 – ene 2026) | Es el puente entre la formación en RI y lo que haces hoy, y viene de la misma institución que tu licenciatura: eso lo hace verificable de inmediato. |
+| El título del encabezado se mantiene como en el original: *Lic. Relaciones Internacionales* | Es el grado que respalda el CV; la especialidad ya se explica en el perfil y en el puesto. |
 | Se agregó **Chaos Ctrl** como experiencia laboral | Tapaba un hueco de más de dos años (jun 2024 → hoy) que es la peor señal de un CV. |
 | Se nombran los cinco clientes | Nombres de instituciones reconocibles valen más que "una institución educativa". Ver el pendiente 1. |
 | El perfil dice "5 clientes" y "7 automatizaciones", no "7 automatizaciones para 5 clientes" | Solo tres clientes tienen escenarios verificables en Make al corte. Juntar las dos cifras en una sola frase diría algo que los datos no sostienen. |
