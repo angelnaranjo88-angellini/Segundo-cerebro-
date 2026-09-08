@@ -8,8 +8,10 @@ actualizado: 2026-09-08
 
 # CV — Luis Ángel Sánchez Naranjo (versión 2026)
 
-> Contenido del CV. La maquetación vive en `plantilla-cv.html`; para generar el PDF de una
-> hoja: `./cv/generar-pdf.sh "<tu teléfono>"`. Reemplaza la versión anterior
+> Contenido del CV. La maquetación vive en `plantilla-cv.html` y conserva la estructura del
+> diseño original: fotografía circular en la banda superior, barra lateral azul y columna
+> principal. Para generar el PDF de una hoja:
+> `./cv/generar-pdf.sh "<tu teléfono>" <foto.png>`. Reemplaza la versión anterior
 > (`Currículum Vitae CV de Mujer Minimalista Azul.pdf`, sin fecha).
 > Los `[corchetes]` son datos que faltan y solo tú puedes llenar.
 > El teléfono se deja como marcador a propósito: no metemos datos de contacto directo al repo.
@@ -125,6 +127,8 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
 | El perfil dejó de ser una lista de adjetivos | "Honesto, responsable, resiliente" no distingue a nadie. Ahora la primera línea dice qué haces y con qué resultados. |
 | Habilidades separadas en técnicas y blandas | Un reclutador busca las técnicas primero; antes estaban revueltas con hobbies y paquetería. |
 | Se quitaron los hobbies | Espacio para proyectos. Si sobra hoja, se pueden regresar en una línea. |
+| Se conservan la fotografía y la estructura del diseño original | Banda superior con foto circular, barra lateral azul y columna principal. Solo cambió el contenido, no la forma. |
+| Las barras de nivel de Paquetería Office se volvieron una línea de texto | Las barras sin escala declarada no dicen nada verificable, y ese espacio lo ocupan ahora las habilidades técnicas. |
 | Educación en orden cronológico inverso | Lo más reciente y relevante arriba. |
 | Las cifras llevan fecha de corte | Los números sin fecha envejecen mal en una entrevista. |
 
@@ -138,7 +142,11 @@ Español (nativo) · Inglés intermedio-avanzado (constancia CLE, UNAM) · Portu
    experiencia queda cerrado. Están construidos en otra plataforma, fuera de Make —
    ver la nota abajo.
 3. **LinkedIn y portafolio.** Hoy el CV no tiene ningún enlace donde comprobar lo que dice.
-4. Decide si conservas el Colegio del Aire. Es distintivo y explica la disciplina, pero es una
+4. **La fotografía.** La actual salió de un screenshot de una foto impresa dentro de una mica,
+   sostenida en la mano: se recortó y se limpió lo que se pudo, pero arrastra el reflejo del
+   plástico y el desenfoque del celular. Es lo único del CV que no se arregla con edición.
+   Una foto tomada de frente con luz de ventana y fondo liso, desde el celular, ya sería mejor.
+5. Decide si conservas el Colegio del Aire. Es distintivo y explica la disciplina, pero es una
    carrera trunca de hace 9 años: si el CV se sale de una hoja, es lo primero que se recorta.
 
 ## Notas de verificación

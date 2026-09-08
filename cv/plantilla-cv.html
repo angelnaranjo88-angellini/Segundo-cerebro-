@@ -1,73 +1,153 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><title>CV Luis Ángel Sánchez Naranjo</title>
 <style>
-  @page { size: A4; margin: 11mm 12mm 10mm 12mm; }
+  @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin:0; padding:0; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  body {
-    font-family: "Liberation Sans", "DejaVu Sans", sans-serif;
-    font-size: 8.8pt; line-height: 1.35; color: #1c2430;
+  :root {
+    --banda:#c9d6e8; --side:#ecf4ff; --navy:#264a76; --navy2:#35608f;
+    --texto:#1f2833; --gris:#5b6673; --linea:#b9c9de;
   }
-  :root { --azul:#1f4e79; --azul2:#2f6ea8; --gris:#5d6672; --linea:#d3dae2; }
+  body { font-family:"Liberation Sans","DejaVu Sans",sans-serif;
+         font-size:8.5pt; line-height:1.34; color:var(--texto); }
 
-  header { border-bottom: 2.5px solid var(--azul); padding-bottom: 7px; margin-bottom: 9px; }
-  h1 { font-size: 21pt; font-weight: 700; letter-spacing: .04em; color: var(--azul);
-       text-transform: uppercase; line-height:1.05; }
-  .tagline { font-size: 9.2pt; color: var(--azul2); margin-top: 3px; letter-spacing:.02em; }
-  .contacto { margin-top: 6px; font-size: 8.3pt; color: var(--gris); }
-  .contacto span { white-space: nowrap; }
-  .contacto span + span::before { content: "•"; color: var(--linea); margin: 0 7px; }
+  /* ---------- encabezado ---------- */
+  .banda { background:var(--banda); padding:9mm 10mm 8mm; display:flex; align-items:center; gap:9mm; }
+  .foto { width:32mm; height:32mm; border-radius:50%; object-fit:cover; object-position:50% 32%;
+          flex:0 0 auto; border:2.5px solid #fff; box-shadow:0 0 0 1px rgba(38,74,118,.18); }
+  h1 { font-size:25pt; font-weight:700; color:var(--navy); line-height:1.08; letter-spacing:-.005em; }
+  .rol { margin-top:5px; font-size:11pt; font-weight:700; color:var(--navy2);
+         letter-spacing:.16em; text-transform:uppercase; line-height:1.3; }
 
-  .cols { display: grid; grid-template-columns: 1fr 34%; gap: 0 16px; }
-  .sep { border-left: 1px solid var(--linea); padding-left: 16px; }
+  /* ---------- cuerpo ---------- */
+  .cuerpo { display:flex; min-height:calc(297mm - 49mm); }
+  .side { width:63mm; flex:0 0 63mm; background:var(--side); padding:6mm 5.5mm 8mm 10mm; }
+  .main { flex:1; padding:6mm 10mm 8mm 6.5mm; }
 
-  h2 { font-size: 8.4pt; font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
-       color: var(--azul); margin: 10px 0 4.5px; padding-bottom: 2.5px;
-       border-bottom: 1px solid var(--linea); }
-  section:first-child h2 { margin-top: 0; }
+  h2 { font-size:9pt; font-weight:700; color:var(--navy); text-transform:uppercase;
+       letter-spacing:.13em; margin-bottom:4px; }
+  h2::after { content:""; display:block; width:26px; height:2.5px; background:var(--navy);
+              margin-top:3px; }
+  section { margin-bottom:7.5px; }
+  section:last-child { margin-bottom:0; }
+  .side section + section, .main section + section { margin-top:9px; }
 
-  p.perfil { text-align: justify; }
-  .job { margin-bottom: 8px; }
-  .job:last-child { margin-bottom: 0; }
-  .rol { font-size: 9.4pt; font-weight: 700; color:#17202b; }
-  .org { font-size: 8.6pt; font-weight: 700; color: var(--azul2); }
-  .meta { font-size: 7.8pt; color: var(--gris); font-style: italic; margin-bottom: 3px; }
-  .clientes { font-size: 8.2pt; margin-bottom: 3px; }
+  /* contacto */
+  .ct { display:flex; align-items:center; gap:5px; margin-top:5px; font-size:8.2pt; }
+  .ic { width:11px; height:11px; flex:0 0 auto; }
+  .ct span { overflow-wrap:anywhere; }
+  .ct .mail { font-size:7.6pt; letter-spacing:-.005em; }
+  .comp { margin-top:5px; color:#333c48; }
 
-  ul { list-style: none; }
-  li { position: relative; padding-left: 9px; margin-bottom: 2.2px; text-align: justify; }
-  li::before { content:""; position:absolute; left:0; top:.44em;
-               width:3.2px; height:3.2px; background: var(--azul2); border-radius:50%; }
+  ul { list-style:none; }
+  li { position:relative; padding-left:8px; margin-top:2px; }
+  li::before { content:""; position:absolute; left:0; top:.45em; width:3px; height:3px;
+               background:var(--navy2); border-radius:50%; }
 
-  .edu { margin-bottom: 7px; }
-  .edu:last-child { margin-bottom:0; }
-  .edu .t { font-weight: 700; color:#17202b; }
-  .edu .i { color: var(--gris); }
-  .edu .f { font-size: 7.8pt; color: var(--gris); font-style: italic; }
+  .blq { margin-top:5px; }
+  .blq .h { font-weight:700; color:var(--navy2); font-size:8pt;
+            text-transform:uppercase; letter-spacing:.05em; }
+  .blq .c { color:#333c48; }
 
-  .skill { margin-bottom: 5.5px; }
-  .skill .h { font-weight:700; color: var(--azul2); font-size:8.1pt;
-              text-transform: uppercase; letter-spacing:.04em; }
-  .chips { color:#39424f; }
-  .idioma { margin-bottom: 3px; }
-  .idioma b { color:#17202b; }
-  .idioma span { color: var(--gris); }
-  strong { color:#17202b; }
+  .edu { margin-top:6px; }
+  .edu .t { font-weight:700; color:#16202c; }
+  .edu .i { color:var(--gris); font-size:8pt; }
+  .edu .f { font-size:7.6pt; color:var(--gris); font-style:italic; }
+
+  .idi { margin-top:3px; }
+  .idi b { color:#16202c; }
+  .idi span { color:var(--gris); }
+
+  /* experiencia */
+  p.perfil { text-align:justify; margin-top:5px; }
+  .job { margin-top:7px; }
+  .job .p { font-size:10pt; font-weight:700; color:#16202c; }
+  .job .e { font-size:8.8pt; font-weight:700; color:var(--navy2); }
+  .job .m { font-size:7.8pt; color:var(--gris); font-style:italic; margin:1px 0 2px; }
+  .job .cl { font-size:8.1pt; margin-bottom:2px; }
+  .job li { text-align:justify; }
+  strong { color:#16202c; }
 </style></head><body>
 
-<header>
-  <h1>Luis Ángel Sánchez Naranjo</h1>
-  <div class="tagline">Lic. en Relaciones Internacionales &nbsp;·&nbsp; Automatización con IA para negocios</div>
-  <div class="contacto">
-    <span>__TELEFONO__</span><span>angelnaranjo88@aragon.unam.mx</span><span>Ciudad de México</span>
+<div class="banda">
+  <img class="foto" src="__FOTO__" alt="Luis Ángel Sánchez Naranjo">
+  <div>
+    <h1>Luis Ángel Sánchez<br>Naranjo</h1>
+    <div class="rol">Automatización con IA<br>para negocios</div>
   </div>
-</header>
+</div>
 
-<div class="cols">
-<div class="main">
+<div class="cuerpo">
+<aside class="side">
 
   <section>
-    <h2>Perfil profesional</h2>
+    <h2>Contacto</h2>
+    <div class="ct">
+      <svg class="ic" viewBox="0 0 24 24" fill="#264a76"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+      <span>__TELEFONO__</span>
+    </div>
+    <div class="ct">
+      <svg class="ic" viewBox="0 0 24 24" fill="#264a76"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span class="mail">angelnaranjo88@aragon.unam.mx</span>
+    </div>
+    <div class="ct">
+      <svg class="ic" viewBox="0 0 24 24" fill="#264a76"><path d="M12 2a7 7 0 00-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+      <span>Ciudad de México</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Habilidades técnicas</h2>
+    <div class="blq">
+      <div class="h">Automatización e IA</div>
+      <div class="c">Make (22 escenarios construidos, 7 en producción) · n8n · agentes con LLM · ingeniería de prompts · Claude y Claude Code (nivel avanzado) · OpenAI API · RAG</div>
+    </div>
+    <div class="blq">
+      <div class="h">Desarrollo web</div>
+      <div class="c">Bolt · Vercel · HTML, CSS y JavaScript · landing pages · APIs REST y webhooks · GitHub</div>
+    </div>
+    <div class="blq">
+      <div class="h">Plataformas</div>
+      <div class="c">WhatsApp Business Cloud API · Meta Ads · Airtable · Google Workspace (Calendar, Sheets, Drive)</div>
+    </div>
+    <div class="blq">
+      <div class="h">Paquetería y diseño</div>
+      <div class="c">Microsoft Excel · Word · PowerPoint · Adobe Illustrator</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Educación</h2>
+    <div class="edu">
+      <div class="t">Diplomado en Inteligencia Artificial Aplicada en la Creación y Administración de Negocios Nacionales e Internacionales</div>
+      <div class="i">UNAM — Facultad de Estudios Superiores Aragón</div>
+      <div class="f">Mayo 2025 – Enero 2026</div>
+    </div>
+    <div class="edu">
+      <div class="t">Lic. en Relaciones Internacionales</div>
+      <div class="i">UNAM — Facultad de Estudios Superiores Aragón</div>
+      <div class="f">2019 – 2023</div>
+    </div>
+    <div class="edu">
+      <div class="t">Lic. en Administración Militar / Piloto Aviador</div>
+      <div class="i">Colegio del Aire, Escuela Militar de Aviación</div>
+      <div class="f">2017 – 2019 (trunca)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Idiomas</h2>
+    <div class="idi"><b>Español</b> <span>— nativo</span></div>
+    <div class="idi"><b>Inglés</b> <span>— intermedio-avanzado (constancia CLE, UNAM)</span></div>
+    <div class="idi"><b>Portugués</b> <span>— comprensión lectora</span></div>
+  </section>
+
+</aside>
+
+<main class="main">
+
+  <section>
+    <h2>Acerca de</h2>
     <p class="perfil">Licenciado en Relaciones Internacionales por la UNAM, especializado en automatización de procesos comerciales con inteligencia artificial. Fundador de <strong>Chaos Ctrl</strong>, donde diseño, construyo y opero agentes conversacionales de WhatsApp, embudos de captación y sistemas de seguimiento para instituciones educativas y negocios de salud, bienestar y servicios. Cartera de <strong>5 clientes</strong>, con <strong>7 automatizaciones en producción</strong> y más de <strong>6 000 ejecuciones acumuladas</strong> (corte: septiembre 2026). Trabajo con herramientas a la medida: cuando la plataforma no alcanza, construyo la pieza que falta.</p>
   </section>
 
@@ -75,9 +155,10 @@
     <h2>Experiencia laboral</h2>
 
     <div class="job">
-      <div class="rol">Fundador y consultor <span class="org">— Chaos Ctrl, automatización con IA para negocios</span></div>
-      <div class="meta">Ciudad de México · Mayo 2025 – Actualidad</div>
-      <div class="clientes"><strong>Clientes:</strong> Universidad Marista · Centro Universitario Trilingüe · Apcon, Escuela de Mecánica Automotriz · Lefranm Quiropráctico · Salones de Belleza Manuel</div>
+      <div class="p">Fundador y consultor</div>
+      <div class="e">Chaos Ctrl — Automatización con IA para negocios</div>
+      <div class="m">Ciudad de México · Mayo 2025 – Actualidad</div>
+      <div class="cl"><strong>Clientes:</strong> Universidad Marista · Centro Universitario Trilingüe · Apcon, Escuela de Mecánica Automotriz · Lefranm Quiropráctico · Salones de Belleza Manuel</div>
       <ul>
         <li>Diseño y operación de <strong>agentes conversacionales de WhatsApp Business Cloud con IA</strong> —clasificación de intención, extracción de datos estructurados y respuesta automática— que atienden ventas, inscripciones y agendamiento sin intervención humana.</li>
         <li><strong>Sistema de agendamiento automático integrado con Google Calendar</strong>: alta, consulta, reprogramación y cancelación de citas de extremo a extremo.</li>
@@ -90,72 +171,24 @@
     </div>
 
     <div class="job">
-      <div class="rol">Servicio social <span class="org">— Secretaría de la Función Pública</span></div>
-      <div class="meta">Control Interno y Administración de Riesgos · Diciembre 2023 – Junio 2024</div>
+      <div class="p">Servicio social</div>
+      <div class="e">Secretaría de la Función Pública</div>
+      <div class="m">Control Interno y Administración de Riesgos · Diciembre 2023 – Junio 2024</div>
       <ul>
         <li>Atención de consultas telefónicas y por correo en materia de Control Interno y Administración de Riesgos.</li>
         <li>Gestión de solicitudes de habilitación al sistema <strong>SICOIN</strong>, incluidas habilitaciones extemporáneas, y asignación de usuarios de enlace (SICOIN, ARI, COCODI).</li>
-        <li>Registro de Matrices de Administración de Riesgos y apoyo en la revisión de Opiniones Metodológicas.</li>
-        <li>Manejo de archivo documental físico en el <strong>SICOA</strong> y actualización de directorios institucionales.</li>
+        <li>Proyectos de respuesta para dar formalidad a diversas solicitudes y registro de <strong>Matrices de Administración de Riesgos</strong>.</li>
+        <li>Apoyo en la revisión de Opiniones Metodológicas y actualización de directorios institucionales.</li>
+        <li>Manejo y tratamiento de documental físico en materia de archivo, en el sistema <strong>SICOA</strong>.</li>
       </ul>
     </div>
   </section>
 
   <section>
-    <h2>Educación</h2>
-    <div class="edu">
-      <div class="t">Diplomado en Inteligencia Artificial Aplicada en la Creación y Administración de Negocios Nacionales e Internacionales</div>
-      <div class="i">Universidad Nacional Autónoma de México — Facultad de Estudios Superiores Aragón</div>
-      <div class="f">Mayo 2025 – Enero 2026</div>
-    </div>
-    <div class="edu">
-      <div class="t">Licenciatura en Relaciones Internacionales</div>
-      <div class="i">Universidad Nacional Autónoma de México — Facultad de Estudios Superiores Aragón</div>
-      <div class="f">2019 – 2023</div>
-    </div>
-    <div class="edu">
-      <div class="t">Licenciatura en Administración Militar / Piloto Aviador</div>
-      <div class="i">Colegio del Aire, Escuela Militar de Aviación</div>
-      <div class="f">2017 – 2019 (trunca)</div>
-    </div>
-  </section>
-
-</div>
-
-<div class="sep">
-
-  <section>
-    <h2>Habilidades técnicas</h2>
-    <div class="skill">
-      <div class="h">Automatización e IA</div>
-      <div class="chips">Make (22 escenarios construidos, 7 en producción) · n8n · agentes con LLM · ingeniería de prompts · Claude y Claude Code (nivel avanzado) · OpenAI API · RAG</div>
-    </div>
-    <div class="skill">
-      <div class="h">Desarrollo web</div>
-      <div class="chips">Bolt · Vercel · HTML, CSS y JavaScript · landing pages · APIs REST y webhooks · GitHub</div>
-    </div>
-    <div class="skill">
-      <div class="h">Plataformas</div>
-      <div class="chips">WhatsApp Business Cloud API · Meta Ads · Airtable · Google Workspace (Calendar, Sheets, Drive)</div>
-    </div>
-    <div class="skill">
-      <div class="h">Ofimática y diseño</div>
-      <div class="chips">Excel · Word · PowerPoint · Adobe Illustrator</div>
-    </div>
-  </section>
-
-  <section>
     <h2>Competencias</h2>
-    <div class="chips">Comunicación asertiva · Escucha proactiva · Resolución de problemas · Trabajo en equipo · Liderazgo · Tolerancia al estrés</div>
+    <div class="comp">Comunicación asertiva · Escucha proactiva · Resolución de problemas · Trabajo en equipo · Liderazgo · Tolerancia al estrés</div>
   </section>
 
-  <section>
-    <h2>Idiomas</h2>
-    <div class="idioma"><b>Español</b> <span>— nativo</span></div>
-    <div class="idioma"><b>Inglés</b> <span>— intermedio-avanzado (constancia CLE, UNAM)</span></div>
-    <div class="idioma"><b>Portugués</b> <span>— comprensión lectora</span></div>
-  </section>
-
-</div>
+</main>
 </div>
 </body></html>
