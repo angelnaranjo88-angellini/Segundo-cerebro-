@@ -2,13 +2,40 @@
 titulo: Bitácora
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-09-09
 ---
 
 # Bitácora
 
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
+
+## [2026-09-09] sintesis | El seguimiento de Tersil lleva ocho días en verde sin enviar nada
+
+El dueño reportó que no encontraba ninguna operación exitosa de envío en el escenario de
+seguimiento de Tersil. Confirmado: **no existe ninguna**. 381 ejecuciones, todas `SUCCESS`,
+cero errores, cero mensajes.
+
+Causa raíz: `datastore:SearchRecord` entrega los campos bajo `data`, y los filtros del router
+leen `{{1.seguimientos}}` en vez de `{{1.data.seguimientos}}`. Con el operando vacío ninguna de
+las tres rutas se cumple. Como `{{1.key}}` sí existe, el módulo siguiente no falla y Make
+reporta éxito. Escrito [[Diagnostico-Seguimiento-Tersil]] con los otros tres defectos:
+la ventana de 24 h de WhatsApp invalida los seguimientos 2 y 3, los `Ignore` ocultan los
+rechazos de Meta, y el contador se marca antes de enviar.
+
+Ingesta de Tersil como cliente nuevo: [[Tersil]], [[Tersil-Agente-de-Ventas]],
+[[Make-Tersil-Asistente-V2]], [[Make-Tersil-Seguimiento-23h]]. Nada tocado todavía en Make;
+el arreglo queda pendiente de decisión.
+
+## [2026-09-09] decision | El contador de errores de Make no mide si un escenario funciona
+
+Corregido [[Seguimiento-por-Sondeo]], que afirmaba «fallos típicos: ninguno observado» con
+99.9% de fiabilidad. Ese número medía **excepciones**, no efecto. Un escenario cuyos filtros
+descartan todo corre en verde para siempre.
+
+La señal que sí delata el fallo es el **consumo por corrida creciendo de forma monótona**: si
+la cola se drenara, bajaría. En Tersil pasó de 42 a 51 operaciones en 38 horas. Añadir esa
+comprobación al lint: escenario de sondeo cuyas operaciones por ejecución solo suben.
 
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 
