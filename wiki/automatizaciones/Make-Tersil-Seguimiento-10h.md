@@ -67,15 +67,23 @@ de vez en cuando: el límite del data store es 1 MB y 59 registros ocupan ~10 KB
 
 ## Métricas
 
-| Corte | Ejecuciones | Operaciones | Errores | Mensajes |
-|---|---|---|---|---|
-| 2026-09-09, antes del arreglo | 381 | 9 321 | 0 | **0** |
-| 2026-09-09, tras el arreglo | — | — | — | pendiente de primera corrida |
+| Corrida | Operaciones | Duración | Mensajes |
+|---|---|---|---|
+| 17:14 UTC, última con el escenario roto | 52 | 746 ms | **0** |
+| 17:44 UTC, primera con el escenario nuevo | **16** | **4 774 ms** | **5** |
 
-> [!warning] Métrica sin verificar
-> El arreglo se aplicó a las 17:28 UTC del 2026-09-09. La primera corrida posterior tenía 5
-> registros dentro de la ventana de 10–24 h. **Falta confirmar el envío real** en el historial
-> de ejecuciones y actualizar esta tabla.
+Verificado el 2026-09-09 a las 17:45 UTC. Las 16 operaciones cuadran exactamente con
+`1 búsqueda + 5 ExistRecord + 5 sendMessage + 5 UpdateRecord`, y la duración se multiplicó por
+seis porque ahora hay llamadas HTTP reales a WhatsApp donde antes no había ninguna.
+
+La prueba concluyente está en el data store: los cinco registros pasaron a `seguimientos: 1`
+con `ultimo_seguimiento` entre las 17:44:19 y las 17:44:22, un segundo por envío. Como el
+`UpdateRecord` corre **después** del `sendMessage`, que estén marcados solo puede significar que
+los cinco mensajes salieron. `dlqCount: 0`: ninguno falló.
+
+Los 54 registros viejos siguen en `seguimientos: 0`, excluidos por el guardarraíl de 24 h, y los
+4 que entraron hoy esperan a cumplir sus 10 horas. El escenario pasó de gastar ~50 operaciones
+por corrida sin enviar nada a gastar 16 y enviar 5.
 
 ## Correlaciones
 

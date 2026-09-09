@@ -26,8 +26,11 @@ dentro y no hacen falta plantillas aprobadas por Meta.
 - `sendMessage` antes de `UpdateRecord`: ya no se marca como enviado lo que falló.
 - `Ignore` → `Break` con 3 reintentos y `dlq: true`: los rechazos de Meta ahora son visibles.
 
-5 registros caían dentro de la ventana en la primera corrida posterior al cambio. **Falta
-verificar el envío real.** Ver [[Make-Tersil-Seguimiento-10h]].
+**Verificado a las 17:45 UTC**: la corrida de las 17:44 consumió 16 operaciones en 4 774 ms
+—contra 52 en 746 ms de la última corrida rota— y los cinco registros de la ventana pasaron a
+`seguimientos: 1`, con marca de tiempo de segundo en segundo. Como el `UpdateRecord` va después
+del `sendMessage`, esa marca prueba el envío. `dlqCount: 0`. **Cinco mensajes, los primeros en
+nueve días.** Ver [[Make-Tersil-Seguimiento-10h]].
 
 Pendiente: el prompt de [[Make-Tersil-Asistente-V2]] sigue diciendo «cada 23 horas».
 

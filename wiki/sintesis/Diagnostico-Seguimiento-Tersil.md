@@ -128,17 +128,24 @@ envío masivo: los 54 registros represados desde el 1 de septiembre quedaron exc
 tener que purgar el data store. Los 5 que sí caían dentro de la ventana entraron a la primera
 corrida posterior al cambio.
 
-> [!warning] Pendiente de verificar
-> Falta confirmar en el historial de ejecuciones que esos 5 mensajes salieron de verdad, y
-> anotar el resultado en [[Make-Tersil-Seguimiento-10h]].
+### Verificado
+
+La corrida de las **17:44 UTC** del mismo día consumió **16 operaciones en 4 774 ms** —contra
+las 52 en 746 ms de la última corrida rota— y los cinco registros de la ventana pasaron a
+`seguimientos: 1` con marca de tiempo escalonada de segundo en segundo. Como el `UpdateRecord`
+corre después del `sendMessage`, esa marca es la prueba de que los mensajes salieron.
+`dlqCount: 0`.
+
+**Cinco mensajes enviados en la primera corrida.** Los primeros del escenario en sus nueve días
+de vida.
 
 ### Lo que queda abierto
 
 - El prompt de [[Make-Tersil-Asistente-V2]] todavía le dice al modelo que «el sistema envía
   automáticamente los mensajes de seguimiento **cada 23 horas**». Es interno —el cliente no lo
   ve— y no afecta al comportamiento, pero quedó desactualizado.
-- Los 54 registros viejos siguen en el data store sin recibir nada. No cuestan operaciones,
-  pero son basura acumulada.
+- Los 54 registros viejos siguen en el data store sin recibir nada, correctamente excluidos por
+  el guardarraíl. No cuestan operaciones, pero son basura acumulada.
 - La autopausa de [[Make-Tersil-Asistente-V2]] es permanente y hay registros de hace cinco
   semanas.
 

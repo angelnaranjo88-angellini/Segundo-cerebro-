@@ -29,7 +29,7 @@ Cliente escribe → [[Make-Tersil-Asistente-V2]] → ficha + datos de pago
 | Catálogo digital | Publicado en bolt.host, fuera de Make |
 | Autopausa al cerrar | Funcionando. 7 conversaciones pausadas |
 | Aviso de pedido por correo | Funcionando |
-| Seguimiento único a 10 h | Reparado el 2026-09-09. Primera corrida pendiente de verificar |
+| Seguimiento único a 10 h | Reparado el 2026-09-09. 5 mensajes en la primera corrida |
 
 ## El problema que estuvo abierto ocho días
 
