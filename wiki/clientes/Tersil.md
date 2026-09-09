@@ -28,7 +28,7 @@ contra entrega. Los datos bancarios viven en el prompt del agente, no en este re
 | Pieza | Estado |
 |---|---|
 | [[Make-Tersil-Asistente-V2]] | activo — agente de ventas por WhatsApp |
-| [[Make-Tersil-Seguimiento-23h]] | activo pero **roto**, ver [[Diagnostico-Seguimiento-Tersil]] |
+| [[Make-Tersil-Seguimiento-10h]] | activo — un recordatorio a las 10 h, reparado el 2026-09-09 |
 
 ## Diferencia con los demás clientes
 

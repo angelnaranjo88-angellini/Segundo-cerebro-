@@ -15,7 +15,7 @@ actualizado: 2026-09-09
 | Página | Qué responde |
 |---|---|
 | [[Correlacion-de-Proyectos]] | ¿Qué comparten de verdad mis proyectos? |
-| [[Diagnostico-Seguimiento-Tersil]] | ¿Por qué el seguimiento de Tersil no manda nada? |
+| [[Diagnostico-Seguimiento-Tersil]] | ¿Por qué un escenario en verde puede no enviar nada? |
 | [[Patrones-Reutilizables]] | ¿Qué ya construí dos veces y debería estandarizar o vender? |
 | [[Riesgos-y-Deuda-Tecnica]] | ¿Dónde se va el dinero y qué se está rompiendo? |
 | [[CLAUDE]] | Las reglas del wiki. Leer antes de escribir. |
@@ -39,7 +39,7 @@ actualizado: 2026-09-09
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
-| [[Tersil-Agente-de-Ventas]] | Venta completa en WhatsApp; el seguimiento está roto | activo |
+| [[Tersil-Agente-de-Ventas]] | Venta completa en WhatsApp; seguimiento reparado el 09-09 | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
 
 ## Automatizaciones
@@ -53,7 +53,7 @@ actualizado: 2026-09-09
 | [[Make-Lefranm-Seguimiento-Citas]] | 5747451 | 0% | ~1 695 |
 | [[Make-CUT-Seguimiento-Prospectos]] | 6055110 | 0.65% | ~595 |
 | [[Make-Tersil-Asistente-V2]] | 9597789 | 1.3% | ~3 947 |
-| [[Make-Tersil-Seguimiento-23h]] | 9738949 | 0% pero **0 envíos** | ~9 321 |
+| [[Make-Tersil-Seguimiento-10h]] | 9738949 | reescrito 2026-09-09 | ~9 321 |
 | [[Make-CUT-Creacion-de-Contenido-Sheets]] | 6077792 | **46.2%** | ~63 |
 | [[Escenarios-Inactivos]] | — | — | los 15 apagados |
 

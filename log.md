@@ -10,6 +10,27 @@ actualizado: 2026-09-09
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-09] decision | El seguimiento de Tersil queda en un solo mensaje a las 10 horas
+
+Decisión del dueño: un único recordatorio a las **10 horas**, sin los de 46 y 69 h. Eso disuelve
+el problema de la ventana de 24 h de WhatsApp en vez de gestionarlo — a las 10 h siempre se está
+dentro y no hacen falta plantillas aprobadas por Meta.
+
+`Tersil - Seguimiento 10 h` (9738949) reescrito de 12 módulos a 4, sin router:
+
+- Referencias corregidas a `{{1.data.telefono}}` y `{{1.data.nombre}}`.
+- Filtro `seguimientos < 1` como candado antidoble.
+- **Guardarraíl nuevo**: `ultimo_mensaje > now-24h`, para no intentar nunca un envío fuera de
+  ventana. De paso excluyó solos los 54 registros represados desde el 1 de septiembre, así que
+  no hizo falta purgar el data store ni hubo envío masivo al reactivar.
+- `sendMessage` antes de `UpdateRecord`: ya no se marca como enviado lo que falló.
+- `Ignore` → `Break` con 3 reintentos y `dlq: true`: los rechazos de Meta ahora son visibles.
+
+5 registros caían dentro de la ventana en la primera corrida posterior al cambio. **Falta
+verificar el envío real.** Ver [[Make-Tersil-Seguimiento-10h]].
+
+Pendiente: el prompt de [[Make-Tersil-Asistente-V2]] sigue diciendo «cada 23 horas».
+
 ## [2026-09-09] sintesis | El seguimiento de Tersil lleva ocho días en verde sin enviar nada
 
 El dueño reportó que no encontraba ninguna operación exitosa de envío en el escenario de
@@ -24,7 +45,7 @@ la ventana de 24 h de WhatsApp invalida los seguimientos 2 y 3, los `Ignore` ocu
 rechazos de Meta, y el contador se marca antes de enviar.
 
 Ingesta de Tersil como cliente nuevo: [[Tersil]], [[Tersil-Agente-de-Ventas]],
-[[Make-Tersil-Asistente-V2]], [[Make-Tersil-Seguimiento-23h]]. Nada tocado todavía en Make;
+[[Make-Tersil-Asistente-V2]], [[Make-Tersil-Seguimiento-10h]]. Nada tocado todavía en Make;
 el arreglo queda pendiente de decisión.
 
 ## [2026-09-09] decision | El contador de errores de Make no mide si un escenario funciona

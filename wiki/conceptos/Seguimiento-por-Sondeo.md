@@ -31,7 +31,7 @@ el candado que evita el doble envío.
 | [[Make-Lefranm-Seguimiento-Citas]] | Data Store | 1 311 | **0** |
 | [[Make-Lefranm-Seguimiento-Cosmeticos]] | Airtable | 1 308 | **0** |
 | [[Make-CUT-Seguimiento-Prospectos]] | Airtable | 460 | 3 (0.65%) |
-| [[Make-Tersil-Seguimiento-23h]] | Data Store | 381 | 0 reportados, **100% sin efecto** |
+| [[Make-Tersil-Seguimiento-10h]] | Data Store | 381 | 0 reportados, **100% sin efecto** hasta el arreglo del 2026-09-09 |
 
 Las tres primeras: **3 079 ejecuciones, 3 errores**, fiabilidad del 99.9%. La cuarta reporta
 cero errores y no ha enviado nada, así que el porcentaje de excepciones **no mide si el patrón
@@ -52,7 +52,7 @@ WhatsApp.
 > [!warning] Corrección del 2026-09-09
 > Hasta hoy esta sección decía «ninguno observado». Sigue siendo cierto para las tres
 > implementaciones de Lefranm y CUT (3 079 ejecuciones, 3 errores), pero
-> [[Make-Tersil-Seguimiento-23h]] falla al 100% desde su creación **sin reportar un solo
+> [[Make-Tersil-Seguimiento-10h]] falla al 100% desde su creación **sin reportar un solo
 > error**. La fiabilidad del patrón nunca se midió: se midió su tasa de excepciones, que es
 > otra cosa.
 
@@ -67,11 +67,21 @@ creciendo de forma monótona**: si la cola se drenara, bajaría.
 
 **La ventana de 24 h.** El patrón sirve para *un* recordatorio dentro de la ventana de servicio
 de WhatsApp. Cualquier seguimiento posterior necesita plantilla aprobada por Meta. Los tres
-escenarios que funcionan mandan un solo mensaje; el de Tersil intentaba tres y por eso choca.
+escenarios que funcionan mandan un solo mensaje; el de Tersil intentaba tres y por eso chocaba
+— desde el 2026-09-09 manda uno solo a las 10 h.
+
+El remedio general: además del «ya pasaron N horas», poner el **guardarraíl del otro lado**
+(`ultimo_mensaje > now-24h`). Así un registro represado nunca se intenta fuera de ventana. Es
+lo que se añadió en [[Make-Tersil-Seguimiento-10h]] y lo que evitó tener que purgar su cola a
+mano.
 
 **Marcar antes de enviar.** Si el `UpdateRecord` corre antes del `sendMessage`, un envío
 fallido queda marcado como hecho. El orden correcto es enviar y luego marcar; el candado
 protege contra el doble envío, no contra el cero envíos.
+
+**`Ignore` como manejador de error.** Descarta los rechazos del proveedor sin dejar rastro y es
+lo que hace que un escenario roto luzca sano. `Break` con `dlq: true` cuesta lo mismo y deja el
+fallo visible en ejecuciones incompletas.
 
 **El riesgo económico.** El sondeo cobra aunque no haya nada que hacer. Los cuatro escenarios
 corren 48 veces al día, para siempre, hayan o no registros pendientes. Con la campaña del

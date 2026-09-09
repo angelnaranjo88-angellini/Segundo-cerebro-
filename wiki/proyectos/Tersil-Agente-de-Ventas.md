@@ -18,7 +18,7 @@ Cliente escribe → [[Make-Tersil-Asistente-V2]] → ficha + datos de pago
                             ↓                            ↓
                   TERSIL_Seguimiento          correo al dueño + autopausa
                             ↓
-                  [[Make-Tersil-Seguimiento-23h]]  ← roto desde el día uno
+                  [[Make-Tersil-Seguimiento-10h]]  ← reparado el 2026-09-09
 ```
 
 ## Estado al 2026-09-09
@@ -29,24 +29,22 @@ Cliente escribe → [[Make-Tersil-Asistente-V2]] → ficha + datos de pago
 | Catálogo digital | Publicado en bolt.host, fuera de Make |
 | Autopausa al cerrar | Funcionando. 7 conversaciones pausadas |
 | Aviso de pedido por correo | Funcionando |
-| Seguimiento a 23/46/69 h | **Roto**. Cero mensajes en 381 corridas |
+| Seguimiento único a 10 h | Reparado el 2026-09-09. Primera corrida pendiente de verificar |
 
-## El problema abierto
+## El problema que estuvo abierto ocho días
 
-El seguimiento nunca ha funcionado. Diagnóstico completo en
-[[Diagnostico-Seguimiento-Tersil]]: los filtros del router leen `{{1.seguimientos}}` cuando el
-módulo de búsqueda entrega los campos bajo `{{1.data.seguimientos}}`, así que ninguna ruta se
-cumple y el escenario reporta éxito sin enviar nada.
+El seguimiento nunca funcionó desde su creación. Diagnóstico completo en
+[[Diagnostico-Seguimiento-Tersil]]. Reparado el 2026-09-09: **un solo recordatorio a las 10
+horas**, con guardarraíl de ventana, orden de envío corregido y errores visibles.
 
-Hay 59 conversaciones acumuladas en la cola que nunca recibieron su recordatorio. **No se
-puede saber cuántas de esas ventas se perdieron por falta de seguimiento**, pero el agente
-tiene prohibido insistir por su cuenta precisamente porque el sondeo debía hacerlo.
+Se perdieron los recordatorios de **54 conversaciones** entre el 1 y el 8 de septiembre. No se
+puede saber cuántas ventas costó, pero el agente tiene prohibido insistir por su cuenta
+precisamente porque el sondeo debía hacerlo, así que esos clientes no recibieron nada de nadie.
 
 ## Decisiones pendientes
 
-1. Si los seguimientos 2 y 3 se convierten en plantillas aprobadas por Meta, o se elimina el
-   flujo y queda un único recordatorio a las 23 h.
-2. Qué hacer con la cola acumulada antes de reactivar (ver la advertencia del diagnóstico).
+1. Actualizar la línea del prompt de [[Make-Tersil-Asistente-V2]] que aún dice «cada 23 horas».
+2. Depurar los 54 registros viejos que quedaron represados y ya no recibirán nada.
 3. Si la autopausa debe expirar sola: hoy es permanente y ya hay registros de hace cinco
    semanas que quizá deberían volver al bot.
 

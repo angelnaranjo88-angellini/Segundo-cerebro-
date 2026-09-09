@@ -57,15 +57,18 @@ antigua del 1 de agosto.
 
 ## Relación con el seguimiento
 
-El módulo 23 siembra la cola que consume [[Make-Tersil-Seguimiento-23h]], con
+El módulo 23 siembra la cola que consume [[Make-Tersil-Seguimiento-10h]], con
 `seguimientos: 0` y `ultimo_mensaje = ultimo_seguimiento = now`. El módulo 24 la limpia cuando
-el pedido se cierra. Como el consumidor está roto, **la cola solo crece**: ver
-[[Diagnostico-Seguimiento-Tersil]].
+el pedido se cierra. El `overwrite: true` del módulo 23 es lo que permite que un cliente que
+vuelve a escribir reinicie su ciclo de seguimiento.
 
-> [!note] El prompt ya cuenta con el seguimiento
+> [!warning] El prompt quedó desactualizado
 > Las reglas generales del agente le prohíben mandar recordatorios por su cuenta, «porque el
-> sistema envía automáticamente los mensajes de seguimiento cada 23 horas». Durante ocho días
-> eso fue falso: ni el bot insistía ni el sondeo enviaba.
+> sistema envía automáticamente los mensajes de seguimiento **cada 23 horas**». Durante ocho
+> días eso fue falso: ni el bot insistía ni el sondeo enviaba. Desde el 2026-09-09 el sondeo sí
+> envía, pero **uno solo y a las 10 horas**, así que la frase sigue sin coincidir con la
+> realidad. Es interno —el cliente nunca lo ve— y no cambia el comportamiento, pero conviene
+> corregirla. Ver [[Diagnostico-Seguimiento-Tersil]].
 
 ## Otras versiones
 

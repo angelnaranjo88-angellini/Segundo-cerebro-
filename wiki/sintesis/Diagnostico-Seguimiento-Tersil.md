@@ -9,9 +9,11 @@ actualizado: 2026-09-09
 
 # Diagnóstico — por qué el seguimiento de Tersil no envía nada
 
-> Revisión de [[Make-Tersil-Seguimiento-23h]] el 2026-09-09, a petición del dueño, que no
-> encontraba ninguna operación exitosa de envío. **No las hay.** El escenario lleva ocho días
-> corriendo en verde sin mandar un solo mensaje.
+> Revisión de [[Make-Tersil-Seguimiento-10h]] el 2026-09-09, a petición del dueño, que no
+> encontraba ninguna operación exitosa de envío. **No las había.** El escenario llevaba ocho
+> días corriendo en verde sin mandar un solo mensaje.
+>
+> **Resuelto el mismo día.** Ver «Qué se hizo» al final.
 
 ## La evidencia
 
@@ -105,17 +107,42 @@ conversación nueva añade un registro que nunca se drena.
 > 24 h** y Meta los rechazará en bloque. Conviene vaciar o depurar `TERSIL_Seguimiento` antes
 > de reactivar, para no quemar reputación del número con decenas de envíos fallidos seguidos.
 
-## Orden de arreglo sugerido
+## Qué se hizo (2026-09-09, 17:28 UTC)
 
-1. Corregir las referencias a `{{1.data.*}}` en los filtros del router y en los tres
-   `sendMessage`.
-2. Cambiar los `Ignore` por un manejo de error que sí registre.
-3. Invertir el orden: enviar primero, marcar después.
-4. Decidir qué hacer con los seguimientos 2 y 3: plantilla aprobada, o recortar el flujo a un
-   solo seguimiento a las 23 h.
-5. Depurar la cola acumulada antes de reactivar.
+El dueño decidió simplificar: **un solo seguimiento, a las 10 horas**. Eso disuelve el problema
+de la ventana de 24 h en vez de gestionarlo, porque a las 10 h siempre se está dentro.
+
+El escenario se reescribió entero —de 12 módulos a 4, sin router— y se renombró a
+`Tersil - Seguimiento 10 h`:
+
+| Defecto | Arreglo |
+|---|---|
+| `{{1.seguimientos}}` vacío | Todas las referencias pasan a `{{1.data.*}}` |
+| Tres seguimientos, dos fuera de ventana | Uno solo a las 10 h; rutas 2 y 3 eliminadas |
+| `Ignore` ocultaba los rechazos | `Break` con 3 reintentos y `dlq: true` |
+| Se marcaba antes de enviar | `sendMessage` primero, `UpdateRecord` después |
+
+Y se añadió un guardarraíl que no existía: el filtro exige `ultimo_mensaje > now-24h`, así que
+un registro que se pase de la ventana **nunca se intenta**. Eso resolvió de paso el riesgo del
+envío masivo: los 54 registros represados desde el 1 de septiembre quedaron excluidos solos, sin
+tener que purgar el data store. Los 5 que sí caían dentro de la ventana entraron a la primera
+corrida posterior al cambio.
+
+> [!warning] Pendiente de verificar
+> Falta confirmar en el historial de ejecuciones que esos 5 mensajes salieron de verdad, y
+> anotar el resultado en [[Make-Tersil-Seguimiento-10h]].
+
+### Lo que queda abierto
+
+- El prompt de [[Make-Tersil-Asistente-V2]] todavía le dice al modelo que «el sistema envía
+  automáticamente los mensajes de seguimiento **cada 23 horas**». Es interno —el cliente no lo
+  ve— y no afecta al comportamiento, pero quedó desactualizado.
+- Los 54 registros viejos siguen en el data store sin recibir nada. No cuestan operaciones,
+  pero son basura acumulada.
+- La autopausa de [[Make-Tersil-Asistente-V2]] es permanente y hay registros de hace cinco
+  semanas.
 
 ## Correlaciones
 
-Ver [[Make-Tersil-Seguimiento-23h]], [[Make-Tersil-Asistente-V2]], [[Tersil]],
+Ver [[Make-Tersil-Seguimiento-10h]], [[Make-Tersil-Asistente-V2]], [[Tersil]],
 [[Seguimiento-por-Sondeo]] y [[Riesgos-y-Deuda-Tecnica]].
