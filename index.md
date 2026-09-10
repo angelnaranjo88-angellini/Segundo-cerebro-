@@ -2,13 +2,13 @@
 titulo: Índice
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-09-10
 ---
 
 # Índice
 
 > Catálogo de todas las páginas del wiki. Se actualiza en cada ingesta.
-> Corte de datos del portafolio: **2026-09-05**.
+> Corte de datos del portafolio: **2026-09-05**. Última entrada: 2026-09-10.
 
 ## Empezar aquí
 
@@ -38,6 +38,7 @@ actualizado: 2026-09-05
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
+| [[Sacapuntos-Lealtad-Papeleria]] | Puntos por ticket para papelería; solo la pantalla principal | prototipo |
 
 ## Automatizaciones
 

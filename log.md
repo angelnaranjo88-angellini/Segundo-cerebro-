@@ -2,13 +2,47 @@
 titulo: Bitácora
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-09-10
 ---
 
 # Bitácora
 
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
+
+## [2026-09-10] decision | Carpeta `apps/` fuera de las tres capas
+
+El código de [[Sacapuntos-Lealtad-Papeleria]] se guardó en `apps/sacapuntos/`, una cuarta
+carpeta que el esquema de [[CLAUDE]] no contempla. Se prefirió eso a perder la fuente del
+prototipo, pero el esquema se edita en colaboración: **pendiente de confirmar por el humano.**
+
+Alternativa si se rechaza: repositorio aparte, como se hizo con
+[[Landing-Sonrisas-Dental]], y en el wiki solo la página del proyecto.
+
+## [2026-09-10] ingesta | Sacapuntos, prototipo de lealtad para papelería
+
+Proyecto nuevo, nacido como ejercicio de diseño y no de una fuente cruda: se pidió la pantalla
+principal de un sistema de puntos para papelería, en azul y naranja, con los módulos mínimos
+para que funcione.
+
+Escrita [[Sacapuntos-Lealtad-Papeleria]]. Seis módulos en la v1 (captura de ticket, clientes,
+premios, canje, movimientos, reglas) y cuatro dejados fuera a propósito. Regla de acumulación:
+$10 = 1 punto, vigencia 12 meses.
+
+Movió: `index.md`, [[Patrones-Reutilizables]] (variante del paquete de cliente nuevo para
+comercio con mostrador) y esta bitácora. Dos páginas, no las 5–15 de una ingesta típica,
+porque el proyecto no toca todavía a ningún cliente ni escenario existente.
+
+Correlación principal: es el **primer proyecto vivo que no es un agente de WhatsApp**. No
+consume créditos de Make ni llamadas a IA, y por tanto queda fuera del 88.6% del gasto y del
+8.2% de error que documenta [[Riesgos-y-Deuda-Tecnica]]. La consulta de saldo por WhatsApp, en
+cambio, sí cae en el patrón conocido.
+
+Tres decisiones de negocio quedan abiertas y están anotadas en la página: tipo de cambio del
+punto, acumulación en mayoreo y vigencia por ciclo escolar. Ninguna se resolvió en silencio.
+
+Todas las cifras de la pantalla son de ejemplo. Marcadas como tales en la interfaz y en la
+página.
 
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 

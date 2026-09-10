@@ -1,0 +1,964 @@
+<title>Sacapuntos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    /* marca */
+    --tinta:#14307A;
+    --tinta-viva:#2455C8;
+    --tinta-tenue:#E3EAFA;
+    --marcador:#F26A1B;
+    --marcador-tenue:#FDEADD;
+
+    /* superficies y tinta de texto */
+    --fondo:#EFF2F8;
+    --sup:#FFFFFF;
+    --sup-2:#F7F9FD;
+    --papel:#FCFAF5;
+    --papel-tinta:#1B2233;
+    --most-fondo:#14307A;
+    --most-tinta:#FFFFFF;
+    --most-velo:rgba(255,255,255,.17);
+    --most-velo-2:rgba(255,255,255,.24);
+    --texto:#0E1630;
+    --texto-2:#47536E;
+    --texto-3:#6E7A96;
+    --linea:#DCE3F0;
+    --linea-fuerte:#C4CEE4;
+    --cuadricula:rgba(20,48,122,.055);
+
+    /* semánticos: separados del acento de marca */
+    --ok:#0F7A55;
+    --ok-tenue:#E2F3EC;
+    --alerta:#B4281F;
+    --alerta-tenue:#FBE8E6;
+
+    /* series de gráfica (validadas) */
+    --serie-emit:#2455C8;
+    --serie-canj:#DC5A0F;
+    --serie-emit-fill:rgba(36,85,200,.13);
+
+    /* rail */
+    --rail:#14307A;
+    --rail-sup:#1B3C92;
+    --rail-texto:#EAF0FF;
+    --rail-texto-2:#A8BCEC;
+
+    --r-s:6px; --r-m:10px; --r-l:14px;
+    --sombra:0 1px 2px rgba(14,22,48,.06), 0 8px 24px -12px rgba(14,22,48,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --tinta:#9DB8FF; --tinta-viva:#5B92F5; --tinta-tenue:#1B2748; --marcador:#FF8438; --marcador-tenue:#33210F;
+      --fondo:#0B1020; --sup:#131A2C; --sup-2:#182034; --papel:#212A3D; --papel-tinta:#E9E5DA;
+      --most-fondo:#2C4FA8; --most-tinta:#FFFFFF; --most-velo:rgba(255,255,255,.18); --most-velo-2:rgba(255,255,255,.26);
+      --texto:#E8EDF8; --texto-2:#A9B6D2; --texto-3:#8492B0;
+      --linea:#263152; --linea-fuerte:#35426B; --cuadricula:rgba(140,170,255,.055);
+      --ok:#3DBF91; --ok-tenue:#11302A; --alerta:#F2827A; --alerta-tenue:#331A19;
+      --serie-emit:#5B92F5; --serie-canj:#E06A1E; --serie-emit-fill:rgba(91,146,245,.16);
+      --rail:#0D1426; --rail-sup:#1A2440; --rail-texto:#E8EDF8; --rail-texto-2:#8796B6;
+      --sombra:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --tinta:#9DB8FF; --tinta-viva:#5B92F5; --tinta-tenue:#1B2748; --marcador:#FF8438; --marcador-tenue:#33210F;
+    --fondo:#0B1020; --sup:#131A2C; --sup-2:#182034; --papel:#212A3D; --papel-tinta:#E9E5DA;
+      --most-fondo:#2C4FA8; --most-tinta:#FFFFFF; --most-velo:rgba(255,255,255,.18); --most-velo-2:rgba(255,255,255,.26);
+    --texto:#E8EDF8; --texto-2:#A9B6D2; --texto-3:#8492B0;
+    --linea:#263152; --linea-fuerte:#35426B; --cuadricula:rgba(140,170,255,.055);
+    --ok:#3DBF91; --ok-tenue:#11302A; --alerta:#F2827A; --alerta-tenue:#331A19;
+    --serie-emit:#5B92F5; --serie-canj:#E06A1E; --serie-emit-fill:rgba(91,146,245,.16);
+    --rail:#0D1426; --rail-sup:#1A2440; --rail-texto:#E8EDF8; --rail-texto-2:#8796B6;
+    --sombra:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--fondo); color:var(--texto);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif; margin:0; text-wrap:balance; font-weight:600; letter-spacing:-.01em}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+  .num{font-variant-numeric:tabular-nums}
+  :focus-visible{outline:2px solid var(--marcador); outline-offset:2px; border-radius:3px}
+  button{font:inherit; color:inherit; cursor:pointer}
+  input,select{font:inherit; color:inherit}
+
+  /* ---------- shell ---------- */
+  .app{display:grid; grid-template-columns:232px minmax(0,1fr); min-height:100vh}
+
+  .rail{background:var(--rail); color:var(--rail-texto); display:flex; flex-direction:column; gap:26px; padding:20px 14px 18px; position:sticky; top:0; height:100vh}
+  .marca{display:flex; align-items:center; gap:9px; padding:0 6px}
+  .marca-nom{font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:19px; letter-spacing:-.025em}
+  .marca-sub{font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--rail-texto-2); padding:2px 6px 0}
+  .nav{display:flex; flex-direction:column; gap:2px; list-style:none; margin:0; padding:0}
+  .nav button{display:flex; align-items:center; gap:10px; width:100%; text-align:left; background:none; border:0; padding:8px 10px; border-radius:var(--r-s); color:var(--rail-texto-2); font-size:13.5px; font-weight:500}
+  .nav button:hover{background:var(--rail-sup); color:var(--rail-texto)}
+  .nav button[aria-current="page"]{background:var(--rail-sup); color:var(--rail-texto); font-weight:600}
+  .nav button[aria-current="page"] svg{color:var(--marcador)}
+  .nav svg{width:16px; height:16px; flex:none}
+  .nav-tit{font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--rail-texto-2); opacity:.72; padding:0 10px 6px}
+  .rail-pie{margin-top:auto; border-top:1px solid rgba(255,255,255,.13); padding:12px 10px 0; font-size:12px; color:var(--rail-texto-2); display:flex; flex-direction:column; gap:3px}
+  .rail-pie b{color:var(--rail-texto); font-weight:600}
+
+  .lienzo{
+    min-width:0; padding-block:0 30px; padding-left:clamp(16px,2.2vw,28px); padding-right:clamp(16px,2.2vw,28px);
+    background-image:linear-gradient(var(--cuadricula) 1px,transparent 1px),linear-gradient(90deg,var(--cuadricula) 1px,transparent 1px);
+    background-size:26px 26px;
+  }
+
+  /* ---------- barra superior ---------- */
+  .barra{display:flex; flex-wrap:wrap; align-items:center; gap:14px; padding-block:18px 14px; border-bottom:1px solid var(--linea); margin-bottom:16px}
+  .barra h1{font-size:21px}
+  .barra-meta{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-left:auto}
+  .campo-inline{display:flex; align-items:center; gap:7px; background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-s); padding:5px 9px; font-size:12.5px; color:var(--texto-2)}
+  .campo-inline select{border:0; background:none; font-size:12.5px; font-weight:600; color:var(--texto); padding:0}
+  .regla{display:inline-flex; align-items:center; gap:7px; background:var(--tinta-tenue); color:var(--tinta); border-radius:var(--r-s); padding:5px 10px; font-size:12.5px; font-weight:600}
+  .corte{font-size:12px; color:var(--texto-3)}
+
+  .aviso{display:flex; gap:9px; align-items:flex-start; background:var(--marcador-tenue); border-left:3px solid var(--marcador); border-radius:0 var(--r-s) var(--r-s) 0; padding:9px 12px; font-size:12.5px; color:var(--texto-2); margin-bottom:16px}
+  .aviso b{color:var(--texto)}
+
+  /* ---------- tira de KPIs: un objeto, no cuatro tarjetas ---------- */
+  .kpis{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-l); box-shadow:var(--sombra); overflow:hidden; margin-bottom:16px}
+  .kpi{padding:15px 18px; border-left:1px solid var(--linea); display:flex; flex-direction:column; gap:4px; min-width:0}
+  .kpi:first-child{border-left:0}
+  .kpi-rot{font-size:10.5px; letter-spacing:.085em; text-transform:uppercase; color:var(--texto-3); font-weight:600}
+  .kpi-cifra{font-family:"Bricolage Grotesque",sans-serif; font-weight:600; font-size:30px; line-height:1.05; letter-spacing:-.03em; font-variant-numeric:tabular-nums}
+  .kpi-sub{font-size:12.5px; color:var(--texto-2)}
+  .kpi-pie{margin-top:2px}
+  .delta{display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:600; padding:2px 7px; border-radius:999px}
+  .delta.sube{background:var(--ok-tenue); color:var(--ok)}
+  .delta.baja{background:var(--alerta-tenue); color:var(--alerta)}
+  .delta.plano{background:var(--sup-2); color:var(--texto-3)}
+
+  /* ---------- rejilla principal ---------- */
+  .rejilla{display:grid; grid-template-columns:minmax(0,1.62fr) minmax(320px,.95fr); gap:16px; align-items:start}
+  .col{display:flex; flex-direction:column; gap:16px; min-width:0}
+
+  .panel{background:var(--sup); border:1px solid var(--linea); border-radius:var(--r-l); box-shadow:var(--sombra)}
+  .panel-cab{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; padding:14px 18px 10px}
+  .panel-cab h2{font-size:15px}
+  .panel-cab .hint{font-size:12px; color:var(--texto-3)}
+  .panel-cab .der{margin-left:auto; display:flex; align-items:center; gap:10px}
+
+  .leyenda{display:flex; gap:14px; font-size:12px; color:var(--texto-2); flex-wrap:wrap}
+  .leyenda span{display:inline-flex; align-items:center; gap:6px}
+  .sw{width:10px; height:10px; border-radius:2px; flex:none}
+  .btn-txt{background:none; border:1px solid var(--linea); border-radius:var(--r-s); padding:4px 9px; font-size:12px; font-weight:600; color:var(--texto-2)}
+  .btn-txt:hover{border-color:var(--linea-fuerte); color:var(--texto)}
+
+  .grafica-caja{position:relative; padding:0 10px 6px}
+  .grafica-caja svg{display:block; width:100%; height:auto; max-width:100%; overflow:visible}
+  .tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-100%); background:var(--texto); color:var(--sup); border-radius:var(--r-s); padding:7px 10px; font-size:12px; white-space:nowrap; box-shadow:0 6px 20px -6px rgba(0,0,0,.45); z-index:5; transition:opacity .12s}
+  .tip.on{opacity:1}
+  .tip-t{font-weight:700; margin-bottom:3px; font-size:11px; letter-spacing:.04em; text-transform:uppercase; opacity:.78}
+  .tip-l{display:flex; align-items:center; gap:6px; font-variant-numeric:tabular-nums}
+  .tip-l i{width:8px; height:8px; border-radius:2px; display:block; flex:none}
+  .tabla-datos{padding:0 18px 14px}
+  .tabla-datos[hidden]{display:none!important}
+  .nota-grafica{padding:0 18px 14px; font-size:12px; color:var(--texto-2); display:flex; gap:7px; align-items:flex-start}
+
+  /* ---------- tablas ---------- */
+  .env-tabla{overflow-x:auto; border-top:1px solid var(--linea)}
+  table{width:100%; border-collapse:collapse; font-size:13px}
+  th{text-align:left; font-size:10.5px; letter-spacing:.075em; text-transform:uppercase; color:var(--texto-3); font-weight:600; padding:9px 14px; background:var(--sup-2); border-bottom:1px solid var(--linea); white-space:nowrap}
+  td{padding:9px 14px; border-bottom:1px solid var(--linea); vertical-align:middle; white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr.nuevo{animation:entra .45s ease-out}
+  @keyframes entra{from{background:var(--marcador-tenue)} to{background:transparent}}
+  .der-num{text-align:right; font-variant-numeric:tabular-nums}
+  .pts-mas{color:var(--ok); font-weight:600}
+  .pts-menos{color:var(--alerta); font-weight:600}
+
+  .chip{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:600; padding:2px 8px; border-radius:999px; border:1px solid transparent}
+  .chip.acum{background:var(--tinta-tenue); color:var(--tinta)}
+  .chip.canje{background:var(--marcador-tenue); color:var(--marcador)}
+  .chip.nivel{background:var(--sup-2); color:var(--texto-2); border-color:var(--linea)}
+
+  /* ---------- el ticket ---------- */
+  .ticket{
+    background:var(--papel); color:var(--papel-tinta); padding:18px 18px 20px;
+    -webkit-mask:
+      radial-gradient(circle 5px at 50% 0,#0000 98%,#000) 0 0/11px 100% repeat-x,
+      linear-gradient(#000,#000) 0 5px/100% calc(100% - 10px) no-repeat,
+      radial-gradient(circle 5px at 50% 100%,#0000 98%,#000) 0 100%/11px 100% repeat-x;
+    mask:
+      radial-gradient(circle 5px at 50% 0,#0000 98%,#000) 0 0/11px 100% repeat-x,
+      linear-gradient(#000,#000) 0 5px/100% calc(100% - 10px) no-repeat,
+      radial-gradient(circle 5px at 50% 100%,#0000 98%,#000) 0 100%/11px 100% repeat-x;
+  }
+  .ticket-cab{text-align:center; font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.06em; line-height:1.7; text-transform:uppercase; padding-top:4px}
+  .ticket-cab strong{display:block; font-size:13px; letter-spacing:.12em; font-weight:600}
+  .rule{border:0; border-top:1px dashed var(--linea-fuerte); margin:13px 0}
+  .campos{display:flex; flex-direction:column; gap:11px}
+  .campo label{display:block; font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.075em; text-transform:uppercase; color:var(--texto-3); margin-bottom:4px; font-weight:500}
+  .campo input,.campo select{width:100%; background:transparent; border:0; border-bottom:1px solid var(--linea-fuerte); border-radius:0; padding:5px 2px; font-family:"IBM Plex Mono",monospace; font-size:14px; font-weight:500; color:var(--papel-tinta)}
+  .campo input:focus,.campo select:focus{border-bottom-color:var(--marcador); outline:none}
+  .campo select{cursor:pointer}
+  .fila-2{display:grid; grid-template-columns:1fr 1fr; gap:11px}
+  .con-signo .envoltura{position:relative; display:block}
+  .con-signo input{padding-left:15px}
+  .con-signo .signo{position:absolute; left:2px; top:50%; transform:translateY(-50%); font-family:"IBM Plex Mono",monospace; font-size:14px; color:var(--texto-3); pointer-events:none}
+  .promo{display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--texto-2); cursor:pointer; padding-top:2px}
+  .promo input{width:16px; height:16px; accent-color:var(--marcador); flex:none; cursor:pointer}
+
+  .renglon{display:flex; align-items:baseline; gap:7px; font-family:"IBM Plex Mono",monospace; font-size:12.5px; margin-bottom:6px}
+  .renglon .guia{flex:1; border-bottom:1px dotted var(--linea-fuerte); transform:translateY(-3px)}
+  .renglon .val{font-variant-numeric:tabular-nums; font-weight:500}
+  .renglon.apagado{color:var(--texto-3)}
+  .total{display:flex; align-items:baseline; gap:10px; margin-top:10px; padding-top:11px; border-top:2px solid var(--papel-tinta)}
+  .total-rot{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.09em; text-transform:uppercase; font-weight:600}
+  .total-val{margin-left:auto; font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:34px; line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; color:var(--marcador)}
+  .total-val small{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:500; letter-spacing:.05em; color:var(--texto-3); margin-left:5px}
+
+  .btn{display:flex; align-items:center; justify-content:center; gap:8px; width:100%; background:var(--marcador); color:#fff; border:0; border-radius:var(--r-s); padding:11px 14px; font-size:14px; font-weight:600; margin-top:13px}
+  .btn:hover:not(:disabled){filter:brightness(.93)}
+  .btn:disabled{opacity:.42; cursor:not-allowed}
+  .btn svg{width:16px; height:16px}
+  .pie-ticket{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.05em; text-align:center; color:var(--texto-3); margin-top:11px; line-height:1.7; text-transform:uppercase}
+
+  /* ---------- cliente en mostrador: el único panel invertido ---------- */
+  .mostrador{background:var(--most-fondo); color:var(--most-tinta); border-radius:var(--r-l); padding:16px 18px 18px; box-shadow:var(--sombra)}
+  .mostrador-rot{font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:600; opacity:.74; margin-bottom:9px}
+  .mostrador-nom{font-family:"Bricolage Grotesque",sans-serif; font-weight:600; font-size:17.5px; letter-spacing:-.015em; line-height:1.25}
+  .mostrador-id{font-family:"IBM Plex Mono",monospace; font-size:11.5px; opacity:.8; margin-top:3px; letter-spacing:.03em}
+  .saldo{display:flex; align-items:flex-end; gap:9px; margin:13px 0 4px}
+  .saldo-cifra{font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:40px; line-height:.95; letter-spacing:-.035em; font-variant-numeric:tabular-nums}
+  .saldo-und{font-size:12px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; opacity:.8; padding-bottom:5px}
+  .insignia{display:inline-flex; align-items:center; gap:6px; background:var(--most-velo); border-radius:999px; padding:3px 10px; font-size:11.5px; font-weight:600; margin-left:auto; white-space:nowrap}
+  .barra-prog{height:5px; border-radius:999px; background:var(--most-velo-2); overflow:hidden; margin:11px 0 7px}
+  .barra-prog i{display:block; height:100%; background:var(--marcador); border-radius:999px; transition:width .4s ease}
+  .mostrador-pie{display:flex; flex-wrap:wrap; gap:4px 16px; font-size:12px; opacity:.88; margin-top:9px}
+  .mostrador-pie span{display:inline-flex; gap:5px}
+  .mostrador-pie b{font-variant-numeric:tabular-nums}
+
+  /* ---------- premios ---------- */
+  .premios{max-height:334px; overflow-y:auto; border-top:1px solid var(--linea); -webkit-mask:linear-gradient(#000 calc(100% - 26px),transparent); mask:linear-gradient(#000 calc(100% - 26px),transparent)}
+  .premio{display:flex; align-items:center; gap:12px; padding:10px 18px; border-bottom:1px solid var(--linea)}
+  .premio:last-child{border-bottom:0}
+  .premio-info{min-width:0; flex:1}
+  .premio-nom{font-size:13px; font-weight:500; overflow-wrap:anywhere}
+  .premio-meta{font-size:11.5px; color:var(--texto-3); font-variant-numeric:tabular-nums; margin-top:1px}
+  .premio-pts{font-family:"Bricolage Grotesque",sans-serif; font-weight:600; font-size:16px; font-variant-numeric:tabular-nums; letter-spacing:-.02em; flex:none; text-align:right}
+  .premio-pts small{font-family:"IBM Plex Mono",monospace; font-size:10px; font-weight:500; letter-spacing:.06em; color:var(--texto-3); text-transform:uppercase; margin-left:3px}
+  .btn-canje{flex:none; background:var(--sup); border:1px solid var(--tinta-viva); color:var(--tinta-viva); border-radius:var(--r-s); padding:5px 11px; font-size:12px; font-weight:600}
+  .btn-canje:hover:not(:disabled){background:var(--tinta-viva); color:#fff}
+  .btn-canje:disabled{border-color:var(--linea); color:var(--texto-3); cursor:not-allowed; background:var(--sup-2)}
+
+  /* ---------- alcance ---------- */
+  .alcance{margin-top:18px; border-top:1px solid var(--linea); padding-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px}
+  .alcance h3{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--texto-3); margin-bottom:9px; font-family:"IBM Plex Sans",sans-serif; font-weight:600}
+  .alcance ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px; font-size:13px; color:var(--texto-2)}
+  .alcance li{display:flex; gap:8px; align-items:flex-start}
+  .alcance li i{flex:none; width:15px; height:15px; border-radius:3px; display:grid; place-items:center; font-style:normal; font-size:10px; font-weight:700; margin-top:2px}
+  .alcance li i.si{background:var(--ok-tenue); color:var(--ok)}
+  .alcance li i.no{background:var(--sup-2); color:var(--texto-3); border:1px solid var(--linea)}
+  .alcance b{color:var(--texto); font-weight:600}
+
+  /* ---------- toast ---------- */
+  .toast{position:fixed; left:50%; bottom:24px; transform:translate(-50%,16px); background:var(--texto); color:var(--sup); padding:11px 18px; border-radius:var(--r-m); font-size:13.5px; font-weight:500; box-shadow:0 12px 34px -10px rgba(0,0,0,.5); opacity:0; pointer-events:none; transition:opacity .2s,transform .2s; z-index:40; max-width:calc(100vw - 32px); text-align:center}
+  .toast.on{opacity:1; transform:translate(-50%,0)}
+
+  @media (max-width:1120px){
+    .rejilla{grid-template-columns:minmax(0,1fr)}
+    .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .kpi:nth-child(3){border-left:0}
+    .kpi:nth-child(n+3){border-top:1px solid var(--linea)}
+  }
+  @media (max-width:860px){
+    .app{grid-template-columns:minmax(0,1fr)}
+    .rail{position:static; height:auto; flex-direction:row; align-items:center; gap:14px; overflow-x:auto; padding:11px 16px}
+    .marca-sub,.nav-tit,.rail-pie{display:none}
+    .nav{flex-direction:row; gap:4px}
+    .nav button{white-space:nowrap; padding:7px 11px}
+    .marca{flex:none}
+  }
+  @media (max-width:560px){
+    .kpis{grid-template-columns:minmax(0,1fr)}
+    .kpi{border-left:0}
+    .kpi+.kpi{border-top:1px solid var(--linea)}
+    .barra-meta{margin-left:0; width:100%}
+    .fila-2{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms!important; transition-duration:.001ms!important}
+  }
+</style>
+
+<div class="app">
+  <!-- ================= RAIL ================= -->
+  <aside class="rail">
+    <div>
+      <div class="marca">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+          <path d="M11 1.6 20 19.2H2Z" fill="#F26A1B"></path>
+          <path d="M11 12.4 15.3 19.2H6.7Z" fill="#FCFAF5"></path>
+        </svg>
+        <span class="marca-nom">Sacapuntos</span>
+      </div>
+      <div class="marca-sub">Lealtad · Papelería</div>
+    </div>
+
+    <nav aria-label="Módulos">
+      <div class="nav-tit">Operación</div>
+      <ul class="nav">
+        <li><button type="button" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>
+          Panel</button></li>
+        <li><button type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M5 3h14v18l-3.5-2-3.5 2-3.5-2L5 21Z"></path><path d="M9 8h6M9 12h6"></path></svg>
+          Capturar ticket</button></li>
+        <li><button type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 20.5c0-4.1 3.4-6.4 7.5-6.4s7.5 2.3 7.5 6.4"></path></svg>
+          Clientes</button></li>
+        <li><button type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M3 8.5h18V21H3Z"></path><path d="M12 8.5V21M3 8.5 5.5 3h13L21 8.5"></path></svg>
+          Premios</button></li>
+        <li><button type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 7h12M4 12h16M4 17h9"></path><path d="m17 14 3 3-3 3"></path></svg>
+          Movimientos</button></li>
+      </ul>
+      <div class="nav-tit" style="padding-top:18px">Ajustes</div>
+      <ul class="nav">
+        <li><button type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 5h16v14H4Z"></path><path d="M8 9.5h8M8 14h4"></path></svg>
+          Reglas de puntos</button></li>
+      </ul>
+    </nav>
+
+    <div class="rail-pie">
+      <span>Caja <b>02</b> · turno matutino</span>
+      <span>Atiende <b>L. A. Sánchez</b></span>
+    </div>
+  </aside>
+
+  <!-- ================= LIENZO ================= -->
+  <div class="lienzo">
+    <header class="barra">
+      <h1>Panel de lealtad</h1>
+      <div class="barra-meta">
+        <span class="regla">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5 11 15l4.5-5.5"></path></svg>
+          1 punto por cada $10
+        </span>
+        <label class="campo-inline" for="sucursal">Sucursal
+          <select id="sucursal">
+            <option>Aviación</option>
+            <option>Centro</option>
+            <option>Mercado Morelos</option>
+          </select>
+        </label>
+        <span class="corte">Corte: 10 sep 2026, 14:20</span>
+      </div>
+    </header>
+
+    <p class="aviso">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex:none;margin-top:2px" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v.5M12 11.5V16"></path></svg>
+      <span><b>Datos de ejemplo.</b> Clientes, folios y cifras son inventados para mostrar la pantalla en operación. Los teléfonos van enmascarados a propósito: el padrón real vive en la base, no en la interfaz.</span>
+    </p>
+
+    <!-- KPIs -->
+    <section class="kpis" aria-label="Indicadores del programa">
+      <div class="kpi">
+        <span class="kpi-rot">Puntos en circulación</span>
+        <span class="kpi-cifra" id="kpi-circulacion">184,260</span>
+        <span class="kpi-sub">Pasivo estimado <b class="num" id="kpi-pasivo">$18,426</b> en premios</span>
+        <span class="kpi-pie"><span class="delta sube">+6.2% vs. agosto</span></span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-rot">Tickets capturados hoy</span>
+        <span class="kpi-cifra" id="kpi-tickets">58</span>
+        <span class="kpi-sub"><b class="num" id="kpi-venta">$14,380</b> de venta ligada</span>
+        <span class="kpi-pie"><span class="delta plano">41% de los tickets del día</span></span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-rot">Canjes del mes</span>
+        <span class="kpi-cifra" id="kpi-canjes">37</span>
+        <span class="kpi-sub"><b class="num" id="kpi-redimidos">18,940</b> puntos redimidos</span>
+        <span class="kpi-pie"><span class="delta sube">+12 vs. agosto</span></span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-rot">Clientes activos · 90 d</span>
+        <span class="kpi-cifra">412</span>
+        <span class="kpi-sub">De <b class="num">689</b> registrados</span>
+        <span class="kpi-pie"><span class="delta baja">−3.1% vs. agosto</span></span>
+      </div>
+    </section>
+
+    <div class="rejilla">
+      <!-- ---------- columna izquierda ---------- -->
+      <div class="col">
+        <section class="panel">
+          <div class="panel-cab">
+            <h2>Puntos emitidos y canjeados</h2>
+            <span class="hint">Semanal · últimas 8 semanas</span>
+            <div class="der">
+              <div class="leyenda">
+                <span><i class="sw" style="background:var(--serie-emit)"></i>Emitidos</span>
+                <span><i class="sw" style="background:var(--serie-canj)"></i>Canjeados</span>
+              </div>
+              <button type="button" class="btn-txt" id="btn-tabla" aria-expanded="false" aria-controls="tabla-serie">Ver datos</button>
+            </div>
+          </div>
+          <div class="grafica-caja" id="grafica-caja">
+            <svg id="grafica" viewBox="0 0 760 268" role="img" aria-labelledby="g-tit"><title id="g-tit">Puntos emitidos y canjeados por semana, últimas ocho semanas</title></svg>
+            <div class="tip" id="tip" role="status" aria-live="polite"></div>
+          </div>
+          <p class="nota-grafica">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex:none;margin-top:2px" aria-hidden="true"><path d="M4 18 9.5 9l4 4.5L20 5"></path></svg>
+            <span>El pico de la semana del 19 de agosto es regreso a clases: tres semanas concentran el 46% de los puntos del periodo. Los canjes llegan después, cuando la temporada ya pasó — <b id="nota-tasa">se canjea el 32% de lo emitido</b>.</span>
+          </p>
+          <div class="tabla-datos" id="tabla-serie" hidden>
+            <div class="env-tabla" style="border:1px solid var(--linea); border-radius:var(--r-m)">
+              <table>
+                <caption class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Datos de la gráfica</caption>
+                <thead><tr><th scope="col">Semana</th><th scope="col" class="der-num">Emitidos</th><th scope="col" class="der-num">Canjeados</th><th scope="col" class="der-num">Tasa de canje</th></tr></thead>
+                <tbody id="tabla-serie-cuerpo"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-cab">
+            <h2>Movimientos recientes</h2>
+            <span class="hint" id="mov-hint">Caja 02 · hoy</span>
+          </div>
+          <div class="env-tabla">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Hora</th><th scope="col">Folio</th><th scope="col">Cliente</th>
+                  <th scope="col">Tipo</th><th scope="col" class="der-num">Compra</th><th scope="col" class="der-num">Puntos</th>
+                </tr>
+              </thead>
+              <tbody id="movimientos"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- ---------- columna derecha ---------- -->
+      <div class="col">
+        <!-- captura de ticket, dibujada como ticket -->
+        <form class="ticket" id="forma" autocomplete="off">
+          <div class="ticket-cab">
+            <strong>Papelería El Compás</strong>
+            Suc. Aviación · RFC PEC8806114J2<br>Captura de ticket
+          </div>
+          <hr class="rule">
+
+          <div class="campos">
+            <div class="campo">
+              <label for="cliente">Cliente</label>
+              <select id="cliente" name="cliente"></select>
+            </div>
+            <div class="fila-2">
+              <div class="campo">
+                <label for="folio">Folio del ticket</label>
+                <input id="folio" name="folio" class="mono" value="A-48213">
+              </div>
+              <div class="campo con-signo">
+                <label for="total">Total de la compra</label>
+                <span class="envoltura"><span class="signo" aria-hidden="true">$</span><input id="total" name="total" type="text" inputmode="decimal" value="248.50" aria-describedby="ayuda-total"></span>
+              </div>
+            </div>
+            <label class="promo" for="promo">
+              <input type="checkbox" id="promo" name="promo">
+              Doble puntos (temporada escolar)
+            </label>
+          </div>
+
+          <hr class="rule">
+
+          <div class="renglon"><span>Base · $10 = 1 pt</span><span class="guia"></span><span class="val" id="r-base">24 pts</span></div>
+          <div class="renglon apagado" id="r-promo-fila"><span>Promo doble puntos</span><span class="guia"></span><span class="val" id="r-promo">—</span></div>
+          <div class="renglon"><span>Saldo del cliente</span><span class="guia"></span><span class="val" id="r-saldo">1,840 pts</span></div>
+
+          <div class="total">
+            <span class="total-rot">Abonar</span>
+            <span class="total-val" id="r-total">24<small>pts</small></span>
+          </div>
+
+          <button class="btn" type="submit" id="btn-abonar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Acumular puntos
+          </button>
+          <p class="pie-ticket" id="ayuda-total">Los puntos vencen a 12 meses<br>· · · corte de caja 21:00 · · ·</p>
+        </form>
+
+        <!-- cliente en mostrador: el panel invertido -->
+        <section class="mostrador" aria-live="polite">
+          <div class="mostrador-rot">Cliente en mostrador</div>
+          <div style="display:flex;align-items:flex-start;gap:10px">
+            <div style="min-width:0">
+              <div class="mostrador-nom" id="m-nombre">Marisol Rentería</div>
+              <div class="mostrador-id" id="m-id">C-0412 · tel. ••••3471 · desde ago 2024</div>
+            </div>
+            <span class="insignia" id="m-nivel">Nivel Plumón</span>
+          </div>
+          <div class="saldo">
+            <span class="saldo-cifra" id="m-saldo">1,840</span>
+            <span class="saldo-und">puntos disponibles</span>
+          </div>
+          <div class="barra-prog"><i id="m-prog" style="width:40%"></i></div>
+          <div class="mostrador-pie">
+            <span id="m-meta">Le faltan <b>—</b> para el siguiente premio</span>
+            <span>Vencen pronto: <b id="m-vencen">120 pts</b></span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-cab">
+            <h2>Canje de premios</h2>
+            <span class="hint" id="premios-hint">8 premios · desplaza para ver todos</span>
+          </div>
+          <div class="premios" id="premios"></div>
+        </section>
+      </div>
+    </div>
+
+    <!-- alcance -->
+    <section class="alcance">
+      <div>
+        <h3>Módulos en esta v1</h3>
+        <ul>
+          <li><i class="si">✓</i><span><b>Captura de ticket</b> — folio, total y promoción; convierte a puntos con la regla vigente.</span></li>
+          <li><i class="si">✓</i><span><b>Padrón de clientes</b> — saldo, nivel y antigüedad; identificación por teléfono.</span></li>
+          <li><i class="si">✓</i><span><b>Catálogo de premios</b> — costo en puntos y existencias por sucursal.</span></li>
+          <li><i class="si">✓</i><span><b>Canje</b> — descuenta del saldo y deja rastro del movimiento.</span></li>
+          <li><i class="si">✓</i><span><b>Movimientos</b> — bitácora de cada abono y cada canje.</span></li>
+          <li><i class="si">✓</i><span><b>Reglas de puntos</b> — pesos por punto, multiplicadores y vigencia.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Fuera de la v1 a propósito</h3>
+        <ul>
+          <li><i class="no">+</i><span><b>App del cliente</b> — mientras no haya volumen, el saldo se consulta en mostrador o por WhatsApp.</span></li>
+          <li><i class="no">+</i><span><b>Multisucursal real</b> — el selector ya está; falta inventario y caja separados.</span></li>
+          <li><i class="no">+</i><span><b>Referidos y cumpleaños</b> — suben el costo del programa antes de saber si retiene.</span></li>
+          <li><i class="no">+</i><span><b>Lectura automática del ticket</b> — conviene cuando la captura manual ya estorbe.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Decisiones que faltan</h3>
+        <ul>
+          <li><i class="no">?</i><span><b>¿$10 = 1 punto es el tipo de cambio correcto?</b> Con el pasivo actual, cada punto cuesta ~$0.10 en premio.</span></li>
+          <li><i class="no">?</i><span><b>¿Se acumula en mayoreo?</b> Dos clientes institucionales ya concentran el 19% de los puntos emitidos.</span></li>
+          <li><i class="no">?</i><span><b>¿Los puntos vencen a 12 meses o a fin de ciclo escolar?</b> La segunda opción es más natural para una papelería.</span></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===== datos de ejemplo ===== */
+  var REGLA = { pesosPorPunto:10, multiplicadorPromo:2 };
+
+  var clientes = [
+    { id:"C-0412", nombre:"Marisol Rentería",            tel:"••••3471", pts:1840, desde:"ago 2024", vencen:120 },
+    { id:"C-0689", nombre:"Papelería Mi Barrio · mayoreo", tel:"••••9052", pts:4260, desde:"mar 2024", vencen:0 },
+    { id:"C-0244", nombre:"Esc. Prim. Benito Juárez · compras", tel:"••••1187", pts:2930, desde:"ene 2025", vencen:480 },
+    { id:"C-0501", nombre:"Jorge Alcántara",             tel:"••••6620", pts:620,  desde:"feb 2026", vencen:0 },
+    { id:"C-0677", nombre:"Dulce Karina Pech",           tel:"••••4418", pts:310,  desde:"jul 2026", vencen:35 },
+    { id:"C-0455", nombre:"Héctor Villalobos",           tel:"••••2903", pts:95,   desde:"ago 2026", vencen:0 }
+  ];
+
+  var premios = [
+    { nombre:"Bolígrafo BIC azul · 4 pzas",            pts:120,  stock:38 },
+    { nombre:"Resistol 850 blanco · 225 ml",           pts:180,  stock:16 },
+    { nombre:"Cuaderno profesional 100 h · cuadro chico", pts:220, stock:24 },
+    { nombre:"Engrapadora Barrilito + caja de grapas", pts:400,  stock:9 },
+    { nombre:"Colores Prismacolor · 12 pzas",          pts:560,  stock:11 },
+    { nombre:"Papel bond carta · paquete 500 h",       pts:650,  stock:6 },
+    { nombre:"Calculadora científica Casio fx-82",     pts:950,  stock:3 },
+    { nombre:"Mochila escolar reforzada",              pts:1800, stock:2 }
+  ];
+
+  var serie = [
+    { s:"22 jul", emit: 10450, canj: 3120 },
+    { s:"29 jul", emit: 12180, canj: 3460 },
+    { s:"5 ago",  emit: 15640, canj: 4020 },
+    { s:"12 ago", emit: 19870, canj: 5180 },
+    { s:"19 ago", emit: 24310, canj: 6740 },
+    { s:"26 ago", emit: 18260, canj: 7920 },
+    { s:"2 sep",  emit: 13540, canj: 6480 },
+    { s:"9 sep",  emit: 6120,  canj: 2310, parcial:true }
+  ];
+
+  var movimientos = [
+    { hora:"14:06", folio:"A-48212", cliente:"Jorge Alcántara",      tipo:"acum",  monto:186.00, pts:18 },
+    { hora:"13:52", folio:"R-00941", cliente:"Marisol Rentería",     tipo:"canje", premio:"Cuaderno profesional 100 h", pts:-220 },
+    { hora:"13:40", folio:"A-48211", cliente:"Esc. Prim. Benito Juárez", tipo:"acum", monto:2480.00, pts:248 },
+    { hora:"13:18", folio:"A-48210", cliente:"Dulce Karina Pech",    tipo:"acum",  monto:74.50, pts:7 },
+    { hora:"12:55", folio:"R-00940", cliente:"Papelería Mi Barrio",  tipo:"canje", premio:"Papel bond carta 500 h", pts:-650 },
+    { hora:"12:31", folio:"A-48209", cliente:"Héctor Villalobos",    tipo:"acum",  monto:412.00, pts:41 }
+  ];
+
+  var kpis = { circulacion:184260, tickets:58, venta:14380, canjes:37, redimidos:18940 };
+  var folioSiguiente = 48213, folioCanje = 942;
+
+  /* ===== utilería ===== */
+  var $ = function(id){ return document.getElementById(id); };
+  var fmt = function(n){ return Math.round(n).toLocaleString("es-MX"); };
+  var pesos = function(n){ return "$" + n.toLocaleString("es-MX",{minimumFractionDigits:2, maximumFractionDigits:2}); };
+  var pesos0 = function(n){ return "$" + Math.round(n).toLocaleString("es-MX"); };
+
+  function nivel(pts){
+    if(pts >= 1500) return { nombre:"Plumón", min:1500, tope:null };
+    if(pts >= 500)  return { nombre:"Pluma",  min:500,  tope:1500 };
+    return { nombre:"Lápiz", min:0, tope:500 };
+  }
+
+  var tiempoToast;
+  function avisa(texto){
+    var t = $("toast");
+    t.textContent = texto; t.classList.add("on");
+    clearTimeout(tiempoToast);
+    tiempoToast = setTimeout(function(){ t.classList.remove("on"); }, 3400);
+  }
+
+  function horaAhora(){
+    var d = new Date();
+    return String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0");
+  }
+
+  /* ===== estado seleccionado ===== */
+  var seleccionado = clientes[0].id;
+  function cliente(){
+    for(var i=0;i<clientes.length;i++) if(clientes[i].id === seleccionado) return clientes[i];
+    return clientes[0];
+  }
+
+  /* ===== selector de cliente ===== */
+  function pintaSelector(){
+    var sel = $("cliente");
+    sel.innerHTML = "";
+    clientes.forEach(function(c){
+      var o = document.createElement("option");
+      o.value = c.id;
+      o.textContent = c.nombre + "  ·  " + fmt(c.pts) + " pts";
+      sel.appendChild(o);
+    });
+    sel.value = seleccionado;
+  }
+
+  /* ===== cliente en mostrador ===== */
+  function pintaMostrador(){
+    var c = cliente(), n = nivel(c.pts);
+    $("m-nombre").textContent = c.nombre;
+    $("m-id").textContent = c.id + " · tel. " + c.tel + " · desde " + c.desde;
+    $("m-nivel").textContent = "Nivel " + n.nombre;
+    $("m-saldo").textContent = fmt(c.pts);
+    $("m-vencen").textContent = c.vencen > 0 ? fmt(c.vencen) + " pts" : "ninguno";
+
+    // progreso hacia el siguiente premio alcanzable
+    var siguiente = null;
+    for(var i=0;i<premios.length;i++){ if(premios[i].pts > c.pts){ siguiente = premios[i]; break; } }
+    if(siguiente){
+      $("m-prog").style.width = Math.max(3, Math.min(100, (c.pts / siguiente.pts) * 100)).toFixed(1) + "%";
+      $("m-meta").innerHTML = "Le faltan <b>" + fmt(siguiente.pts - c.pts) + " pts</b> para " +
+        siguiente.nombre.split(" · ")[0].toLowerCase();
+    }else{
+      $("m-prog").style.width = "100%";
+      $("m-meta").innerHTML = "<b>Alcanza cualquier premio</b> del catálogo";
+    }
+  }
+
+  /* ===== premios ===== */
+  function pintaPremios(){
+    var c = cliente(), cont = $("premios");
+    cont.innerHTML = "";
+    premios.forEach(function(p, i){
+      var alcanza = c.pts >= p.pts, hay = p.stock > 0;
+      var fila = document.createElement("div");
+      fila.className = "premio";
+      fila.innerHTML =
+        '<div class="premio-info">' +
+          '<div class="premio-nom">' + p.nombre + '</div>' +
+          '<div class="premio-meta">' + (hay ? p.stock + " en existencia" : "sin existencia") +
+            (alcanza ? "" : " · faltan " + fmt(p.pts - c.pts) + " pts") + '</div>' +
+        '</div>' +
+        '<div class="premio-pts">' + fmt(p.pts) + '<small>pts</small></div>';
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "btn-canje"; b.textContent = "Canjear";
+      b.disabled = !alcanza || !hay;
+      b.title = !hay ? "Sin existencia en esta sucursal" : (!alcanza ? "Saldo insuficiente" : "Canjear " + p.nombre);
+      b.addEventListener("click", function(){ canjear(i); });
+      fila.appendChild(b);
+      cont.appendChild(fila);
+    });
+  }
+
+  /* ===== KPIs ===== */
+  function pintaKpis(){
+    $("kpi-circulacion").textContent = fmt(kpis.circulacion);
+    $("kpi-pasivo").textContent = pesos0(kpis.circulacion * (1/REGLA.pesosPorPunto));
+    $("kpi-tickets").textContent = fmt(kpis.tickets);
+    $("kpi-venta").textContent = pesos0(kpis.venta);
+    $("kpi-canjes").textContent = fmt(kpis.canjes);
+    $("kpi-redimidos").textContent = fmt(kpis.redimidos);
+  }
+
+  /* ===== movimientos ===== */
+  function pintaMovimientos(resaltaPrimero){
+    var cuerpo = $("movimientos");
+    cuerpo.innerHTML = "";
+    movimientos.slice(0, 9).forEach(function(m, i){
+      var tr = document.createElement("tr");
+      if(resaltaPrimero && i === 0) tr.className = "nuevo";
+      var esAcum = m.tipo === "acum";
+      tr.innerHTML =
+        '<td class="mono" style="color:var(--texto-3)">' + m.hora + '</td>' +
+        '<td class="mono">' + m.folio + '</td>' +
+        '<td>' + m.cliente + (esAcum ? "" : '<span style="color:var(--texto-3)"> · ' + m.premio + '</span>') + '</td>' +
+        '<td><span class="chip ' + (esAcum ? "acum" : "canje") + '">' + (esAcum ? "Acumulación" : "Canje") + '</span></td>' +
+        '<td class="der-num">' + (esAcum ? pesos(m.monto) : '<span style="color:var(--texto-3)">—</span>') + '</td>' +
+        '<td class="der-num ' + (m.pts >= 0 ? "pts-mas" : "pts-menos") + '">' + (m.pts >= 0 ? "+" : "−") + fmt(Math.abs(m.pts)) + '</td>';
+      cuerpo.appendChild(tr);
+    });
+  }
+
+  /* ===== gráfica ===== */
+  var NS = "http://www.w3.org/2000/svg";
+  function el(t, attrs){
+    var n = document.createElementNS(NS, t);
+    for(var k in attrs) if(Object.prototype.hasOwnProperty.call(attrs,k)) n.setAttribute(k, attrs[k]);
+    return n;
+  }
+  var G = { x0:58, x1:690, y0:22, y1:226, alto:268 };
+
+  // pasos "redondos" para que cada etiqueta nombre un valor real de la escala
+  function escala(max){
+    var candidatos = [250,500,1000,2000,2500,5000,10000,20000,25000,50000];
+    for(var i=0;i<candidatos.length;i++){
+      for(var n=4;n<=6;n++){ if(candidatos[i]*n >= max) return { paso:candidatos[i], pasos:n }; }
+    }
+    return { paso:Math.ceil(max/5), pasos:5 };
+  }
+  function etiquetaEje(v){
+    if(v === 0) return "0";
+    if(v >= 1000) return (v/1000).toLocaleString("es-MX",{maximumFractionDigits:1}) + "k";
+    return fmt(v);
+  }
+
+  function tinta(nombre){
+    return getComputedStyle(document.documentElement).getPropertyValue(nombre).trim();
+  }
+
+  function pintaGrafica(){
+    var svg = $("grafica");
+    while(svg.childNodes.length > 1) svg.removeChild(svg.lastChild);
+
+    var maxDato = 0;
+    serie.forEach(function(d){ maxDato = Math.max(maxDato, d.emit, d.canj); });
+    var esc = escala(maxDato), paso = esc.paso, pasos = esc.pasos, tope = paso * pasos;
+
+    var cEmit = tinta("--serie-emit"), cCanj = tinta("--serie-canj");
+    var cLinea = tinta("--linea"), cTexto3 = tinta("--texto-3"), cTexto2 = tinta("--texto-2"), cSup = tinta("--sup");
+
+    var X = function(i){ return G.x0 + (i * (G.x1 - G.x0)) / (serie.length - 1); };
+    var Y = function(v){ return G.y1 - (v / tope) * (G.y1 - G.y0); };
+
+    // rejilla + eje y
+    for(var k=0; k<=pasos; k++){
+      var v = paso * k, y = Y(v);
+      svg.appendChild(el("line", { x1:G.x0, y1:y, x2:G.x1, y2:y, stroke:cLinea, "stroke-width":1 }));
+      var et = el("text", { x:G.x0-10, y:y+4, fill:cTexto3, "font-size":11, "text-anchor":"end",
+                            "font-family":"'IBM Plex Mono', monospace" });
+      et.textContent = etiquetaEje(v);
+      svg.appendChild(et);
+    }
+
+    // eje x
+    serie.forEach(function(d, i){
+      var t = el("text", { x:X(i), y:G.y1+20, fill:cTexto3, "font-size":11, "text-anchor":"middle",
+                           "font-family":"'IBM Plex Sans', sans-serif" });
+      t.textContent = d.s;
+      svg.appendChild(t);
+      if(d.parcial){
+        var p = el("text", { x:X(i), y:G.y1+34, fill:cTexto3, "font-size":9.5, "text-anchor":"middle",
+                             "font-family":"'IBM Plex Mono', monospace", "letter-spacing":"0.06em" });
+        p.textContent = "EN CURSO";
+        svg.appendChild(p);
+      }
+    });
+
+    // área + línea de emitidos
+    var dArea = "M" + X(0) + " " + Y(serie[0].emit);
+    var dLinea = dArea;
+    for(var i=1;i<serie.length;i++){ dArea += " L" + X(i) + " " + Y(serie[i].emit); dLinea += " L" + X(i) + " " + Y(serie[i].emit); }
+    dArea += " L" + X(serie.length-1) + " " + G.y1 + " L" + X(0) + " " + G.y1 + " Z";
+    svg.appendChild(el("path", { d:dArea, fill:tinta("--serie-emit-fill"), stroke:"none" }));
+    svg.appendChild(el("path", { d:dLinea, fill:"none", stroke:cEmit, "stroke-width":2, "stroke-linejoin":"round", "stroke-linecap":"round" }));
+
+    // línea de canjeados
+    var dCanj = "M" + X(0) + " " + Y(serie[0].canj);
+    for(var j=1;j<serie.length;j++) dCanj += " L" + X(j) + " " + Y(serie[j].canj);
+    svg.appendChild(el("path", { d:dCanj, fill:"none", stroke:cCanj, "stroke-width":2, "stroke-linejoin":"round", "stroke-linecap":"round" }));
+
+    // marcador del pico (regreso a clases) — anotación, no adorno
+    var iPico = 0;
+    serie.forEach(function(d,i){ if(d.emit > serie[iPico].emit) iPico = i; });
+    svg.appendChild(el("line", { x1:X(iPico), y1:Y(serie[iPico].emit)+7, x2:X(iPico), y2:G.y1, stroke:cEmit, "stroke-width":1, opacity:.34 }));
+    var anot = el("text", { x:X(iPico), y:Y(serie[iPico].emit)-12, fill:cTexto2, "font-size":10.5, "text-anchor":"middle",
+                            "font-family":"'IBM Plex Sans', sans-serif", "font-weight":600 });
+    anot.textContent = "regreso a clases";
+    svg.appendChild(anot);
+
+    // extremos con anillo de superficie y etiqueta directa
+    var ult = serie.length - 1;
+    [[serie[ult].emit, cEmit, "Emitidos"], [serie[ult].canj, cCanj, "Canjeados"]].forEach(function(par){
+      svg.appendChild(el("circle", { cx:X(ult), cy:Y(par[0]), r:4.5, fill:par[1], stroke:cSup, "stroke-width":2 }));
+      var lab = el("text", { x:X(ult)+11, y:Y(par[0])+4, fill:par[1], "font-size":11.5, "font-weight":700,
+                             "font-family":"'IBM Plex Mono', monospace" });
+      lab.textContent = fmt(par[0]);
+      svg.appendChild(lab);
+    });
+
+    // capa de interacción
+    var ancho = (G.x1 - G.x0) / (serie.length - 1);
+    var cruz = el("line", { x1:0, y1:G.y0-4, x2:0, y2:G.y1, stroke:cTexto3, "stroke-width":1, opacity:0 });
+    svg.appendChild(cruz);
+    var pEmit = el("circle", { r:5, fill:cEmit, stroke:cSup, "stroke-width":2, opacity:0 });
+    var pCanj = el("circle", { r:5, fill:cCanj, stroke:cSup, "stroke-width":2, opacity:0 });
+    svg.appendChild(pEmit); svg.appendChild(pCanj);
+
+    var tip = $("tip"), caja = $("grafica-caja");
+    function apaga(){
+      cruz.setAttribute("opacity",0); pEmit.setAttribute("opacity",0); pCanj.setAttribute("opacity",0);
+      tip.classList.remove("on");
+    }
+    serie.forEach(function(d, i){
+      var zona = el("rect", { x:X(i) - ancho/2, y:G.y0-6, width:ancho, height:G.y1-G.y0+12, fill:"transparent", style:"cursor:crosshair" });
+      function enciende(){
+        cruz.setAttribute("x1", X(i)); cruz.setAttribute("x2", X(i)); cruz.setAttribute("opacity", .4);
+        pEmit.setAttribute("cx", X(i)); pEmit.setAttribute("cy", Y(d.emit)); pEmit.setAttribute("opacity", 1);
+        pCanj.setAttribute("cx", X(i)); pCanj.setAttribute("cy", Y(d.canj)); pCanj.setAttribute("opacity", 1);
+        var tasa = d.emit ? Math.round((d.canj / d.emit) * 100) : 0;
+        tip.innerHTML =
+          '<div class="tip-t">Semana del ' + d.s + (d.parcial ? " · en curso" : "") + '</div>' +
+          '<div class="tip-l"><i style="background:' + cEmit + '"></i>Emitidos ' + fmt(d.emit) + '</div>' +
+          '<div class="tip-l"><i style="background:' + cCanj + '"></i>Canjeados ' + fmt(d.canj) + '</div>' +
+          '<div class="tip-l" style="opacity:.7">Tasa de canje ' + tasa + '%</div>';
+        var r = caja.getBoundingClientRect(), esc = r.width / 760;
+        tip.style.left = (X(i) * esc) + "px";
+        tip.style.top  = (Math.min(Y(d.emit), Y(d.canj)) * esc - 12) + "px";
+        tip.classList.add("on");
+      }
+      zona.addEventListener("mouseenter", enciende);
+      zona.addEventListener("mousemove", enciende);
+      zona.addEventListener("mouseleave", apaga);
+      svg.appendChild(zona);
+    });
+    svg.addEventListener("mouseleave", apaga);
+
+    // tabla equivalente
+    var cuerpo = $("tabla-serie-cuerpo");
+    cuerpo.innerHTML = "";
+    serie.forEach(function(d){
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td>" + d.s + (d.parcial ? " <span style='color:var(--texto-3)'>(en curso)</span>" : "") + "</td>" +
+        '<td class="der-num">' + fmt(d.emit) + "</td>" +
+        '<td class="der-num">' + fmt(d.canj) + "</td>" +
+        '<td class="der-num">' + Math.round((d.canj/d.emit)*100) + "%</td>";
+      cuerpo.appendChild(tr);
+    });
+
+    // tasa agregada del periodo
+    var te = 0, tc = 0;
+    serie.forEach(function(d){ te += d.emit; tc += d.canj; });
+    $("nota-tasa").textContent = "se canjea el " + Math.round((tc/te)*100) + "% de lo emitido";
+  }
+
+  /* ===== cálculo del ticket ===== */
+  function leeTotal(){
+    var v = parseFloat(String($("total").value).replace(/[^0-9.]/g, ""));
+    return isNaN(v) || v < 0 ? 0 : v;
+  }
+  function calcula(){
+    var total = leeTotal();
+    var base = Math.floor(total / REGLA.pesosPorPunto);
+    var promo = $("promo").checked;
+    var puntos = promo ? base * REGLA.multiplicadorPromo : base;
+    return { total:total, base:base, promo:promo, puntos:puntos, extra:puntos - base };
+  }
+  function pintaTicket(){
+    var c = calcula(), cli = cliente();
+    $("r-base").textContent = fmt(c.base) + " pts";
+    $("r-saldo").textContent = fmt(cli.pts) + " pts";
+    $("r-promo").textContent = c.promo ? "+" + fmt(c.extra) + " pts" : "—";
+    $("r-promo-fila").classList.toggle("apagado", !c.promo);
+    $("r-total").innerHTML = fmt(c.puntos) + "<small>pts</small>";
+    $("btn-abonar").disabled = c.puntos <= 0;
+    $("folio").value = "A-" + folioSiguiente;
+  }
+
+  /* ===== acciones ===== */
+  function abonar(ev){
+    ev.preventDefault();
+    var c = calcula(), cli = cliente();
+    if(c.puntos <= 0){ avisa("Captura un total mayor a $" + REGLA.pesosPorPunto + " para que genere puntos."); return; }
+
+    cli.pts += c.puntos;
+    movimientos.unshift({ hora:horaAhora(), folio:$("folio").value || ("A-" + folioSiguiente),
+                          cliente:cli.nombre, tipo:"acum", monto:c.total, pts:c.puntos });
+    folioSiguiente++;
+    kpis.circulacion += c.puntos; kpis.tickets += 1; kpis.venta += c.total;
+    serie[serie.length-1].emit += c.puntos;
+
+    $("total").value = "";
+    $("promo").checked = false;
+    todo(true);
+    avisa("Abonados " + fmt(c.puntos) + " pts a " + cli.nombre + " · saldo " + fmt(cli.pts) + " pts");
+  }
+
+  function canjear(i){
+    var p = premios[i], cli = cliente();
+    if(cli.pts < p.pts || p.stock <= 0) return;
+    cli.pts -= p.pts; p.stock -= 1;
+    movimientos.unshift({ hora:horaAhora(), folio:"R-00" + folioCanje, cliente:cli.nombre,
+                          tipo:"canje", premio:p.nombre, pts:-p.pts });
+    folioCanje++;
+    kpis.circulacion -= p.pts; kpis.canjes += 1; kpis.redimidos += p.pts;
+    serie[serie.length-1].canj += p.pts;
+    todo(true);
+    avisa("Canje registrado: " + p.nombre + " · restan " + fmt(cli.pts) + " pts");
+  }
+
+  function todo(resalta){
+    pintaSelector(); pintaMostrador(); pintaPremios(); pintaKpis();
+    pintaMovimientos(!!resalta); pintaTicket(); pintaGrafica();
+  }
+
+  /* ===== enlaces ===== */
+  $("cliente").addEventListener("change", function(){ seleccionado = this.value; todo(false); });
+  $("total").addEventListener("input", pintaTicket);
+  $("promo").addEventListener("change", pintaTicket);
+  $("forma").addEventListener("submit", abonar);
+  $("btn-tabla").addEventListener("click", function(){
+    var t = $("tabla-serie"), abierto = t.hidden;
+    t.hidden = !abierto;
+    this.setAttribute("aria-expanded", String(abierto));
+    this.textContent = abierto ? "Ocultar datos" : "Ver datos";
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".nav button"), function(b){
+    b.addEventListener("click", function(){
+      if(this.getAttribute("aria-current") === "page") return;
+      avisa("El módulo «" + this.textContent.trim() + "» entra en la siguiente pantalla. Esta es la v1 del panel.");
+    });
+  });
+  if(window.matchMedia) window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(){ pintaGrafica(); });
+
+  todo(false);
+})();
+</script>

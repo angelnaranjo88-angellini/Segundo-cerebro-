@@ -3,7 +3,7 @@ titulo: Patrones reutilizables
 tipo: sintesis
 estado: activo
 tags: [sintesis, patrones, oportunidades]
-actualizado: 2026-09-05
+actualizado: 2026-09-10
 ---
 
 # Patrones reutilizables
@@ -93,6 +93,12 @@ Con lo que ya tienes, un negocio local con citas se atiende con cuatro piezas:
 ```
 
 Ese paquete describe exactamente lo que ya corre para Lefranm y lo que le falta a Sonrisas.
+
+Un comercio con mostrador —sin citas que agendar— necesita otra quinta pieza en lugar de la
+1: un programa de puntos operado en caja. El prototipo está en
+[[Sacapuntos-Lealtad-Papeleria]] y todavía no tiene cliente. Es la única variante del paquete
+que no depende de un modelo de lenguaje, y por tanto la única que no hereda el 8.2% de error
+de la capa de IA.
 
 ## Qué hacer con esto
 
