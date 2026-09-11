@@ -23,7 +23,7 @@ escenario de Make. El 2026-09-11 se abrieron los dos que bloqueaban la recepció
 | # | Candado | Estado |
 |---|---|---|
 | 1 | Un **filtro** descartaba todo lo que no fuera texto plano antes de que el agente se enterara | ✅ **abierto** |
-| 2 | El **disparador de Make no mapea** `order` ni `referred_product` en su panel | ⚠️ sorteado, falta confirmarlo con un pedido real |
+| 2 | El **disparador de Make no mapea** `order` ni `referred_product` en su panel | ✅ **abierto** — probado con un carrito real: los datos sí llegan |
 | 3 | El **módulo de envío de Make no sabe mandar** el catálogo nativo (solo `list` y `button`) | ⛔ sigue cerrado — y resulta que no hace falta |
 | 4 | El prompt **nunca mencionaba el catálogo de WhatsApp** | ✅ **abierto** |
 
@@ -153,20 +153,35 @@ el escenario sigue en 8 módulos y 5 operaciones, y el costo no sube.
 De regalo: el correo al dueño ahora imprime el carrito crudo como llegó, lo que lo convierte en
 el auditor del candado 2 sin abrir Make.
 
+## La prueba del 2026-09-11
+
+Carrito real de **3 artículos, $897 estimado**. Tres cosas quedaron demostradas:
+
+1. **Make sí entrega el carrito.** Llegó un `product_retailer_id` de verdad. El candado 2 está
+   abierto: la ruta cruda funciona aunque el panel de mapeo no la muestre.
+2. **Pero Make aplana mal el array anidado.** Con dos niveles de `[]`
+   (`messages[]` → `product_items[]`) se queda con el primer elemento: de 3 artículos llegó 1,
+   y el agente cobró $299 en vez de $807. Arreglado indexando el mensaje (`messages[1]`) para
+   dejar un solo nivel, con las dos rutas mandadas en paralelo —lista A y lista B— para que una
+   sola prueba diga cuál sirve.
+3. **Los precios del catálogo están bien** ($897 = 3 × $299), pero **las claves no son las del
+   prompt**: el pedido trajo `36hao5euls`, un ID automático de Meta. El agente se lo enseñó al
+   cliente, que es feo e inútil.
+
+**La lección transferible**: en Make, una ruta de array de un solo nivel se aplana a lista; dos
+niveles no. Es el mismo error que espera a cualquier otro agente que lea `order.product_items`.
+
 ## Lo que falta, y no está en Make
 
-1. **Confirmar que Make sí entrega el detalle del carrito.** Mandar un pedido de prueba desde
-   el catálogo y abrir el bundle del módulo 1 en el historial. Si `order` viene completo, el
-   agente desglosa el pedido solo; si no, cae en la regla 7 del PASO 2.5 y lo pide por escrito.
-   **El cliente queda atendido en los dos casos** — lo que cambia es cuánta fricción hay.
-2. **Alinear las claves del catálogo de WhatsApp.** El `product_retailer_id` es el *ID de
-   contenido* que se capturó en Commerce Manager. Para que el agente reconozca los modelos solos,
-   tienen que ser exactamente `PRM-016`, `PRM-062`, `PRM-056`, `PRM-067`, `INV-102`, `INV-106`,
-   `INV-075`, `INV-084`. Si no coinciden, el agente no inventa: nombra la clave tal cual y pide
-   confirmación.
-3. **Alinear los precios** del catálogo de WhatsApp a $299. El agente ya está blindado (usa
-   siempre $299), pero el cliente ve el número del catálogo antes de escribir.
-4. **Decidir qué hacer con las 7 pausas de agosto.** Un número en `TERSIL_Pausa_Bot` no recibe
+1. **Repetir la prueba con 3 artículos** para ver si la lista A trae los tres. Si sí, se borra
+   la lista B y queda limpio. Si no, el camino es Iterator + Text Aggregator en una ruta
+   dedicada a `type = order`.
+2. **Resolver los nombres de modelo.** Las claves del catálogo son IDs automáticos de Meta, no
+   `PRM-016`. Dos salidas: (a) capturar los 8 *ID de contenido* de Commerce Manager y meter una
+   tabla de equivalencias `código → modelo` en el prompt —rápido y sin tocar el catálogo—, o
+   (b) reescribir los ID de contenido en Commerce Manager, que es más limpio a largo plazo pero
+   cambia los artículos. Mientras tanto el agente ya no enseña claves que no reconoce.
+3. **Decidir qué hacer con las 7 pausas de agosto.** Un número en `TERSIL_Pausa_Bot` no recibe
    respuesta nunca, y hoy nadie levanta las pausas. Es una decisión de negocio —¿cuándo devuelve
    el humano la conversación al bot?— no un arreglo de escenario, así que se dejó como estaba.
 

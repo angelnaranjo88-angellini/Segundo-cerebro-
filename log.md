@@ -10,6 +10,28 @@ actualizado: 2026-09-11
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-11] lint | Prueba real del pedido por catálogo: un acierto y un bug
+
+Carrito de prueba de **3 artículos ($897)** contra [[Make-Asistente-Tersil-V2]].
+
+**Confirmado**: Make **sí** entrega `order.product_items` aunque el disparador no lo mapee en su
+panel. Se cierra la incógnita que abrió [[Fuente-Cuenta-Make-EU2]].
+
+**Bug encontrado**: Make **aplana mal las rutas de array anidadas**. Con dos niveles de `[]`
+(`messages[]` → `product_items[]`) se queda con el primer elemento: de 3 artículos llegó 1, y el
+agente cobró $299 en vez de $807 sin aplicar el 10%. Arreglado indexando el mensaje
+(`1.messages[1]`) para dejar un solo nivel, mandando ambas rutas en paralelo —lista A y lista
+B— para que una sola prueba diga cuál sirve. Anotado como caveat del patrón en
+[[Agente-Conversacional-de-WhatsApp#Patrón nuevo: ficha técnica como Input del agente]].
+
+**Tercer hallazgo**: las claves del catálogo de WhatsApp de [[Tersil]] son IDs automáticos de
+Meta (`36hao5euls`), no las claves `PRM-`/`INV-` del prompt — y el agente se las enseñó al
+cliente. El PASO 2.5 se partió en dos casos: si reconoce todas las claves confirma con nombre de
+modelo; si no, **nunca muestra la clave** y confirma por piezas y total. Falta la tabla de
+equivalencias `código de Meta → modelo`, que necesita los 8 ID de contenido de Commerce Manager.
+
+Lección transferible, y barata de olvidar: **en Make, un nivel de `[]` se aplana a lista; dos no.**
+
 ## [2026-09-11] decision | El asistente de Tersil ya recibe pedidos del catálogo de WhatsApp
 
 Cambio aplicado **en producción** sobre [[Make-Asistente-Tersil-V2]] (838 ejecuciones, activo).

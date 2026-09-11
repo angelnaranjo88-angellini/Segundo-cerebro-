@@ -101,6 +101,11 @@ Tres razones por las que funciona:
    operaciones extra. Sigue costando 5 operaciones por ejecución.
 2. **No puede romper.** Son rutas de array sin funciones IML: un campo ausente se resuelve a
    vacío, no a error. Nada de `map()` ni `if()`, que sí revientan sobre un `undefined`.
+   **Ojo con los niveles de `[]`**: Make aplana a lista un array de un solo nivel
+   (`1.messages[1].order.product_items[].quantity`) pero con dos niveles
+   (`1.messages[].order.product_items[]`) se queda con el primer elemento. Probado en
+   [[Make-Asistente-Tersil-V2#Prueba real del 2026-09-11 y segundo ajuste]]: costó un pedido de
+   3 piezas cobrado como 1.
 3. **Degrada con gracia.** Si Make no entrega el detalle del carrito, el agente igual sabe que
    llegó un pedido y lo pide por escrito. El cliente queda atendido en los dos casos.
 

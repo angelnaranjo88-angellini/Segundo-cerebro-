@@ -96,6 +96,11 @@ módulos nuevos, cero operaciones extra por ejecución:**
 | Input del agente | `{{1.messages[].text.body}}` | ficha técnica con tipo, carrito, producto referido, botón y pie de foto |
 | `systemPrompt` | sin nada del catálogo de WhatsApp | + PASO 2.5 (pedido del catálogo), 2.6 (consulta de producto), 2.7 (mensajes no-texto) |
 
+Segunda edición el mismo día, tras la prueba real: la ficha pasó a mandar las claves y
+cantidades por **dos rutas en paralelo** (lista A con `messages[1]`, lista B con `messages[]`)
+y el PASO 2.5 se partió en dos casos según reconozca o no las claves. Ver
+[[#Prueba real del 2026-09-11 y segundo ajuste]].
+
 Además: el correo al dueño ahora imprime el carrito crudo tal como llegó (claves, cantidades,
 precio del catálogo) y el tipo del último mensaje, para poder auditar sin abrir Make. Y se
 corrigió la mentira del prompt sobre el seguimiento (decía 23 h, el escenario hace 10 h una
@@ -114,13 +119,38 @@ Respaldo del estado anterior: Make guarda historial de versiones del escenario
   se reinicia con cualquier mensaje, así que ya no puede pasar que un cliente mande su pedido y
   reciba de vuelta el recordatorio de [[Make-Tersil-Seguimiento-10h]].
 
+## Prueba real del 2026-09-11 y segundo ajuste
+
+Se mandó un carrito de **3 artículos ($897 estimado)** desde el catálogo de WhatsApp. Dos
+hallazgos, uno bueno y uno malo.
+
+**✅ Confirmado: Make SÍ entrega los datos del carrito.** El agente recibió un
+`product_retailer_id` real. La ruta cruda funciona aunque el disparador no la mapee en su panel
+— queda cerrada la incógnita que abría [[Fuente-Cuenta-Make-EU2]].
+
+**❌ Bug: Make aplana mal la ruta de array anidada.**
+`{{1.messages[].order.product_items[].product_retailer_id}}` tiene **dos niveles de `[]`**
+(`messages[]` → `product_items[]`) y Make se queda con el primer elemento. De los 3 artículos
+llegó 1, con cantidad 1, así que el agente cobró **$299 en vez de $807** y no aplicó el 10%.
+
+Arreglo aplicado: se indexa explícitamente el mensaje —`1.messages[1]`— para dejar **un solo
+nivel de `[]`**, que es el caso documentado de Make para arrays de colecciones. Como no se puede
+confirmar sin otra prueba, la ficha manda las dos rutas en paralelo, rotuladas **lista A**
+(`messages[1]`) y **lista B** (`messages[]`), y el prompt ordena usar **la que traiga más
+elementos**. Así una sola prueba resuelve cuál sirve; después se borra la perdedora.
+
 > [!warning] Inferencia sin verificar
-> Falta comprobar con un carrito real que Make entregue `order.product_items[]` en el bundle:
-> el disparador no lo mapea en su panel, y la lectura depende de que la app arrastre los campos
-> crudos. El prompt cubre las dos salidas (PASO 2.5 regla 7: si las claves llegan vacías, el
-> agente pide modelos y cantidades por escrito), así que el cliente queda atendido en cualquier
-> caso — pero para saber en cuál de los dos escenarios estamos hay que mandar un pedido de
-> prueba y abrir el bundle del módulo 1 en el historial de Make.
+> Que `1.messages[1].order.product_items[]` aplane los tres artículos es lo esperable según el
+> comportamiento documentado de Make, pero **no está probado**. Si la lista A también trae uno
+> solo, el camino que queda es Iterator + Text Aggregator sobre `order.product_items` en una
+> ruta dedicada a `type = order`.
+
+**❌ Tercer hallazgo: las claves del catálogo son códigos automáticos de Meta.** El pedido trajo
+`36hao5euls`, no `PRM-016`. El agente lo mostró tal cual al cliente, que es feo e inútil. El
+prompt ahora distingue dos casos: si reconoce todas las claves confirma con el nombre del
+modelo; si no reconoce alguna, **nunca enseña la clave** y confirma por piezas y total pidiendo
+los nombres. La solución de fondo es una tabla de equivalencias `código de Meta → modelo` en el
+prompt, que necesita los 8 IDs de contenido de Commerce Manager.
 
 - **Pausas permanentes.** `TERSIL_Pausa_Bot` tiene 7 números pausados entre el 2026-08-01 y el
   2026-08-21, ninguno reactivado. No hay proceso ni escenario de despausa: hay que borrar el
