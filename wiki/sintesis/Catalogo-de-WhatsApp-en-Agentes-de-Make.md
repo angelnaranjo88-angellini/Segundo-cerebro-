@@ -23,7 +23,7 @@ escenario de Make. El 2026-09-11 se abrieron los dos que bloqueaban la recepció
 | # | Candado | Estado |
 |---|---|---|
 | 1 | Un **filtro** descartaba todo lo que no fuera texto plano antes de que el agente se enterara | ✅ **abierto** |
-| 2 | El **disparador de Make no mapea** `order` ni `referred_product` en su panel | ✅ **abierto** — probado con un carrito real: los datos sí llegan |
+| 2 | El **disparador de Make no mapea** `order` ni `referred_product` en su panel | ✅ **abierto** — los datos llegan completos; se leen con índices explícitos |
 | 3 | El **módulo de envío de Make no sabe mandar** el catálogo nativo (solo `list` y `button`) | ⛔ sigue cerrado — y resulta que no hace falta |
 | 4 | El prompt **nunca mencionaba el catálogo de WhatsApp** | ✅ **abierto** |
 
@@ -159,29 +159,32 @@ Carrito real de **3 artículos, $897 estimado**. Tres cosas quedaron demostradas
 
 1. **Make sí entrega el carrito.** Llegó un `product_retailer_id` de verdad. El candado 2 está
    abierto: la ruta cruda funciona aunque el panel de mapeo no la muestre.
-2. **Pero Make aplana mal el array anidado.** Con dos niveles de `[]`
-   (`messages[]` → `product_items[]`) se queda con el primer elemento: de 3 artículos llegó 1,
-   y el agente cobró $299 en vez de $807. Arreglado indexando el mensaje (`messages[1]`) para
-   dejar un solo nivel, con las dos rutas mandadas en paralelo —lista A y lista B— para que una
-   sola prueba diga cuál sirve.
+2. **Pero Make no aplana el array con `[]`.** De 3 artículos llegaba 1, y el agente cobró $299
+   en vez de $807. Ni `messages[]` ni `messages[1]` lo arreglan: la causa es que `order` no
+   existe en la interfaz del disparador, así que el `[]` se resuelve contra el esquema conocido.
+   **Los datos sí vienen completos en el bundle**; se leen con índices explícitos
+   (`product_items[1]`, `[2]`, `[3]`…). Confirmado al tercer intento: el mismo carrito de 3
+   artículos devolvió *"Son 3 piezas — Total: $807 MXN"*.
 3. **Los precios del catálogo están bien** ($897 = 3 × $299), pero **las claves no son las del
    prompt**: el pedido trajo `36hao5euls`, un ID automático de Meta. El agente se lo enseñó al
    cliente, que es feo e inútil.
 
-**La lección transferible**: en Make, una ruta de array de un solo nivel se aplana a lista; dos
-niveles no. Es el mismo error que espera a cualquier otro agente que lea `order.product_items`.
+**La lección transferible**: en Make, `[]` solo aplana los arrays que el módulo declara en su
+interfaz. Para todo lo demás —y el catálogo de WhatsApp entra ahí— hay que pedir cada posición
+por su número. Es el mismo tropiezo que espera a cualquier otro agente que lea
+`order.product_items`. Ver
+[[Agente-Conversacional-de-WhatsApp#Patrón nuevo: ficha técnica como Input del agente]].
 
 ## Lo que falta, y no está en Make
 
-1. **Repetir la prueba con 3 artículos** para ver si la lista A trae los tres. Si sí, se borra
-   la lista B y queda limpio. Si no, el camino es Iterator + Text Aggregator en una ruta
-   dedicada a `type = order`.
-2. **Resolver los nombres de modelo.** Las claves del catálogo son IDs automáticos de Meta, no
+1. **Resolver los nombres de modelo.** Las claves del catálogo son IDs automáticos de Meta, no
    `PRM-016`. Dos salidas: (a) capturar los 8 *ID de contenido* de Commerce Manager y meter una
    tabla de equivalencias `código → modelo` en el prompt —rápido y sin tocar el catálogo—, o
    (b) reescribir los ID de contenido en Commerce Manager, que es más limpio a largo plazo pero
-   cambia los artículos. Mientras tanto el agente ya no enseña claves que no reconoce.
-3. **Decidir qué hacer con las 7 pausas de agosto.** Un número en `TERSIL_Pausa_Bot` no recibe
+   cambia los artículos. Mientras tanto el agente ya no enseña claves que no reconoce: confirma
+   por piezas y total, y pide los nombres. **Es lo único que separa el flujo actual de estar
+   completo.**
+2. **Decidir qué hacer con las 7 pausas de agosto.** Un número en `TERSIL_Pausa_Bot` no recibe
    respuesta nunca, y hoy nadie levanta las pausas. Es una decisión de negocio —¿cuándo devuelve
    el humano la conversación al bot?— no un arreglo de escenario, así que se dejó como estaba.
 

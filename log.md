@@ -10,6 +10,32 @@ actualizado: 2026-09-11
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-11] decision | Resuelto: el asistente ya lee el carrito completo
+
+Tercer carrito de prueba de 3 artículos contra [[Make-Asistente-Tersil-V2]]. Respuesta del
+agente: *"Son 3 piezas, así que te toca 10% de descuento 🎁 — Total: $807 MXN con envío gratis
+incluido"*. **Correcto.**
+
+La solución que funcionó: **índices explícitos**. Diez líneas fijas `Art 1`…`Art 10` pidiendo
+`order.product_items[1]`, `[2]`, `[3]`… en vez de confiar en que `[]` aplane el array.
+
+Queda establecido el hallazgo, que vale para todo el portafolio:
+
+> **En Make, `[]` solo aplana los arrays que el módulo declara en su interfaz. Para los campos
+> que el módulo no declara —como todo lo del catálogo de WhatsApp— los datos sí vienen completos
+> en el bundle, pero hay que pedir cada posición por su número.**
+
+Costó tres rondas de prueba y un pedido de 3 piezas cobrado como 1. Anotado en
+[[Agente-Conversacional-de-WhatsApp#Patrón nuevo: ficha técnica como Input del agente]], que
+antes registraba una explicación equivocada (que el problema eran los dos niveles de `[]`).
+
+No hizo falta el Custom Webhook ni el Iterator + Text Aggregator, que habría obligado a un
+router y a duplicar toda la cola del escenario. Sigue en **8 módulos y 5 operaciones**.
+
+Único pendiente para que quede impecable: las claves del catálogo de [[Tersil]] son IDs
+automáticos de Meta, así que el agente confirma por piezas y total pero pide al cliente los
+nombres de los modelos. Se cierra con una tabla `ID de contenido → modelo` en el prompt.
+
 ## [2026-09-11] lint | Segunda prueba: Make no aplana `order.product_items` de ninguna forma
 
 Se repitió el carrito de 3 artículos contra [[Make-Asistente-Tersil-V2]]. La "lista A"

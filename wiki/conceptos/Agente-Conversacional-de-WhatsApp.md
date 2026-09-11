@@ -101,13 +101,26 @@ Tres razones por las que funciona:
    operaciones extra. Sigue costando 5 operaciones por ejecución.
 2. **No puede romper.** Son rutas de array sin funciones IML: un campo ausente se resuelve a
    vacío, no a error. Nada de `map()` ni `if()`, que sí revientan sobre un `undefined`.
-   **Ojo con los niveles de `[]`**: Make aplana a lista un array de un solo nivel
-   (`1.messages[1].order.product_items[].quantity`) pero con dos niveles
-   (`1.messages[].order.product_items[]`) se queda con el primer elemento. Probado en
-   [[Make-Asistente-Tersil-V2#Prueba real del 2026-09-11 y segundo ajuste]]: costó un pedido de
-   3 piezas cobrado como 1.
-3. **Degrada con gracia.** Si Make no entrega el detalle del carrito, el agente igual sabe que
-   llegó un pedido y lo pide por escrito. El cliente queda atendido en los dos casos.
+3. **Para los arrays no declarados, índices explícitos.** Este es el hallazgo que más caro
+   costó: `{{1.messages[].order.product_items[].product_retailer_id}}` devuelve **un solo
+   elemento**, no la lista. Indexar el mensaje (`messages[1]`) tampoco arregla nada. La causa
+   es que `order` **no existe en la interfaz del disparador**, así que Make resuelve el `[]`
+   contra el esquema que conoce y se queda con el primero. Los datos **sí están completos en el
+   bundle**: se leen pidiendo cada posición por su número.
+
+   ```
+   Art 1: clave={{1.messages[1].order.product_items[1].product_retailer_id}} cant={{...[1].quantity}}
+   Art 2: clave={{1.messages[1].order.product_items[2].product_retailer_id}} cant={{...[2].quantity}}
+   ... hasta Art 10
+   ```
+
+   Diez posiciones fijas, las vacías se ignoran. Regla general: **`[]` solo aplana lo que el
+   módulo declara; para lo demás, índices.** Evita el Iterator + Text Aggregator, que obligaría
+   a un router y a duplicar toda la cola del escenario. Probado en
+   [[Make-Asistente-Tersil-V2#Prueba real del 2026-09-11 y segundo ajuste]] — tres intentos y
+   un pedido de 3 piezas cobrado como 1 en el camino.
+4. **Degrada con gracia.** Si algún dato no llega, el agente igual sabe que llegó un pedido y
+   lo pide por escrito. El cliente queda atendido en los dos casos.
 
 El precio a pagar es una regla dura en el prompt: la ficha es interna, nunca se menciona, y los
 campos vacíos se ignoran en silencio.

@@ -82,10 +82,14 @@ comprobante, notas de voz, ubicaciones y botones. Detalle de la edición en
 [[Make-Asistente-Tersil-V2#Cambio del 2026-09-11]]; el razonamiento completo en
 [[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
 
-Lo que **no** depende de Make y queda del lado del cliente: que las claves de producto del
-catálogo de WhatsApp (`ID de contenido` en Commerce Manager) sean exactamente `PRM-016`,
-`PRM-062`, `PRM-056`, `PRM-067`, `INV-102`, `INV-106`, `INV-075`, `INV-084`. Si no coinciden,
-el agente no rompe —pide confirmación al cliente— pero pierde el reconocimiento automático.
+**Probado en producción el mismo día** con tres carritos reales de 3 artículos: el último
+devolvió *"Son 3 piezas, así que te toca 10% de descuento — Total: $807 MXN con envío gratis"*.
+
+Lo único que falta para que quede impecable: las claves del catálogo de WhatsApp son **IDs
+automáticos de Meta**, no las claves `PRM-`/`INV-` del prompt, así que el agente confirma el
+pedido por piezas y total pero tiene que preguntarle al cliente qué modelos eligió. Se cierra
+con una tabla `ID de contenido → modelo` en el prompt, que necesita los 8 IDs de Commerce
+Manager.
 
 ## Pendientes y riesgos
 

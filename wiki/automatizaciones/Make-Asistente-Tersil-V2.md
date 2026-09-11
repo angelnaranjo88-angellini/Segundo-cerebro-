@@ -107,7 +107,9 @@ corrigió la mentira del prompt sobre el seguimiento (decía 23 h, el escenario 
 sola vez).
 
 Se eligió **no** meter un router: el agente decide qué hacer según la ficha, así que el
-escenario sigue teniendo 8 módulos y 5 operaciones por ejecución. El costo no sube.
+escenario sigue teniendo 8 módulos y 5 operaciones por ejecución. El costo no sube. Tampoco
+hicieron falta Iterator ni Text Aggregator, que habrían obligado a duplicar toda la cola del
+escenario en una ruta aparte.
 
 Respaldo del estado anterior: Make guarda historial de versiones del escenario
 (menú `...` → versiones anteriores).
@@ -118,6 +120,10 @@ Respaldo del estado anterior: Make guarda historial de versiones del escenario
   comprobante, los audios ni los botones; y como el módulo 5 sí corre, el reloj de seguimiento
   se reinicia con cualquier mensaje, así que ya no puede pasar que un cliente mande su pedido y
   reciba de vuelta el recordatorio de [[Make-Tersil-Seguimiento-10h]].
+- **Pendiente: los modelos no se nombran.** Las claves del catálogo son IDs automáticos de Meta,
+  así que el agente confirma por piezas y total pero le pide al cliente que le diga qué modelos
+  eligió. Se cierra con una tabla `ID de contenido → modelo` en el prompt, que necesita los 8
+  IDs de Commerce Manager.
 
 ## Prueba real del 2026-09-11 y segundo ajuste
 
@@ -159,11 +165,13 @@ No depende de que Make aplane nada: pide cada posición por su número. Sin func
 que las posiciones vacías se resuelven a vacío y el prompt las ignora. Diez posiciones sobran
 para un catálogo de 8 modelos.
 
-> [!warning] Inferencia sin verificar
-> Que `product_items[2]` devuelva el segundo artículo está sin probar. Si también viene vacío,
-> significa que Make **trunca los datos** en el bundle, no que falle el mapeo — y entonces el
-> único camino que queda es sustituir el disparador por un **Custom Webhook**, que entrega el
-> JSON crudo del Cloud API. Eso obliga a re-apuntar la URL de callback en la app de Meta.
+**✅ Probado y funcionando el 2026-09-11.** Tercer carrito de 3 artículos ($897): el agente
+contestó *"Son 3 piezas, así que te toca 10% de descuento — Total: $807 MXN con envío gratis"*.
+Los índices explícitos leen el carrito completo.
+
+Queda establecido, y es la lección transferible: **Make sí trae el array entero en el bundle;
+lo que no hace es aplanarlo con `[]` cuando el campo no está declarado en la interfaz del
+módulo. Los índices explícitos sí funcionan.** No hizo falta el Custom Webhook.
 
 **❌ Tercer hallazgo: las claves del catálogo son códigos automáticos de Meta.** El pedido trajo
 `36hao5euls`, no `PRM-016`. El agente lo mostró tal cual al cliente, que es feo e inútil. El
