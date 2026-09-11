@@ -12,27 +12,30 @@ actualizado: 2026-09-11
 > **La pregunta**: ¿puede el agente de WhatsApp darse cuenta de que alguien pidió el catálogo
 > —o de que mandó un carrito desde el catálogo nativo de WhatsApp— y responder sobre él?
 
-Corte: **2026-09-11**. Escenario analizado: [[Make-Asistente-Tersil-V2]] (id 9597789).
+Corte: **2026-09-11**. Escenario analizado y **ya modificado**:
+[[Make-Asistente-Tersil-V2]] (id 9597789).
 
 ## Respuesta corta
 
-**Sí se puede, pero hoy es imposible por tres candados independientes, y ninguno está en
-WhatsApp: los tres están en el escenario de Make.**
+**Sí se puede. Había cuatro candados y ninguno estaba en WhatsApp: los cuatro estaban en el
+escenario de Make. El 2026-09-11 se abrieron los dos que bloqueaban la recepción del pedido.**
 
-1. Un **filtro** descarta todo lo que no sea texto plano antes de que el agente se entere.
-2. El **disparador de Make no mapea** los campos del catálogo: no existe `order` ni
-   `referred_product` en su salida.
-3. El **módulo de envío de Make no sabe mandar** el catálogo nativo: solo soporta `list` y
-   `button` como mensajes interactivos.
+| # | Candado | Estado |
+|---|---|---|
+| 1 | Un **filtro** descartaba todo lo que no fuera texto plano antes de que el agente se enterara | ✅ **abierto** |
+| 2 | El **disparador de Make no mapea** `order` ni `referred_product` en su panel | ⚠️ sorteado, falta confirmarlo con un pedido real |
+| 3 | El **módulo de envío de Make no sabe mandar** el catálogo nativo (solo `list` y `button`) | ⛔ sigue cerrado — y resulta que no hace falta |
+| 4 | El prompt **nunca mencionaba el catálogo de WhatsApp** | ✅ **abierto** |
 
-Y un cuarto, de diseño: el prompt del agente **nunca menciona el catálogo de WhatsApp**. Manda
-siempre el catálogo web de bolt.host.
+El candado 3 no hace falta porque **el cliente ya puede abrir el catálogo por su cuenta** desde
+el botón "Catálogo" del perfil de WhatsApp del negocio. Mandarlo como mensaje interactivo es
+conversión extra, no un requisito para vender.
 
 ## Evidencia
 
-### Candado 1 — el filtro "Solo mensajes de texto"
+### Candado 1 — el filtro "Solo mensajes de texto" *(abierto el 2026-09-11)*
 
-El módulo 3 de [[Make-Asistente-Tersil-V2]] lleva este filtro:
+El módulo 3 de [[Make-Asistente-Tersil-V2]] llevaba este filtro:
 
 ```
 {{1.messages[].text.body}}  →  exists
@@ -43,7 +46,11 @@ corre, no se registra al contacto para seguimiento y **el cliente no recibe nada
 no un error.
 
 Los carritos enviados desde el catálogo de WhatsApp llegan con `type: "order"` y **sin**
-`text.body`. Caen en este filtro.
+`text.body`. Caían en este filtro.
+
+Ahora el filtro es `{{1.messages[].id}}` → *exists*, que solo descarta los webhooks de estado
+(`sent`/`delivered`/`read`, que llegan con `statuses[]` y sin `messages[]`). El costo por
+mensaje descartado sigue siendo de 1 operación, igual que antes.
 
 Rastro en las ejecuciones: la corrida normal consume **5 operaciones**; varias corridas
 recientes consumieron **1 operación en ~0.4 s** (2026-09-09 19:13, 23:32 ×2 y 2026-09-07
@@ -94,15 +101,15 @@ sendMessage, registerPhoneNumber, getMedia, getBusinessProfile, enable2SVPhoneNu
 deregisterPhoneNumber). Para mandar el catálogo nativo hay que salir por el módulo **HTTP**
 contra el Graph API.
 
-### Candado 4 — el prompt manda a otro catálogo
+### Candado 4 — el prompt mandaba a otro catálogo *(abierto el 2026-09-11)*
 
-El `systemPrompt` del agente tiene un PASO 2 explícito: cuando alguien pide catálogo, modelos o
-fotos, responder **siempre** con el link de `tersil-baby-catalog-gl2r.bolt.host`, y "NUNCA
-envíes imágenes, fotos ni links de imágenes individuales". El catálogo de WhatsApp no se
-menciona ni una vez.
+El `systemPrompt` tenía un PASO 2 explícito: cuando alguien pide catálogo, modelos o fotos,
+responder **siempre** con el link de `tersil-baby-catalog-gl2r.bolt.host`. El catálogo de
+WhatsApp no se mencionaba ni una vez.
 
-O sea: aun arreglando los candados 1-3, el agente seguiría ignorando el catálogo de WhatsApp
-mientras el prompt no lo mencione.
+Ahora el prompt presenta **dos formas de ver el catálogo** —el botón "Catálogo" del perfil de
+WhatsApp y el link web— y tres pasos nuevos: **PASO 2.5** (pedido llegado del catálogo),
+**PASO 2.6** (consulta sobre un producto referido) y **PASO 2.7** (mensajes que no son texto).
 
 ## Contradicciones detectadas
 
@@ -120,62 +127,50 @@ mientras el prompt no lo mencione.
 > devuelve cero catálogos accesibles. Sin `catalog_id` confirmado, el Nivel 3 de abajo no
 > arranca.
 
-## Qué hacer con esto
+## Lo que se hizo el 2026-09-11
 
-Tres niveles, de menos a más ambición. El 1 rinde casi todo el valor.
+Tres ediciones quirúrgicas sobre el escenario en producción. **Cero módulos nuevos, cero
+operaciones extra por ejecución.** Detalle en
+[[Make-Asistente-Tersil-V2#Cambio del 2026-09-11]].
 
-### Nivel 1 — dejar de callar y avisarle al agente qué tipo de mensaje llegó
+1. **El filtro de entrada dejó de exigir texto.** Pasó de `text.body` existe a
+   `messages[].id` existe. Ahora entra el carrito, la foto del comprobante, la nota de voz, el
+   botón y la ubicación. Solo se descartan los acuses de entrega.
+2. **El Input del agente dejó de ser el texto pelón.** Es una ficha técnica con tipo de mensaje,
+   claves y cantidades del carrito, producto referido, botón tocado y pie de foto. Se resolvió
+   con **rutas de array sin funciones IML**, que es la decisión clave: un campo ausente se
+   resuelve a vacío en vez de reventar la ejecución. Ver
+   [[Agente-Conversacional-de-WhatsApp#Patrón nuevo: ficha técnica como Input del agente]].
+3. **El prompt aprendió a vender por el catálogo de WhatsApp.** PASO 2.5 le dice que un pedido
+   es la señal de compra más fuerte que existe: empareja claves con cantidades, **recalcula el
+   total él mismo con los $299 y el descuento por volumen** (nunca confía en el precio del
+   catálogo, que puede estar viejo), pregunta los colores —que el carrito no manda—, pasa el
+   aviso de privacidad y en el PASO 6 ya no vuelve a preguntar modelos ni cantidades.
 
-Sin token de Meta, sin tocar el catálogo. Media hora de trabajo.
+Se descartó meter un router a propósito: **el ruteo lo hace el modelo, no el escenario.** Así
+el escenario sigue en 8 módulos y 5 operaciones, y el costo no sube.
 
-1. **Cambiar el filtro por un router.** En vez de "solo texto", bifurcar por
-   `{{1.messages[].type}}`:
-   - `text` → el flujo actual.
-   - `order` → responder algo tipo *"¡Ya vi tu pedido del catálogo! Dame un momento y te
-     confirmo el total 🍼"* y mandar el correo de aviso al dueño.
-   - `image` → es casi siempre un comprobante de pago: acusar recibo y pasar a humano.
-   - cualquier otro → acusar recibo genérico.
+De regalo: el correo al dueño ahora imprime el carrito crudo como llegó, lo que lo convierte en
+el auditor del candado 2 sin abrir Make.
 
-   Aunque no leas el contenido del carrito, **se acaba el silencio**, que es la pérdida real.
+## Lo que falta, y no está en Make
 
-2. **Pasarle el tipo de mensaje al agente.** Hoy el Input del agente es solo
-   `{{1.messages[].text.body}}`. Cambiarlo por algo como:
+1. **Confirmar que Make sí entrega el detalle del carrito.** Mandar un pedido de prueba desde
+   el catálogo y abrir el bundle del módulo 1 en el historial. Si `order` viene completo, el
+   agente desglosa el pedido solo; si no, cae en la regla 7 del PASO 2.5 y lo pide por escrito.
+   **El cliente queda atendido en los dos casos** — lo que cambia es cuánta fricción hay.
+2. **Alinear las claves del catálogo de WhatsApp.** El `product_retailer_id` es el *ID de
+   contenido* que se capturó en Commerce Manager. Para que el agente reconozca los modelos solos,
+   tienen que ser exactamente `PRM-016`, `PRM-062`, `PRM-056`, `PRM-067`, `INV-102`, `INV-106`,
+   `INV-075`, `INV-084`. Si no coinciden, el agente no inventa: nombra la clave tal cual y pide
+   confirmación.
+3. **Alinear los precios** del catálogo de WhatsApp a $299. El agente ya está blindado (usa
+   siempre $299), pero el cliente ve el número del catálogo antes de escribir.
+4. **Decidir qué hacer con las 7 pausas de agosto.** Un número en `TERSIL_Pausa_Bot` no recibe
+   respuesta nunca, y hoy nadie levanta las pausas. Es una decisión de negocio —¿cuándo devuelve
+   el humano la conversación al bot?— no un arreglo de escenario, así que se dejó como estaba.
 
-   ```
-   [tipo: {{1.messages[].type}}] {{1.messages[].text.body}}
-   ```
-
-   y añadir al prompt una regla: *"si el tipo no es `text`, el cliente interactuó con el
-   catálogo de WhatsApp; reconócelo y pide que te confirme modelos y cantidades por escrito"*.
-
-3. **Limpiar `TERSIL_Pausa_Bot`.** Hay 7 números pausados desde agosto que nunca se
-   despausaron. Un número en esa lista no recibe respuesta nunca, mandes lo que mandes — y es
-   la primera cosa que confunde una prueba. Ver [[Make-Asistente-Tersil-V2#Problemas conocidos]].
-
-### Nivel 2 — leer de verdad el carrito
-
-Dos caminos, en este orden:
-
-- **(a) Probar la ruta cruda.** Escribir a mano en un campo de Make
-  `{{1.messages[].order.product_items[].product_retailer_id}}`. Make suele arrastrar en el
-  bundle campos que no están en el panel de mapeo.
-  > [!warning] Inferencia sin verificar
-  > No pude comprobarlo desde la API: hace falta mandar un carrito real y mirar el bundle del
-  > disparador en el historial. Si funciona, el Nivel 2 sale gratis.
-
-- **(b) Si (a) falla, cambiar el disparador por un Custom Webhook.** El webhook genérico de Make
-  entrega el JSON completo del Cloud API: `order.product_items[]` con `product_retailer_id`,
-  `quantity`, `item_price` y `currency`, más `context.referred_product`. Costo: hay que
-  re-apuntar la URL de callback en la app de Meta, y el `watchEvents2` actual deja de recibir.
-  **Hacerlo sobre una copia del escenario**, nunca sobre el que está en producción con 838
-  ejecuciones.
-
-Este nivel es el que de verdad paga: un carrito trae SKU y cantidad **estructurados**. Hoy el
-agente tiene que sacar eso de texto libre y calcular el descuento a mano — que es justo donde
-falla la familia entera de agentes de este portafolio
-(ver [[Agente-Conversacional-de-WhatsApp#Fallos típicos]]).
-
-### Nivel 3 — mandar el catálogo nativo desde Make
+### Nivel 3 (opcional) — mandar el catálogo nativo desde Make
 
 Módulo **HTTP** → `POST https://graph.facebook.com/v21.0/{phone_number_id}/messages`, con
 `Authorization: Bearer <token de usuario del sistema>` y cuerpo `type: interactive`. Tres
@@ -201,9 +196,10 @@ variable de entorno del equipo de Make o en una conexión dedicada.
 
 ## Recomendación
 
-Nivel 1 esta semana; Nivel 2(a) en la misma sesión, que es una prueba de cinco minutos. El
-Nivel 3 solo tiene sentido si antes se decide **cuál catálogo es el canónico** — y si la
+El Nivel 3 solo tiene sentido si antes se decide **cuál catálogo es el canónico** — y si la
 respuesta es "el de WhatsApp", entonces bolt.host pasa a ser un espejo, no una segunda verdad.
+Mientras haya tres copias de los precios (WhatsApp, bolt.host y el prompt), cada cambio de
+precio es tres ediciones y una contradicción en potencia.
 
 ## Correlaciones
 

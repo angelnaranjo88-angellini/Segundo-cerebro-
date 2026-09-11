@@ -18,7 +18,7 @@ actualizado: 2026-09-11
 | [[Correlacion-de-Proyectos]] | ¿Qué comparten de verdad mis proyectos? |
 | [[Patrones-Reutilizables]] | ¿Qué ya construí dos veces y debería estandarizar o vender? |
 | [[Riesgos-y-Deuda-Tecnica]] | ¿Dónde se va el dinero y qué se está rompiendo? |
-| [[Catalogo-de-WhatsApp-en-Agentes-de-Make]] | ¿Puede el agente leer y mandar el catálogo de WhatsApp? |
+| [[Catalogo-de-WhatsApp-en-Agentes-de-Make]] | ¿Puede el agente leer y mandar el catálogo de WhatsApp? (resuelto) |
 | [[CLAUDE]] | Las reglas del wiki. Leer antes de escribir. |
 | [[log]] | Cómo creció esto. |
 
@@ -41,7 +41,7 @@ actualizado: 2026-09-11
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
-| [[Tersil-Asistente-de-Ventas]] | Agente que cierra la venta solo y se autopausa; el más confiable | activo |
+| [[Tersil-Asistente-de-Ventas]] | Cierra la venta solo, recibe pedidos del catálogo de WhatsApp y se autopausa | activo |
 
 ## Automatizaciones
 

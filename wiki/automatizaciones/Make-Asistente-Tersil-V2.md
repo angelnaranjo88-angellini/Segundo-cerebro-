@@ -14,7 +14,8 @@ actualizado: 2026-09-11
 > Ocho módulos: recibe el mensaje, contesta con un agente, registra al contacto para
 > seguimiento y —si cerró la venta— avisa al dueño y se apaga para ese número.
 
-Equipo 2904200 (`eu2.make.com`). Creado 2026-07-30, última edición 2026-09-01.
+Equipo 2904200 (`eu2.make.com`). Creado 2026-07-30, última edición **2026-09-11** (ver
+[[#Cambio del 2026-09-11]]).
 
 ## Disparador
 
@@ -25,11 +26,30 @@ Equipo 2904200 (`eu2.make.com`). Creado 2026-07-30, última edición 2026-09-01.
 
 1. `whatsapp-business-cloud · watchEvents2` — entra el mensaje.
 2. `datastore · ExistRecord` sobre `TERSIL_Pausa_Bot` (174953) — ¿el bot está pausado para este
-   número? **Aquí vive el filtro `Solo mensajes de texto`:
-   `{{1.messages[].text.body}}` debe existir.**
+   número? Filtro `Solo mensajes entrantes (ignora acuses de entrega)`:
+   `{{1.messages[].id}}` debe existir. Solo descarta los webhooks de estado
+   (`sent`/`delivered`/`read`), que llegan con `statuses[]` y sin `messages[]`.
 3. `ai-local-agent · RunLocalAIAgent` — el agente. Filtro `Bot activo (no pausado)`
    (`{{3.exist}} ≠ true`). Modelo `large` (gpt-5-mini, reasoning low), memoria por
    `threadId = wa_id`, 30 turnos de historial, conexión de IA `tersil`.
+   El Input del agente **no es el texto pelón**: es una ficha técnica con todos los campos
+   útiles del mensaje, incluidos los del catálogo:
+
+   ```
+   Tipo de mensaje: {{1.messages[].type}}
+   Texto del cliente: {{1.messages[].text.body}}
+   Claves de modelo del pedido: {{1.messages[].order.product_items[].product_retailer_id}}
+   Cantidades (en el mismo orden): {{1.messages[].order.product_items[].quantity}}
+   Precio unitario que muestra el catalogo: {{1.messages[].order.product_items[].item_price}}
+   Nota que escribio el cliente al enviar el pedido: {{1.messages[].order.text}}
+   Producto que el cliente estaba viendo: {{1.messages[].context.referred_product.product_retailer_id}}
+   Boton o lista que toco: ...button_reply.title / list_reply.title / button.text
+   Pie de foto o archivo: ...image.caption / video.caption / document.caption
+   ```
+
+   Los campos que no aplican llegan vacíos y el prompt ordena ignorarlos en silencio. Son rutas
+   de array sin funciones IML: si el campo no viene en el bundle, se resuelve a vacío en vez de
+   romper la ejecución.
 4. `whatsapp-business-cloud · sendMessage` — manda al cliente
    `first(split(2.response; "[FICHA_GENERADA]"))`, o sea todo lo anterior al marcador.
 5. `datastore · AddRecord` sobre `TERSIL_Seguimiento` (182352), `overwrite: true` — reinicia el
@@ -65,22 +85,50 @@ correo. Si se borra el correo, se borró el pedido.
 La ruta feliz consume **5 operaciones**. Las corridas de **1 operación** son mensajes
 bloqueados por el filtro de texto; las de más de 5, ventas cerradas.
 
+## Cambio del 2026-09-11
+
+Se abrió el escenario a los pedidos del catálogo de WhatsApp. **Tres ediciones quirúrgicas, cero
+módulos nuevos, cero operaciones extra por ejecución:**
+
+| Qué | Antes | Ahora |
+|---|---|---|
+| Filtro del módulo 2 | `Solo mensajes de texto` → `text.body` existe | `Solo mensajes entrantes` → `messages[].id` existe |
+| Input del agente | `{{1.messages[].text.body}}` | ficha técnica con tipo, carrito, producto referido, botón y pie de foto |
+| `systemPrompt` | sin nada del catálogo de WhatsApp | + PASO 2.5 (pedido del catálogo), 2.6 (consulta de producto), 2.7 (mensajes no-texto) |
+
+Además: el correo al dueño ahora imprime el carrito crudo tal como llegó (claves, cantidades,
+precio del catálogo) y el tipo del último mensaje, para poder auditar sin abrir Make. Y se
+corrigió la mentira del prompt sobre el seguimiento (decía 23 h, el escenario hace 10 h una
+sola vez).
+
+Se eligió **no** meter un router: el agente decide qué hacer según la ficha, así que el
+escenario sigue teniendo 8 módulos y 5 operaciones por ejecución. El costo no sube.
+
+Respaldo del estado anterior: Make guarda historial de versiones del escenario
+(menú `...` → versiones anteriores).
+
 ## Problemas conocidos
 
-- **El filtro `Solo mensajes de texto` es un agujero de silencio.** Todo lo que no sea texto
-  plano —carritos del catálogo de WhatsApp (`type: order`), fotos de comprobante, audios,
-  stickers, ubicaciones— muere en el módulo 2 sin respuesta y **sin registrarse para
-  seguimiento**. Diagnóstico completo:
-  [[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
-- **Efecto secundario cruel**: como el módulo 5 tampoco corre, un cliente que solo manda un
-  carrito no actualiza su `ultimo_mensaje`. Si su último texto fue hace 11 horas, lo que recibe
-  a cambio es el recordatorio automático de [[Make-Tersil-Seguimiento-10h]] preguntándole si ya
-  vio los modelitos. Es decir: manda su pedido y el sistema le contesta como si no hubiera
-  escrito nada.
+- **Resuelto el 2026-09-11**: el filtro ya no descarta los carritos del catálogo, las fotos de
+  comprobante, los audios ni los botones; y como el módulo 5 sí corre, el reloj de seguimiento
+  se reinicia con cualquier mensaje, así que ya no puede pasar que un cliente mande su pedido y
+  reciba de vuelta el recordatorio de [[Make-Tersil-Seguimiento-10h]].
+
+> [!warning] Inferencia sin verificar
+> Falta comprobar con un carrito real que Make entregue `order.product_items[]` en el bundle:
+> el disparador no lo mapea en su panel, y la lectura depende de que la app arrastre los campos
+> crudos. El prompt cubre las dos salidas (PASO 2.5 regla 7: si las claves llegan vacías, el
+> agente pide modelos y cantidades por escrito), así que el cliente queda atendido en cualquier
+> caso — pero para saber en cuál de los dos escenarios estamos hay que mandar un pedido de
+> prueba y abrir el bundle del módulo 1 en el historial de Make.
+
 - **Pausas permanentes.** `TERSIL_Pausa_Bot` tiene 7 números pausados entre el 2026-08-01 y el
   2026-08-21, ninguno reactivado. No hay proceso ni escenario de despausa: hay que borrar el
   registro a mano. Cualquier prueba hecha con uno de esos números parece un bot roto.
 - **Un solo `maxErrors: 3`** y sin DLQ (`dlq: false`), a diferencia del seguimiento.
+- **Las notas de voz no se transcriben.** El flujo no tiene `getMedia` ni Whisper, así que el
+  agente solo puede pedir al cliente que escriba. Es la mejora pendiente más obvia; el
+  escenario apagado `Integration WhatsApp… json2video` (9668182) ya tenía el `getMedia`.
 - **Datos bancarios en el `systemPrompt`** — ver [[Tersil#Notas operativas]].
 - El nombre del emisor está cableado por id (`604043842799894`) en dos módulos.
 

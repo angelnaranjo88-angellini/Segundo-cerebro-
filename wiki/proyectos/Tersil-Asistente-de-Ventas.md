@@ -29,7 +29,8 @@ Activo. Tercera generación:
 |---|---|---|---|
 | v1 | `Asistente Tersil` (9405390) | mandaba fotos de producto vía imgbb + extracción con OpenAI | apagado, 0 ejecuciones |
 | v1.5 | `Asistente Tersil V2 - Catalogo PDF` (9628524) | intentó mandar el catálogo como documento PDF | apagado, 0 ejecuciones, nunca corrió |
-| **v2** | [[Make-Asistente-Tersil-V2]] (9597789) | dejó de mandar imágenes; todo apunta a un catálogo web | **activo, 838 ejecuciones** |
+| v2 | [[Make-Asistente-Tersil-V2]] (9597789) | dejó de mandar imágenes; todo apunta a un catálogo web | reemplazada |
+| **v2.1** | [[Make-Asistente-Tersil-V2]] (9597789) | **abre el escenario a los pedidos del catálogo de WhatsApp y a todo mensaje que no sea texto** | **activo, 838 ejecuciones al 2026-09-11** |
 
 La decisión de fondo de la v2: **sacar las imágenes del flujo**. La v1 subía fotos a imgbb y las
 mandaba una por una; la v2 las reemplazó por un link único a un catálogo web. Eso bajó el
@@ -71,19 +72,31 @@ frente a 7.1%-10.1% de los otros tres. Y el más barato por ejecución: 3.6 oper
 - **Aviso de privacidad obligatorio** antes de pedir cualquier dato personal (PASO 5). Único
   en el portafolio.
 
+## Resuelto el 2026-09-11
+
+El cliente ya puede **armar su carrito en el catálogo de WhatsApp y enviar su pedido por el
+chat**, y el asistente lo recibe, lo confirma con nombres de modelo, recalcula el total con el
+descuento por volumen, pide los colores (que el catálogo no manda), pasa el aviso de privacidad
+y cierra sin volver a preguntar lo que ya sabe. También dejó de ser ciego a fotos de
+comprobante, notas de voz, ubicaciones y botones. Detalle de la edición en
+[[Make-Asistente-Tersil-V2#Cambio del 2026-09-11]]; el razonamiento completo en
+[[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
+
+Lo que **no** depende de Make y queda del lado del cliente: que las claves de producto del
+catálogo de WhatsApp (`ID de contenido` en Commerce Manager) sean exactamente `PRM-016`,
+`PRM-062`, `PRM-056`, `PRM-067`, `INV-102`, `INV-106`, `INV-075`, `INV-084`. Si no coinciden,
+el agente no rompe —pide confirmación al cliente— pero pierde el reconocimiento automático.
+
 ## Pendientes y riesgos
 
-1. **No lee el catálogo de WhatsApp.** El cliente puede mandar un carrito desde el catálogo
-   nativo y el agente no se entera: el filtro de entrada lo descarta y nadie contesta.
-   Diagnóstico completo y plan de arreglo en
-   [[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
-2. **Ciego a todo lo que no es texto.** Mismo filtro: una foto de comprobante de pago tampoco
-   llega. El cliente paga, manda la captura y recibe silencio.
-3. **Pausas que nunca se levantan.** 7 números pausados desde agosto de 2026, ninguno
+1. **Pausas que nunca se levantan.** 7 números pausados desde agosto de 2026, ninguno
    reactivado. Cada uno es un cliente al que el bot ya no le habla.
-4. **Tres copias del catálogo**: WhatsApp, bolt.host y la lista de 8 modelos dentro del prompt.
-5. **Datos bancarios en el prompt.** Ver [[Tersil#Notas operativas]].
-6. **El seguimiento cuesta 2.5 veces más que el agente** (~9 511 créditos contra ~3 812). Ver
+2. **Tres copias del catálogo**: WhatsApp, bolt.host y la lista de 8 modelos dentro del prompt.
+   Ahora importa más que antes: si los precios divergen, el cliente ve un número en el catálogo
+   de WhatsApp y otro en la respuesta del agente. El prompt manda usar $299 siempre.
+3. **Datos bancarios en el prompt.** Ver [[Tersil#Notas operativas]].
+4. **Las notas de voz no se transcriben**: el agente solo puede pedir que le escriban.
+5. **El seguimiento cuesta 2.5 veces más que el agente** (~9 511 créditos contra ~3 812). Ver
    [[Make-Tersil-Seguimiento-10h]].
 
 ## Correlaciones

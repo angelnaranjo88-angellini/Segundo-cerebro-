@@ -62,13 +62,10 @@ Cero errores en 478 corridas, coherente con el 99.9% de fiabilidad del patrón.
   Un filtro más estrecho o un intervalo de 1 h en vez de 30 min lo bajaría a la mitad sin
   cambiar la experiencia del cliente.
 
-> [!warning] Contradicción: ¿10 h, 23 h o 30 min?
-> El nombre del escenario dice **10 h**, el filtro implementa **10 h** — pero el
-> `systemPrompt` de [[Make-Asistente-Tersil-V2]] le dice al agente que "el sistema envía
-> automáticamente los mensajes de seguimiento **cada 23 horas**". El agente opera con una
-> creencia falsa sobre su propio sistema, y si un cliente pregunta, contestará mal. Además el
-> prompt dice "mensajes" en plural cuando el escenario manda exactamente uno.
-> Arreglo: corregir el prompt, que es lo barato.
+~~Contradicción 10 h / 23 h~~ — **resuelta el 2026-09-11.** El `systemPrompt` de
+[[Make-Asistente-Tersil-V2]] decía que "el sistema envía automáticamente los mensajes de
+seguimiento **cada 23 horas**", cuando el escenario manda **uno solo, a las 10 h**. Ya dice lo
+que el escenario hace de verdad.
 
 - El registro no se borra al enviar el recordatorio, solo se marca. Se borra cuando el agente
   cierra la venta (módulo 8 de [[Make-Asistente-Tersil-V2]]). Un contacto que nunca compra se

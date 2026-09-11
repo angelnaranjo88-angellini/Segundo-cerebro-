@@ -10,6 +10,41 @@ actualizado: 2026-09-11
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-11] decision | El asistente de Tersil ya recibe pedidos del catálogo de WhatsApp
+
+Cambio aplicado **en producción** sobre [[Make-Asistente-Tersil-V2]] (838 ejecuciones, activo).
+Tres ediciones quirúrgicas, **cero módulos nuevos y cero operaciones extra**:
+
+1. El filtro de entrada pasó de `text.body` existe a `messages[].id` existe. Entra el carrito
+   del catálogo (`type: order`), la foto del comprobante, la nota de voz, el botón y la
+   ubicación; solo se descartan los acuses de entrega.
+2. El Input del agente pasó del texto pelón a una **ficha técnica** con tipo de mensaje, claves
+   y cantidades del carrito, producto referido, botón tocado y pie de foto.
+3. El `systemPrompt` ganó PASO 2.5 (pedido del catálogo), 2.6 (consulta de producto referido) y
+   2.7 (mensajes no-texto), más la corrección de la mentira del seguimiento (decía 23 h, el
+   escenario hace 10 h una sola vez).
+
+**Decisión de diseño: no meter un router.** El ruteo por tipo de mensaje lo hace el modelo a
+partir de la ficha, no el escenario. Así el escenario sigue en 8 módulos y 5 operaciones por
+ejecución y el costo no sube. Nace de ahí un patrón reutilizable en los otros tres agentes:
+[[Agente-Conversacional-de-WhatsApp#Patrón nuevo: ficha técnica como Input del agente]].
+
+**Decisión técnica: rutas de array, nunca funciones IML.** `{{1.messages[].order.product_items[].product_retailer_id}}`
+se resuelve a vacío si el campo no viene; un `map()` o un `if()` sobre `undefined` reventaría la
+ejecución. El prompt cubre las dos salidas, así que el cliente queda atendido tanto si Make
+entrega el detalle del carrito como si no.
+
+Lo que **no** se tocó, a propósito: las 7 pausas de agosto en `TERSIL_Pausa_Bot`. Cuándo
+devuelve el humano la conversación al bot es una decisión de negocio, no un arreglo de
+escenario.
+
+Pendiente del lado de Meta, no de Make: confirmar con un pedido de prueba que el bundle traiga
+`order.product_items[]`, y que las claves del catálogo de WhatsApp sean las mismas del prompt
+(`PRM-016`…`INV-084`). Detalle en [[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
+
+Actualizó: [[Make-Asistente-Tersil-V2]], [[Tersil-Asistente-de-Ventas]],
+[[Make-Tersil-Seguimiento-10h]], [[Agente-Conversacional-de-WhatsApp]] y la síntesis.
+
 ## [2026-09-11] sintesis | El catálogo de WhatsApp en agentes de Make
 
 → [[Catalogo-de-WhatsApp-en-Agentes-de-Make]]. Pregunta del dueño: ¿puede el asistente de

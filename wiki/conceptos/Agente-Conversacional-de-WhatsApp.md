@@ -77,6 +77,36 @@ Segundo fallo típico, invisible en las métricas porque no genera error: **el f
 que descarta lo que no es texto**. El escenario termina "con éxito" en una operación y el
 cliente no recibe nada. Ver [[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
 
+## Patrón nuevo: ficha técnica como Input del agente
+
+Nacido al arreglar [[Make-Asistente-Tersil-V2]] el 2026-09-11 y **aplicable a los otros tres
+agentes tal cual**.
+
+En vez de filtrar por `text.body` y pasarle al agente el texto pelón, se filtra solo por
+`{{1.messages[].id}}` —que descarta los acuses de entrega y nada más— y el Input se convierte
+en una ficha con todos los campos útiles del mensaje:
+
+```
+Tipo de mensaje: {{1.messages[].type}}
+Texto del cliente: {{1.messages[].text.body}}
+Claves de modelo del pedido: {{1.messages[].order.product_items[].product_retailer_id}}
+Cantidades (en el mismo orden): {{1.messages[].order.product_items[].quantity}}
+Producto que estaba viendo: {{1.messages[].context.referred_product.product_retailer_id}}
+Boton o lista que toco: {{1.messages[].interactive.button_reply.title}}...
+```
+
+Tres razones por las que funciona:
+
+1. **El ruteo lo hace el modelo, no el escenario.** Cero módulos nuevos, cero routers, cero
+   operaciones extra. Sigue costando 5 operaciones por ejecución.
+2. **No puede romper.** Son rutas de array sin funciones IML: un campo ausente se resuelve a
+   vacío, no a error. Nada de `map()` ni `if()`, que sí revientan sobre un `undefined`.
+3. **Degrada con gracia.** Si Make no entrega el detalle del carrito, el agente igual sabe que
+   llegó un pedido y lo pide por escrito. El cliente queda atendido en los dos casos.
+
+El precio a pagar es una regla dura en el prompt: la ficha es interna, nunca se menciona, y los
+campos vacíos se ignoran en silencio.
+
 ## Correlaciones
 
 [[Seguimiento-por-Sondeo]] es su complemento obligatorio: el agente siembra, el sondeo cosecha.
