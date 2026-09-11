@@ -10,6 +10,26 @@ actualizado: 2026-09-11
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-09-11] lint | Segunda prueba: Make no aplana `order.product_items` de ninguna forma
+
+Se repitió el carrito de 3 artículos contra [[Make-Asistente-Tersil-V2]]. La "lista A"
+(`1.messages[1].order.product_items[]`) **también trajo un solo artículo**, igual que la B.
+
+Descartada la hipótesis del número de niveles de `[]`. La explicación que queda: como
+`order` **no está declarado en la interfaz del disparador**, el `[]` se resuelve contra el
+esquema conocido y Make devuelve el primer elemento en vez de la lista.
+
+Tercer intento en producción: **índices explícitos**, diez líneas fijas `Art 1`…`Art 10` con
+`product_items[1]`, `[2]`, `[3]`… No depende de que Make aplane nada y no usa funciones IML, así
+que las posiciones vacías se resuelven a vacío sin romper los mensajes de texto.
+
+Sí funcionó lo otro: el agente **ya no le enseña al cliente la clave que no reconoce**
+(`36hao5euls`) y confirma por piezas y total. La regla del CASO A / CASO B quedó bien.
+
+Si `product_items[2]` también viene vacío, entonces Make trunca los datos en el bundle y el
+único camino es sustituir el disparador por un **Custom Webhook**, con el costo de re-apuntar
+la URL de callback en la app de Meta.
+
 ## [2026-09-11] lint | Prueba real del pedido por catálogo: un acierto y un bug
 
 Carrito de prueba de **3 artículos ($897)** contra [[Make-Asistente-Tersil-V2]].

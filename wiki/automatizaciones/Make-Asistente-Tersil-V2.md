@@ -139,11 +139,31 @@ confirmar sin otra prueba, la ficha manda las dos rutas en paralelo, rotuladas *
 (`messages[1]`) y **lista B** (`messages[]`), y el prompt ordena usar **la que traiga más
 elementos**. Así una sola prueba resuelve cuál sirve; después se borra la perdedora.
 
+**Segunda prueba (3 artículos otra vez): la lista A también trajo uno solo.** Así que el
+problema no es el número de niveles de `[]`: **Make no aplana `order.product_items` en
+ninguna forma**, ni con `messages[]` ni indexando el mensaje. Es coherente con que el campo no
+esté declarado en la interfaz del disparador: el `[]` se resuelve contra el esquema conocido, y
+`product_items` no lo es, así que Make lo trata como un valor suelto y devuelve el primero.
+
+**Tercer intento, el que está en producción: índices explícitos.** La ficha enumera diez líneas
+fijas, `Art 1` a `Art 10`:
+
+```
+Art 1: clave={{1.messages[1].order.product_items[1].product_retailer_id}} cant={{...[1].quantity}}
+Art 2: clave={{1.messages[1].order.product_items[2].product_retailer_id}} cant={{...[2].quantity}}
+...
+Art 10: ...
+```
+
+No depende de que Make aplane nada: pide cada posición por su número. Sin funciones IML, así
+que las posiciones vacías se resuelven a vacío y el prompt las ignora. Diez posiciones sobran
+para un catálogo de 8 modelos.
+
 > [!warning] Inferencia sin verificar
-> Que `1.messages[1].order.product_items[]` aplane los tres artículos es lo esperable según el
-> comportamiento documentado de Make, pero **no está probado**. Si la lista A también trae uno
-> solo, el camino que queda es Iterator + Text Aggregator sobre `order.product_items` en una
-> ruta dedicada a `type = order`.
+> Que `product_items[2]` devuelva el segundo artículo está sin probar. Si también viene vacío,
+> significa que Make **trunca los datos** en el bundle, no que falle el mapeo — y entonces el
+> único camino que queda es sustituir el disparador por un **Custom Webhook**, que entrega el
+> JSON crudo del Cloud API. Eso obliga a re-apuntar la URL de callback en la app de Meta.
 
 **❌ Tercer hallazgo: las claves del catálogo son códigos automáticos de Meta.** El pedido trajo
 `36hao5euls`, no `PRM-016`. El agente lo mostró tal cual al cliente, que es feo e inútil. El
