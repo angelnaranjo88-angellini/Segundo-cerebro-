@@ -2,13 +2,67 @@
 titulo: Bitácora
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-09-11
 ---
 
 # Bitácora
 
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
+
+## [2026-09-11] sintesis | El catálogo de WhatsApp en agentes de Make
+
+→ [[Catalogo-de-WhatsApp-en-Agentes-de-Make]]. Pregunta del dueño: ¿puede el asistente de
+Tersil darse cuenta de que alguien pidió el catálogo y contestarle sobre el catálogo de
+WhatsApp?
+
+Respuesta: sí se puede, pero hoy lo bloquean **cuatro candados y ninguno está en WhatsApp**.
+
+1. El filtro `Solo mensajes de texto` del módulo 2 de [[Make-Asistente-Tersil-V2]] descarta
+   todo lo que no traiga `text.body` — y un carrito del catálogo llega como `type: order`, sin
+   `text.body`. El escenario termina "con éxito" en 1 operación y el cliente no recibe nada.
+2. El disparador `watchEvents2` de Make **no mapea** `order.product_items[]` ni
+   `context.referred_product` (verificado contra el RPC `interfaceWebhook` de la app). De ahí
+   viene el síntoma exacto: cuando alguien consulta un producto desde el catálogo, el agente
+   recibe la pregunta sin saber de qué producto habla.
+3. El módulo `sendMessage` de Make solo soporta `list` y `button` como interactivos: **no puede
+   enviar** `catalog_message`, `product` ni `product_list`. Y la app no tiene módulo
+   "Make an API Call", así que el catálogo nativo solo sale por el módulo HTTP.
+4. El `systemPrompt` nunca menciona el catálogo de WhatsApp: manda siempre al catálogo web de
+   bolt.host.
+
+Plan en tres niveles en la página. El Nivel 1 —router por `{{1.messages[].type}}` y pasarle el
+tipo de mensaje al agente— rinde casi todo el valor en media hora y sin token de Meta.
+
+Hallazgo lateral: como el registro de seguimiento tampoco se escribe cuando el filtro bloquea,
+un cliente que manda su carrito recibe a las 10 horas el recordatorio automático preguntándole
+si ya vio los modelitos. Manda su pedido y el sistema le contesta como si no hubiera escrito.
+
+## [2026-09-11] ingesta | Cuenta de Make eu2 — todo Tersil
+
+→ [[Fuente-Cuenta-Make-EU2]]. **El inventario del wiki estaba incompleto.** Existe una segunda
+cuenta de Make (organización 5601227, equipo 2904200, `eu2.make.com`) que
+[[Fuente-Inventario-Make]] no cubría, con un cliente activo y 838 ejecuciones que no aparecía
+en ninguna página: [[Tersil]], tienda de ropa de bebé que vende entera por WhatsApp.
+
+Creadas [[Tersil]], [[Tersil-Asistente-de-Ventas]], [[Make-Asistente-Tersil-V2]] y
+[[Make-Tersil-Seguimiento-10h]] con blueprints completos, no solo con la lista de módulos.
+
+Corrección de un hallazgo del wiki: [[Agente-Conversacional-de-WhatsApp]] afirmaba que
+**"la fragilidad está en la capa de IA"**. Tersil lo desmiente — usa un modelo en cada
+ejecución y falla **1.3%**, frente al 7.1%-10.1% de los otros tres. La variable real es
+`transformTextToStructuredData`: los frágiles encadenan entre una y cuatro extracciones, el
+confiable no usa ninguna. Enunciado nuevo: **la fragilidad está en la extracción estructurada,
+no en la IA.** [[Riesgos-y-Deuda-Tecnica]] sigue calculando con el enunciado viejo.
+
+Segundo hallazgo de costo: [[Make-Tersil-Seguimiento-10h]] gastó ~9 511 créditos en 11 días,
+**2.5 veces lo que su propio agente en 43**, por ~20 operaciones por corrida. Antes de
+optimizar un agente, mira su sondeo. Actualizó [[Seguimiento-por-Sondeo]], que además gana dos
+variantes que deberían volverse estándar: ventana superior de 24 h y reintentos con `Break`.
+
+Pendiente abierto: no hay inventario de **cuentas** de Make. Con dos descubiertas, el supuesto
+de "7 escenarios activos en el portafolio" ya no se sostiene, y los porcentajes de
+[[Riesgos-y-Deuda-Tecnica]] se calcularon sin Tersil.
 
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 

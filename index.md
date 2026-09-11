@@ -2,13 +2,14 @@
 titulo: Índice
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-09-11
 ---
 
 # Índice
 
 > Catálogo de todas las páginas del wiki. Se actualiza en cada ingesta.
-> Corte de datos del portafolio: **2026-09-05**.
+> Corte de datos: **2026-09-05** para el equipo 1436402, **2026-09-11** para Tersil
+> ([[Fuente-Cuenta-Make-EU2]]).
 
 ## Empezar aquí
 
@@ -17,6 +18,7 @@ actualizado: 2026-09-05
 | [[Correlacion-de-Proyectos]] | ¿Qué comparten de verdad mis proyectos? |
 | [[Patrones-Reutilizables]] | ¿Qué ya construí dos veces y debería estandarizar o vender? |
 | [[Riesgos-y-Deuda-Tecnica]] | ¿Dónde se va el dinero y qué se está rompiendo? |
+| [[Catalogo-de-WhatsApp-en-Agentes-de-Make]] | ¿Puede el agente leer y mandar el catálogo de WhatsApp? |
 | [[CLAUDE]] | Las reglas del wiki. Leer antes de escribir. |
 | [[log]] | Cómo creció esto. |
 
@@ -27,6 +29,7 @@ actualizado: 2026-09-05
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
 | [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
+| [[Tersil]] | Ropa de bebé 0-3 meses; vende entera por WhatsApp, en otra cuenta de Make | activo |
 
 ## Proyectos
 
@@ -38,6 +41,7 @@ actualizado: 2026-09-05
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
+| [[Tersil-Asistente-de-Ventas]] | Agente que cierra la venta solo y se autopausa; el más confiable | activo |
 
 ## Automatizaciones
 
@@ -50,7 +54,12 @@ actualizado: 2026-09-05
 | [[Make-Lefranm-Seguimiento-Citas]] | 5747451 | 0% | ~1 695 |
 | [[Make-CUT-Seguimiento-Prospectos]] | 6055110 | 0.65% | ~595 |
 | [[Make-CUT-Creacion-de-Contenido-Sheets]] | 6077792 | **46.2%** | ~63 |
+| [[Make-Asistente-Tersil-V2]] | 9597789 | **1.3%** | ~3 812 |
+| [[Make-Tersil-Seguimiento-10h]] | 9738949 | 0% | ~9 511 |
 | [[Escenarios-Inactivos]] | — | — | los 15 apagados |
+
+Las dos últimas filas son de la otra cuenta de Make y tienen corte 2026-09-11; el resto,
+2026-09-05.
 
 ## Conceptos
 
@@ -71,6 +80,7 @@ actualizado: 2026-09-05
 | [[Fuente-Inventario-Make]] | API de Make, 22 escenarios | 2026-09-05 |
 | [[Fuente-Catalogo-Lefranm]] | PDF en Drive, ~52 SKUs | 2026-09-05 |
 | [[Fuente-Hoja-CUT-Fotos]] | Hoja de Google, cola de publicación | 2026-09-05 |
+| [[Fuente-Cuenta-Make-EU2]] | API de Make, segunda cuenta (org 5601227) | 2026-09-11 |
 
 ## Consultas en vivo
 

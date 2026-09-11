@@ -3,13 +3,13 @@ titulo: Agente conversacional de WhatsApp
 tipo: concepto
 estado: activo
 tags: [patron, whatsapp, agente-ia, make]
-actualizado: 2026-09-05
+actualizado: 2026-09-11
 ---
 
 # Agente conversacional de WhatsApp
 
-> El patrón central del portafolio. Lo has implementado **tres veces en producción** y otras
-> cuatro en prototipos abandonados.
+> El patrón central del portafolio. Lo has implementado **cuatro veces en producción** y otras
+> seis en prototipos abandonados.
 
 ## El patrón
 
@@ -35,9 +35,14 @@ de 2025-2026. Menos módulos, menos puntos de fallo, decisión centralizada.
 | [[Make-Lefranm-Citas]] | 20 | 6.9 | 7.6% | El más completo |
 | [[Make-Lefranm-Cosmeticos-Ventas]] | 22 | 8.4 | 10.1% | El más largo y frágil |
 | [[Make-Asistente-Chavarria]] | 15 | 5.0 | 7.1% | El más eficiente |
+| [[Make-Asistente-Tersil-V2]] | 8 | 3.6 | **1.3%** | El más simple y el más confiable |
+
+Los tres primeros están en el equipo 1436402; Tersil vive en otra cuenta, ver
+[[Fuente-Cuenta-Make-EU2]]. Cortes: 2026-09-05 los tres primeros, 2026-09-11 Tersil.
 
 Prototipos apagados que lo intentaron: `Agendamiento` (3678657), `air table` (3620443),
-`Integration WhatsApp Business Cloud` (4535198). Ver [[Escenarios-Inactivos]].
+`Integration WhatsApp Business Cloud` (4535198), `Asistente Tersil` v1 (9405390),
+`Asistente Tersil V2 - Catalogo PDF` (9628524). Ver [[Escenarios-Inactivos]].
 
 ## Variantes y cuándo elegir cada una
 
@@ -45,16 +50,38 @@ Prototipos apagados que lo intentaron: `Agendamiento` (3678657), `air table` (36
   flujo pide varios datos en turnos distintos (fecha, hora, servicio).
 - **Sin memoria**: [[Make-Asistente-Chavarria]]. Válido si cada mensaje se resuelve solo, pero
   hoy es una limitación, no una decisión.
-- **Una extracción vs. cuatro**: Chavarría usa una; Lefranm-Ventas usa cuatro y tiene 40% más
-  error relativo. La correlación es sugerente, no probada.
+- **Una extracción vs. cuatro vs. ninguna**: Chavarría usa una; Lefranm-Ventas usa cuatro y
+  tiene 40% más error relativo; [[Make-Asistente-Tersil-V2]] no usa ninguna y falla 1.3%. Con
+  tres puntos la correlación ya no es sugerente: es la variable que manda.
+- **Marcador en la respuesta en vez de extracción**: Tersil consigue dos destinos (cliente y
+  dueño) de una sola llamada al modelo pidiéndole que escriba `[FICHA_GENERADA]` y cortando con
+  `split()`. Es la alternativa barata a `transformTextToStructuredData` cuando lo único que
+  necesitas es partir la respuesta, no estructurarla.
 
 ## Fallos típicos
 
-Los tres agentes fallan entre 7% y 10% de las veces, mientras que los tres sondeos sin IA del
-mismo entorno fallan entre 0% y 0.65%. **La fragilidad está en la capa de IA, no en Make ni en
-WhatsApp.** Ese es el hallazgo más accionable del wiki. Ver [[Riesgos-y-Deuda-Tecnica]].
+Tres de los cuatro agentes fallan entre 7% y 10% de las veces, mientras que los sondeos sin IA
+del mismo entorno fallan entre 0% y 0.65%.
+
+> [!warning] Hallazgo corregido el 2026-09-11
+> Esta página afirmaba que **"la fragilidad está en la capa de IA"**. La ingesta de
+> [[Fuente-Cuenta-Make-EU2]] la desmiente: [[Make-Asistente-Tersil-V2]] usa un modelo en cada
+> ejecución y falla **1.3%**. Lo que separa al 1.3% del 10% no es la presencia de IA, es
+> `transformTextToStructuredData`: los tres agentes frágiles encadenan entre una y cuatro
+> extracciones estructuradas; el confiable no usa ninguna.
+> Enunciado nuevo: **la fragilidad está en la extracción estructurada, no en la IA.**
+> [[Riesgos-y-Deuda-Tecnica]] calcula sus porcentajes con el enunciado viejo y hay que
+> recalcularlos.
+
+Segundo fallo típico, invisible en las métricas porque no genera error: **el filtro de entrada
+que descarta lo que no es texto**. El escenario termina "con éxito" en una operación y el
+cliente no recibe nada. Ver [[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
 
 ## Correlaciones
 
 [[Seguimiento-por-Sondeo]] es su complemento obligatorio: el agente siembra, el sondeo cosecha.
 [[Correlacion-de-Proyectos]].
+
+Los cuatro comparten además un límite de plataforma: ninguno puede leer ni enviar el catálogo
+nativo de WhatsApp, porque los módulos de Make no lo mapean. Ver
+[[Catalogo-de-WhatsApp-en-Agentes-de-Make]].
