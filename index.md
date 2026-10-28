@@ -38,7 +38,7 @@ actualizado: 2026-10-28
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
-| [[GG-Barbers-Lanzamiento-Redes]] | Kit v0.2 en revisión: logo en vector + 10 propuestas; luego FB/IG y 6 posts | activo |
+| [[GG-Barbers-Lanzamiento-Redes]] | Kit v0.3: V02 y V08 elegidos, ajustes del cliente aplicados; luego FB/IG y 6 posts | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
 
 ## Automatizaciones

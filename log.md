@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-28] decision | G&G Barber’s: primera revisión del cliente (kit v0.3)
+
+El cliente eligió V02 y V08. Se redujo el & en el logo principal y el horizontal, Essentials llevó
+el caramelo clásico y una línea dorada, y se agregaron tres frentes de tarjeta con dos íconos
+(caramelo, máquina, peine) y un boceto de toldo. Detalle en [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-10-28] decision | G&G Barber’s: nombre, color por submarca y kit v0.2
 
 Respuestas del humano: el nombre es **G&G Barber’s** con apóstrofo; el logo se hizo con IA y no hay

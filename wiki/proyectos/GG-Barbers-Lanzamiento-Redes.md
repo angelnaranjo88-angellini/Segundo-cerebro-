@@ -49,6 +49,23 @@ claude.ai, "Kit de marca G&G Barbers"; mismo enlace que la v0.1). Incluye:
 Entregables locales de la sesión: paquete de 18 logos (SVG, PNG, PNG transparente) y hoja de
 propuestas en JPG para WhatsApp. Carpeta en Canva creada: "G&G Barber's · Kit de marca".
 
+### Revisión 1 del cliente → kit v0.3 (2026-10-28)
+
+Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambios aplicados:
+
+- **& reducido al 64%** de la altura de las G en todo el logo principal de Barber’s (V02, V03,
+  V06, tarjetas) y en el horizontal V05, para que resalten las G. Essentials conserva su & original.
+- **Essentials**: caramelo de barbería clásico (esfera, tapa, espiral y base, como el logo
+  original) en lugar del poste simplificado; **línea izquierda dorada `#C2A15E`** y derecha cromo.
+- **Tarjeta de presentación**: cuatro frentes para elegir: A tijeras, B tijeras y caramelo,
+  C tijeras y máquina, D tijeras y peine.
+- **Toldo**: el cliente usará el logo horizontal (V05) para el toldo; se agregó boceto.
+
+> [!warning] Inferencia sin verificar
+> El cliente pidió el caramelo "así", pero no llegó imagen de referencia. Se interpretó como el
+> caramelo del logo original de Essentials. También falta confirmar qué línea va dorada
+> (se puso la izquierda).
+
 > [!warning] Subida a Canva bloqueada
 > La red del entorno en la nube no permite subir archivos a canva.com (proxy 403, 2026-10-28).
 > Los logos se suben a mano a la carpeta, o se permite el dominio en la configuración de red.
@@ -79,7 +96,9 @@ propuestas en JPG para WhatsApp. Carpeta en Canva creada: "G&G Barber's · Kit d
 
 ## Pendientes y riesgos
 
-- Respuesta del cliente a la v0.2: elegir logo principal y secundario.
+- Confirmar caramelo de Essentials y lado de la línea dorada.
+- Elegir frente de tarjeta (A–D).
+- Elegir logo secundario de las propuestas P01–P10.
 - **En pausa hasta que el humano los dé**: fecha de inauguración, dirección, horario, WhatsApp.
 - Qué incluye la barba premium frente a la tradicional; ¿paquete corte + barba?
 - Usuario de Instagram disponible (no admite "&" ni apóstrofo).
