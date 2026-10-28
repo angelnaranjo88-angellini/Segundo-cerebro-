@@ -54,7 +54,7 @@ propuestas en JPG para WhatsApp. Carpeta en Canva creada: "G&G Barber's · Kit d
 Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambios aplicados:
 
 - **& reducido al 64%** de la altura de las G en todo el logo principal de Barber’s (V02, V03,
-  V06, tarjetas) y en el horizontal V05, para que resalten las G. Essentials conserva su & original.
+  V06, tarjetas) y en el horizontal V05, para que resalten las G. Essentials también, desde el 2026-10-28 (V08 y V09).
 - **Essentials**: caramelo de barbería clásico (esfera, tapa, espiral y base, como el logo
   original) en lugar del poste simplificado; **línea izquierda dorada `#C2A15E`** y derecha cromo.
 - **Tarjeta de presentación**: cuatro frentes para elegir: A tijeras, B tijeras y caramelo,
