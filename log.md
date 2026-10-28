@@ -10,6 +10,19 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-28] decision | G&G Barber’s: nombre, color por submarca y kit v0.2
+
+Respuestas del humano: el nombre es **G&G Barber’s** con apóstrofo; el logo se hizo con IA y no hay
+vector; cada submarca conserva su plata; Essentials vive en las mismas redes; fecha, dirección y
+horario quedan pendientes. Canva Pro ya está pagado.
+
+Logo redibujado en SVG desde los contornos de Cinzel. Kit v0.2 publicado en el mismo enlace, con
+9 versiones de uso, 10 propuestas y un formulario de revisión para el cliente. Detalle en
+[[GG-Barbers-Lanzamiento-Redes]].
+
+Bloqueo: el entorno en la nube no puede subir archivos a canva.com (proxy 403). Se creó la carpeta
+en Canva; los archivos se suben a mano.
+
 ## [2026-10-28] ingesta | G&G Barbers: logos, precios y kit de marca v0.1
 
 Cliente nuevo: [[GG-Barbers]], barbería de un amigo por inaugurar. Ingeridas tres imágenes

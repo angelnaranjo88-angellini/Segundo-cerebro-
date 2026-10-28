@@ -26,7 +26,7 @@ actualizado: 2026-10-28
 |---|---|---|
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
 | [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
-| [[GG-Barbers]] | Barbería por inaugurar; marca madre G&G con submarca Essentials | activo |
+| [[GG-Barbers]] | G&G Barber’s, barbería por inaugurar; submarca Essentials en las mismas redes | activo |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
 
 ## Proyectos
@@ -38,7 +38,7 @@ actualizado: 2026-10-28
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
-| [[GG-Barbers-Lanzamiento-Redes]] | Kit de marca, alta de FB/IG y 6 posts de inauguración | activo |
+| [[GG-Barbers-Lanzamiento-Redes]] | Kit v0.2 en revisión: logo en vector + 10 propuestas; luego FB/IG y 6 posts | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
 
 ## Automatizaciones

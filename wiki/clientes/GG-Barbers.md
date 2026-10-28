@@ -1,12 +1,12 @@
 ---
-titulo: G&G Barbers
+titulo: G&G Barber’s
 tipo: cliente
 estado: activo
 tags: [barberia, marca, redes-sociales]
 actualizado: 2026-10-28
 ---
 
-# G&G Barbers
+# G&G Barber’s
 
 > Barbería de un amigo, por inaugurar. La marca madre es **G&G**, con dos submarcas:
 > **G&G Barbers** (la barbería) y **G&G Essentials** (la línea de productos).
@@ -27,13 +27,13 @@ actualizado: 2026-10-28
 | Depilación nariz | $100 |
 | Depilación oídos | $100 |
 
-> [!warning] Nombre sin cerrar
-> El cliente dice "G&G BARBER'S", pero el logo dice "BARBERS" sin apóstrofo. Se recomienda
-> **G&G Barbers**. Pendiente de confirmar con el cliente. Ver [[Fuente-Logos-y-Precios-GG]].
+**Nombre decidido (2026-10-28): G&G Barber’s**, con apóstrofo tipográfico. El logo original decía
+"BARBERS"; el redibujo en vector ya usa el nombre correcto. Ver [[Fuente-Logos-y-Precios-GG]].
 
 ## Canales
 
-Por crear: Facebook, Instagram y Business Suite. Falta definir dirección, horario y WhatsApp.
+Por crear: Facebook, Instagram y Business Suite. **G&G Essentials vive en las mismas redes** que la
+barbería (decidido 2026-10-28). Falta definir dirección, horario y WhatsApp.
 
 ## Proyectos
 
@@ -45,8 +45,10 @@ Ninguna todavía.
 
 ## Notas operativas
 
-- Su identidad visual es negro, plata cálida y blanco. El logo existe solo como imagen 3D
-  (probablemente generada con IA); no hay vector.
+- Identidad: negro, plata y blanco. **Cada submarca conserva su plata** (decisión del cliente):
+  Barber’s cálida `#A9A199`, Essentials cromo frío `#BDBAB6`.
+- El logo original se hizo con IA y no tiene vector (confirmado 2026-10-28). Se redibujó en SVG a
+  partir de los contornos de Cinzel.
 - El cliente es un amigo; el precio de la cotización se mantiene igual.
 
 ## Correlaciones

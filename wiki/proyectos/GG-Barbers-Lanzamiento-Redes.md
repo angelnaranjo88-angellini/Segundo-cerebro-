@@ -1,5 +1,5 @@
 ---
-titulo: G&G Barbers — lanzamiento en redes
+titulo: G&G Barber’s — lanzamiento en redes
 tipo: proyecto
 estado: activo
 clientes: [GG-Barbers]
@@ -8,7 +8,7 @@ inicio: 2026-10-28
 actualizado: 2026-10-28
 ---
 
-# G&G Barbers — lanzamiento en redes
+# G&G Barber’s — lanzamiento en redes
 
 > Identidad visual y presencia en Facebook e Instagram para la inauguración de [[GG-Barbers]].
 
@@ -31,8 +31,27 @@ entrega lo mínimo para inaugurar con una imagen consistente.
 
 ## Estado actual
 
-Corte 2026-10-28: **kit de marca v0.1 propuesto** (página publicada como artifact privado en
-claude.ai, "Kit de marca G&G Barbers"). Falta que el cliente lo valide.
+Corte 2026-10-28: **kit de marca v0.2 enviado a revisión del cliente** (artifact privado en
+claude.ai, "Kit de marca G&G Barbers"; mismo enlace que la v0.1). Incluye:
+
+- Logo redibujado en vector y **9 versiones de uso** (V01–V09): principal 3D original, plana sobre
+  negro, plana sobre claro, isotipo de perfil, horizontal, una tinta, monograma de 32 px,
+  Essentials y etiqueta de Essentials.
+- **10 propuestas de logo** (P01–P10): clásico redibujado, monograma doble, sello de latón, placa
+  de puerta, navaja en la G, ampersand de poste, rótulo de vitrina, didona editorial, ticket de
+  turno y línea de peine.
+- Paleta con CMYK y Pantone 877 C para la plata, tipografías, estilo gráfico, aplicaciones
+  (portada FB, tarjeta, tarjeta de lealtad), voz y precios.
+- Formulario por logo (me gusta / cambiar / descartar + nota) que se copia como texto para
+  WhatsApp. Se guarda solo en el navegador de quien revisa: **las respuestas llegan por WhatsApp,
+  no al wiki ni a Claude**.
+
+Entregables locales de la sesión: paquete de 18 logos (SVG, PNG, PNG transparente) y hoja de
+propuestas en JPG para WhatsApp. Carpeta en Canva creada: "G&G Barber's · Kit de marca".
+
+> [!warning] Subida a Canva bloqueada
+> La red del entorno en la nube no permite subir archivos a canva.com (proxy 403, 2026-10-28).
+> Los logos se suben a mano a la carpeta, o se permite el dominio en la configuración de red.
 
 ## Orden de trabajo
 
@@ -47,20 +66,24 @@ claude.ai, "Kit de marca G&G Barbers"). Falta que el cliente lo valide.
 - **Paleta** muestreada de los logos: Negro Piedra `#0B0B0B`, Grafito `#181716`,
   Veta `#3B3833`, Plata G&G `#A9A199`, Platino `#E6E2DE`, Blanco Hueso `#F5F3EF`.
   La plata es cálida; sobre fondo claro no pasa contraste (2.3:1), así que ahí se usa negro.
-- **Tipografías**: Cinzel (títulos y precios), Cormorant Garamond itálica (frases),
-  Montserrat (texto e información). Las tres son gratis en Canva y Google Fonts.
+- **Tipografías** (v0.2): Cinzel (títulos, frases y precios) + Libre Franklin (texto e
+  información). Se bajó de tres familias a dos siguiendo la regla de la skill de identidad para
+  barberías.
+- **Nombre**: G&G Barber’s, con apóstrofo (2026-10-28).
+- **Color por submarca**: Barber’s plata cálida, Essentials cromo frío (2026-10-28).
+- **Essentials comparte redes** con la barbería (2026-10-28).
+- **Canva Pro** contratado por el humano (2026-10-28).
 - **Herramientas**: Canva Pro como base (kit de marca, plantillas, cambio de tamaño, PDF);
   la IA de imágenes (ChatGPT o Higgsfield) solo para fondos y ambientes. A la fecha de corte,
   Canva no tiene kits de marca creados y Higgsfield está en el plan gratis con 10 créditos.
 
 ## Pendientes y riesgos
 
-- Nombre final: Barbers o Barber's.
-- ¿Existe archivo fuente del logo? Si no, hay que redibujarlo.
-- ¿Se unifica la plata de Essentials (más fría) con la de Barbers?
-- Fecha de inauguración, dirección, horario, WhatsApp.
-- Usuario de Instagram disponible (no admite "&").
-- ¿Essentials tiene redes propias?
+- Respuesta del cliente a la v0.2: elegir logo principal y secundario.
+- **En pausa hasta que el humano los dé**: fecha de inauguración, dirección, horario, WhatsApp.
+- Qué incluye la barba premium frente a la tradicional; ¿paquete corte + barba?
+- Usuario de Instagram disponible (no admite "&" ni apóstrofo).
+- Subir los logos a Canva y armar el kit de marca allí (no hay API para crear kits).
 
 ## Correlaciones
 
