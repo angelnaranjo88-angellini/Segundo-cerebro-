@@ -26,8 +26,17 @@ entrega lo mínimo para inaugurar con una imagen consistente.
 | Foto de perfil y portadas (perfil FB/IG, portada FB, destacadas) | 800 |
 | 6 publicaciones de inauguración (feed e historias) | **sin precio** |
 
-> [!warning] Cotización incompleta
-> Las 6 publicaciones no tienen precio. Lo demás suma $4,300.
+### Cotización actualizada (2026-10-28)
+
+Documento "Cotización G&G Barber's" (Claude Docs, folio GG-2026-001). **Total propuesto: $12,800 MXN.**
+
+| Bloque | MXN |
+|---|---|
+| Alcance original (incluye 6 publicaciones a $300 c/u = $1,800) | 6,100 |
+| Trabajo adicional ya entregado: vector Barber's 1,800 · vector Essentials 900 · 10 propuestas 2,000 · variantes de íconos 500 · papelería 900 · toldo 600 · 3 rondas incluidas | 6,700 |
+
+Pago propuesto: 50% al aprobar, 50% al publicar. Sin IVA. Los precios del trabajo adicional son
+propuesta de Claude; falta que el humano decida si aplica descuento por amistad.
 
 ## Estado actual
 
@@ -81,8 +90,8 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 
 ## Orden de trabajo
 
-1. Kit de marca (en curso).
-2. Vector del logo: versión plana, isotipo y versión negra.
+1. Kit de marca — **cerrado 2026-10-28**.
+2. Vector del logo — **hecho**.
 3. Perfil, portadas y destacadas.
 4. Alta de FB e IG con los activos listos.
 5. Seis publicaciones, calendarizadas hacia atrás desde la fecha de inauguración.

@@ -10,6 +10,13 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-28] decision | G&G Barber’s: kit cerrado y cotización actualizada
+
+El humano da por terminado el kit de marca. Se armó la cotización con el alcance original más el
+trabajo extra no cotizado: total propuesto de $12,800 MXN. Siguiente paso: cerrar perfil, portadas y
+destacadas, luego plantillas y mini manual en PDF; las redes y las publicaciones esperan los datos
+del negocio. Detalle en [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-10-28] decision | G&G Barber’s: segunda revisión del cliente (kit v0.4)
 
 Sale el dorado de Essentials. Regresa la portada de Facebook con recuadro negro sobre mármol, que
