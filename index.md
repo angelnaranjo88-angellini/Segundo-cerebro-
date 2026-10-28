@@ -2,7 +2,7 @@
 titulo: Índice
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-10-28
 ---
 
 # Índice
@@ -26,6 +26,7 @@ actualizado: 2026-09-05
 |---|---|---|
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
 | [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
+| [[GG-Barbers]] | Barbería por inaugurar; marca madre G&G con submarca Essentials | activo |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
 
 ## Proyectos
@@ -37,6 +38,7 @@ actualizado: 2026-09-05
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
+| [[GG-Barbers-Lanzamiento-Redes]] | Kit de marca, alta de FB/IG y 6 posts de inauguración | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
 
 ## Automatizaciones
@@ -71,6 +73,7 @@ actualizado: 2026-09-05
 | [[Fuente-Inventario-Make]] | API de Make, 22 escenarios | 2026-09-05 |
 | [[Fuente-Catalogo-Lefranm]] | PDF en Drive, ~52 SKUs | 2026-09-05 |
 | [[Fuente-Hoja-CUT-Fotos]] | Hoja de Google, cola de publicación | 2026-09-05 |
+| [[Fuente-Logos-y-Precios-GG]] | 3 imágenes por chat: logos y precios | 2026-10-28 |
 
 ## Consultas en vivo
 

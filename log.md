@@ -10,6 +10,19 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-28] ingesta | G&G Barbers: logos, precios y kit de marca v0.1
+
+Cliente nuevo: [[GG-Barbers]], barbería de un amigo por inaugurar. Ingeridas tres imágenes
+compartidas por chat ([[Fuente-Logos-y-Precios-GG]]). Abierto el proyecto
+[[GG-Barbers-Lanzamiento-Redes]].
+
+Kit de marca v0.1 propuesto: paleta medida de los logos, tres tipografías de Canva, cinco
+versiones de logo, estilo gráfico, voz y pendientes. Publicado como artifact privado en claude.ai.
+
+Hallazgos: el nombre "Barber's" no coincide con el logo ("Barbers"); el logo solo existe en
+raster 3D; la plata de Essentials es más fría que la de Barbers; la cotización no tiene precio
+para las 6 publicaciones.
+
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 
 40 páginas, 37 destinos de enlace distintos. **Cero enlaces rotos** y cero páginas huérfanas
