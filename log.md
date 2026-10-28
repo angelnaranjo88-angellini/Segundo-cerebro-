@@ -10,6 +10,13 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-28] decision | G&G Barber’s: segunda revisión del cliente (kit v0.4)
+
+Sale el dorado de Essentials. Regresa la portada de Facebook con recuadro negro sobre mármol, que
+en la v0.2 había salido por error y al cliente le gustó; ahora hay dos versiones, con y sin
+caramelo. El toldo lleva caramelo. Lección: un error de exportación terminó siendo la pieza
+favorita, así que antes de "corregir" algo visual conviene preguntar.
+
 ## [2026-10-28] decision | G&G Barber’s: primera revisión del cliente (kit v0.3)
 
 El cliente eligió V02 y V08. Se redujo el & en el logo principal y el horizontal, Essentials llevó

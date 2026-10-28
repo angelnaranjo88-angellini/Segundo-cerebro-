@@ -56,15 +56,24 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 - **& reducido al 64%** de la altura de las G en todo el logo principal de Barber’s (V02, V03,
   V06, tarjetas) y en el horizontal V05, para que resalten las G. Essentials también, desde el 2026-10-28 (V08 y V09).
 - **Essentials**: caramelo de barbería clásico (esfera, tapa, espiral y base, como el logo
-  original) en lugar del poste simplificado; **línea izquierda dorada `#C2A15E`** y derecha cromo.
+  original) en lugar del poste simplificado; línea izquierda dorada (revertido en la v0.4).
 - **Tarjeta de presentación**: cuatro frentes para elegir: A tijeras, B tijeras y caramelo,
   C tijeras y máquina, D tijeras y peine.
 - **Toldo**: el cliente usará el logo horizontal (V05) para el toldo; se agregó boceto.
 
 > [!warning] Inferencia sin verificar
 > El cliente pidió el caramelo "así", pero no llegó imagen de referencia. Se interpretó como el
-> caramelo del logo original de Essentials. También falta confirmar qué línea va dorada
-> (se puso la izquierda).
+> caramelo del logo original de Essentials.
+
+### Revisión 2 del cliente → kit v0.4 (2026-10-28)
+
+- **Sin dorado**: al cliente no le gustó la línea dorada de Essentials. Las dos líneas quedan
+  cromo y el dorado sale de la paleta.
+- **Portada de Facebook con recuadro negro**: en la v0.2 el logo horizontal salía con su fondo
+  negro sobre el mármol por un error de exportación. Al cliente le gustó mucho; se recuperó a
+  propósito como **Portada A**, y se agregó la **Portada B** con caramelo.
+- **Toldo**: lleva caramelo de barbería a la derecha del texto (nuevo logo
+  `v-horizontal-caramelo`).
 
 > [!warning] Subida a Canva bloqueada
 > La red del entorno en la nube no permite subir archivos a canva.com (proxy 403, 2026-10-28).
@@ -96,7 +105,8 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 
 ## Pendientes y riesgos
 
-- Confirmar caramelo de Essentials y lado de la línea dorada.
+- Confirmar caramelo de Essentials.
+- Elegir portada de Facebook (A sin caramelo o B con caramelo).
 - Elegir frente de tarjeta (A–D).
 - Elegir logo secundario de las propuestas P01–P10.
 - **En pausa hasta que el humano los dé**: fecha de inauguración, dirección, horario, WhatsApp.
