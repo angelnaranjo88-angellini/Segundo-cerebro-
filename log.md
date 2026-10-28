@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-28] decision | G&G Barber’s: perfil, portadas y destacadas entregados
+
+Se cerró el entregable 3: foto de perfil, dos portadas de Facebook y seis destacadas, con mármol
+generado por código. Kit v0.5 publicado. Siguen las plantillas y el mini manual en PDF. Las redes y
+las publicaciones esperan los datos del negocio. Detalle en [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-10-28] decision | G&G Barber’s: kit cerrado y cotización actualizada
 
 El humano da por terminado el kit de marca. Se armó la cotización con el alcance original más el

@@ -23,8 +23,17 @@ entrega lo mínimo para inaugurar con una imagen consistente.
 |---|---|
 | Creación de Facebook e Instagram (Business Suite, vinculación, bio, horarios, contacto) | 1,500 |
 | Guía de marca derivada del logo (paleta, tipografías, estilo, plantillas, mini manual PDF) | 2,000 |
-| Foto de perfil y portadas (perfil FB/IG, portada FB, destacadas) | 800 |
+| Foto de perfil y portadas (perfil FB/IG, portada FB, destacadas) — entregado | 800 |
 | 6 publicaciones de inauguración (feed e historias) | **sin precio** |
+
+### Perfil y portadas (entregable 3) — listo, 2026-10-28
+
+- Foto de perfil 1080 × 1080 con el isotipo V04, ya con el & reducido.
+- Portada de Facebook A y B en 1640 × 624: mármol con recuadro negro, B con caramelo.
+- Seis portadas de destacadas en 1080 × 1920: Servicios, Precios, Citas, Ubicación, Essentials y
+  Trabajos (máquina de corte; la navaja no se entendía a ese tamaño).
+- El mármol es **procedural** (generado por código a la medida), no una ampliación de la textura
+  del logo de IA, para que no pierda nitidez en 1640 px.
 
 ### Cotización actualizada (2026-10-28)
 
@@ -92,7 +101,7 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 
 1. Kit de marca — **cerrado 2026-10-28**.
 2. Vector del logo — **hecho**.
-3. Perfil, portadas y destacadas.
+3. Perfil, portadas y destacadas — **listo 2026-10-28**.
 4. Alta de FB e IG con los activos listos.
 5. Seis publicaciones, calendarizadas hacia atrás desde la fecha de inauguración.
 
