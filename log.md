@@ -10,6 +10,14 @@ actualizado: 2026-10-31
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-31] decision | Precios nuevos del catálogo Lefranm al prompt de ventas
+
+El agente mandaba el PDF nuevo del Kit ($8,414) pero en el texto decía $8,323: el prompt
+tenía los precios viejos. Las tres listas también cambiaron. Se regeneró el catálogo del
+`systemPrompt` desde los PDF (48 renglones verificados), además de la tabla del Kit, los precios
+de cabina y el ejemplo de cotización. El LF-045 desapareció de las listas: se quitó del prompt, pendiente de
+confirmar. Ver [[Make-Lefranm-Cosmeticos-Ventas#Actualización de precios del 2026-10-31]].
+
 ## [2026-10-31] decision | PDFs verificados, respaldo ampliado y Facial antiacné corregido
 
 1. **PDFs (ventas, 5587862):** Luis Angel subió versiones nuevas sobre los mismos archivos.

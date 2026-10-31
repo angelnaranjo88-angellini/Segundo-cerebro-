@@ -5,12 +5,17 @@ estado: activo
 origen: Google Drive · carpeta Lefran · Lista-de-Precios-Cosmetologas-y-Esteticas.pdf
 fecha_ingesta: 2026-09-05
 tags: [lefranm, catalogo, precios]
-actualizado: 2026-09-05
+actualizado: 2026-10-31
 ---
 
 # Catálogo de precios Lefranm
 
 > El PDF que sostiene las respuestas del agente de ventas.
+
+> [!warning] Precios desactualizados
+> Los precios de esta página son de la ingesta del 2026-09-05. El 2026-10-31 subieron (ver
+> [[Make-Lefranm-Cosmeticos-Ventas#Actualización de precios del 2026-10-31]]). Además el LF-045
+> ya no aparece en las listas nuevas.
 
 ## Resumen
 

@@ -82,6 +82,29 @@ actualizado: 2026-10-31
 | Lista Verde | `LISTA_VERDE_PDF_URL` | `Lista-Precios-Verde-Lefranm.pdf` | `1g7e4AnE-EMsfbOxcC0xeadmk-lxaV8Hg` | **sí** (`lista_verde`) |
 | Lista Roja | `LISTA_ROJA_PDF_URL` | `Lista-Precios-Roja-Lefranm.pdf` | `19XRzcbYiqsGX_szuwpQvq6guRTMv-mYu` | **sí** (`lista_roja`) |
 
+> [!warning] Los PDF y el prompt NO se sincronizan solos
+> El PDF solo es el archivo que se adjunta. Los precios que el agente **escribe** en el chat
+> salen del `systemPrompt` (catálogo, tabla del Kit, precios de cabina y ejemplo de cotización).
+> El 2026-10-31 se subieron PDFs con precios nuevos y el agente siguió diciendo «Kit $8,323»
+> mientras mandaba el PDF de $8,414. **Cada vez que cambien precios hay que actualizar también
+> el prompt.**
+
+### Actualización de precios del 2026-10-31
+
+Fuente: las tres listas y el Kit en PDF (leídos con `pdftotext -layout`). El catálogo del prompt
+se generó por script desde los PDF y se comprobó renglón por renglón (48/48 correctos).
+- Subieron casi todos los precios (ej. Crema Limpiadora $440/$290/$222 → $448/$291/$224).
+- Cabina LF-051: $370/$277 → **$374/$285**. LF-052: $527/$442 → **$535/$450**.
+- Kit: subtotal **$8,414**. La tabla de respaldo ahora usa los códigos del PDF: seis productos
+  son presentación de cabina LF-051 de 250g.
+- Cambiaron contenidos: Baby Milk 225mL (antes 250mL), Crema-Calcium 225mL (antes 250mL).
+- **LF-045 Jabón Exfoliante Para Manos y Cuerpo ya no aparece en ninguna lista** y se quitó
+  del catálogo del prompt.
+
+> [!warning] Pendiente de confirmar con Luis Angel
+> ¿El LF-045 se descontinuó o solo se omitió del PDF? Si se sigue vendiendo, hay que regresarlo
+> al prompt con sus precios nuevos.
+
 ### Checklist para cambiar un PDF
 
 - **Atajo:** en Drive, *clic derecho → Administrar versiones → Subir nueva versión* sobre el
