@@ -3,7 +3,7 @@ titulo: G&G Barber’s
 tipo: cliente
 estado: activo
 tags: [barberia, marca, redes-sociales]
-actualizado: 2026-10-28
+actualizado: 2026-10-31
 ---
 
 # G&G Barber’s
@@ -29,6 +29,12 @@ actualizado: 2026-10-28
 
 **Nombre decidido (2026-10-28): G&G Barber’s**, con apóstrofo tipográfico. El logo original decía
 "BARBERS"; el redibujo en vector ya usa el nombre correcto. Ver [[Fuente-Logos-y-Precios-GG]].
+
+## Posicionamiento
+
+Definido por el dueño (2026-10-31): **barbería VIP**. Servicio premium, de confort y alta calidad,
+una experiencia distinta a las demás barberías. La voz de marca pasa de "oficio sereno" a
+"exclusividad con oficio": seguro y sobrio, sin gritar.
 
 ## Canales
 

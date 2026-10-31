@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-31] decision | G&G Barber’s se posiciona como barbería VIP
+
+El dueño pidió que la bio comunique un servicio premium y exclusivo. Se reescribieron la presentación
+de Facebook y la bio de Instagram con ese tono. Ver [[GG-Barbers]].
+
 ## [2026-10-28] decision | G&G Barber’s: perfil, portadas y destacadas entregados
 
 Se cerró el entregable 3: foto de perfil, dos portadas de Facebook y seis destacadas, con mármol
