@@ -6,7 +6,7 @@ plataforma: make
 id_escenario: 5866647
 clientes: [Lefranm-Cosmeticos]
 tags: [seguimiento, airtable, whatsapp]
-actualizado: 2026-09-05
+actualizado: 2026-10-31
 ---
 
 # Make · LEFRANM COSMETICOS SEGUIMIENTO
@@ -46,3 +46,8 @@ Proyecto: [[Lefranm-Agente-de-Ventas]]. Patrón: [[Seguimiento-por-Sondeo]].
 Nótese la simetría: este cliente corre **dos** sondeos idénticos en paralelo, uno sobre
 Airtable y otro sobre Data Store ([[Make-Lefranm-Seguimiento-Citas]]), porque su estado está
 partido en dos sistemas. Ver [[Persistencia-Airtable-vs-Data-Store]].
+
+## Cambio del 2026-10-31
+
+El filtro del módulo 2 excluye el número del dueño, que usa el agente de ventas como cotizador.
+Ver [[Make-Lefranm-Cosmeticos-Ventas#Modo cotizador para el dueño (2026-10-31)]].

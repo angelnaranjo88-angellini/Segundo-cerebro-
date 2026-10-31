@@ -125,6 +125,30 @@ se generó por script desde los PDF y se comprobó renglón por renglón (48/48 
 > (no se copia aquí). Cualquiera que exporte el blueprint la ve. Conviene restringirla en Google
 > Cloud a solo la Drive API, o moverla a una variable de escenario/organización de Make.
 
+## Modo cotizador para el dueño (2026-10-31)
+
+El dueño usa el mismo número de ventas para cotizar. Antes el agente lo trataba como cliente:
+saludo, pregunta de uso personal o mayoreo, Kit, ficha y datos bancarios.
+
+- **Detección en Make, no en el LLM.** El `message` del módulo 12 agrega
+  `modo={{if(contains(1.contacts[].wa_id; "<número>"); "cotizador"; "cliente")}}` al
+  `CONTEXTO_INTERNO`. El número vive solo en Make y no se copia aquí. Escribir «soy el dueño» no
+  cambia el modo; el prompt lo dice explícitamente.
+- **Sección «MODO COTIZADOR (DUEÑO)» en el prompt:** responde solo con la cotización
+  (`Cotización — lista X`, una línea por producto y el total). Usa lista verde si no se indica
+  otra y la que pida si dice azul, verde o roja. No calcula envío ni hace saludo, Kit, ficha o
+  datos bancarios, ni usa `[AVISAR_HUMANO]`. Manda PDF solo si se lo piden.
+- **Módulo 43** (respaldo de PDF): filtro extra `wa_id` *no contiene* el número del dueño, para
+  que una cotización no dispare una lista en PDF.
+- **[[Make-Lefranm-Seguimiento-Cosmeticos]]:** filtro del módulo 2 para que no le mande al
+  dueño el mensaje de «se quedó platicando». Su registro sigue en el Data Store con
+  `seguimiento_enviado = false`; cada 30 min la búsqueda lo encuentra, pero el filtro lo descarta.
+
+> [!warning] Inferencia sin verificar
+> Se asume que el `wa_id` del dueño contiene sus 10 dígitos (formato `521XXXXXXXXXX`). Si su
+> WhatsApp está registrado con otro formato, el modo no se activa: hay que revisar el `wa_id`
+> en una ejecución de prueba.
+
 ## Persistencia
 
 Airtable para contactos y pedidos; Data Store solo para el hilo de conversación.

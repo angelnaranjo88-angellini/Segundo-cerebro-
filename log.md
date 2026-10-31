@@ -10,6 +10,14 @@ actualizado: 2026-10-31
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-31] decision | Modo cotizador para el dueño de Lefranm
+
+El dueño cotiza por el mismo WhatsApp de ventas y el agente le respondía como a un cliente. Make
+detecta su número (`modo=cotizador` en el CONTEXTO_INTERNO) y el prompt tiene una sección
+que contesta solo con productos, precio y total: lista verde por defecto, la que pida si dice
+azul, verde o roja, sin envío. Se excluyó su número del respaldo de PDF y del seguimiento. Ver
+[[Make-Lefranm-Cosmeticos-Ventas#Modo cotizador para el dueño (2026-10-31)]].
+
 ## [2026-10-31] decision | Precios nuevos del catálogo Lefranm al prompt de ventas
 
 El agente mandaba el PDF nuevo del Kit ($8,414) pero en el texto decía $8,323: el prompt
