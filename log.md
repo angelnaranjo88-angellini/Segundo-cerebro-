@@ -10,6 +10,20 @@ actualizado: 2026-10-31
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-31] decision | PDFs verificados, respaldo ampliado y Facial antiacné corregido
+
+1. **PDFs (ventas, 5587862):** Luis Angel subió versiones nuevas sobre los mismos archivos.
+   Los 6 IDs descargan como PDF por la Drive API. Fichas técnicas no se actualizó (julio).
+2. **Respaldo de PDFs:** los módulos 42 y 43 ahora cubren Kit, Fichas y Catálogo, además de
+   las tres listas (`documento` + `switch`). Ver
+   [[Make-Lefranm-Cosmeticos-Ventas#Envío de PDFs por WhatsApp]].
+3. **Facial antiacné (citas, 5645150):** la promo estaba como línea suelta y chocaba con el
+   precio $1,680 del catálogo, protegido por la regla de cita literal. Se alineó catálogo, bloque
+   de promos y mapa de calendarios. Ver [[Make-Lefranm-Citas#Arreglo del Facial antiacné (2026-10-31)]].
+
+Los dos blueprints se compararon contra lo enviado después de guardarlos: solo cambió lo
+previsto.
+
 ## [2026-10-31] ingesta | Envío de PDFs en el agente de ventas Lefranm
 
 Revisión del blueprint del escenario 5587862, pedida por Luis Angel después de arreglar el

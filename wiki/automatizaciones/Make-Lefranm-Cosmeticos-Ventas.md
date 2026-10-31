@@ -55,21 +55,32 @@ actualizado: 2026-10-31
    la descarga directa que WhatsApp sí acepta (el link `uc?export=download` de Drive regresa
    una página HTML de aviso y no el PDF). Por eso el `replace` necesita que la URL del prompt
    empiece **exactamente** con `https://drive.google.com/uc?export=download&id=`.
-5. **Respaldo, ruta «Lista de precios sin marca»** → **módulo 43**. Si el clasificador
-   (módulo 42) detecta que el agente *dijo* que mandaba la lista de precios pero se le olvidó la
-   marca (`quiere_lista = true` y no hay `pdf_url`), manda la lista según `lista_color`, con la
-   **URL escrita directamente en el módulo** y la misma conversión a `googleapis.com`.
+5. **Respaldo, ruta «Documento PDF sin marca»** → **módulo 43**. El clasificador (módulo 42)
+   revisa si el agente *dijo* que mandaba un documento pero olvidó la marca. Devuelve
+   `quiere_lista = true` y `documento` con uno de `lista_azul`, `lista_verde`, `lista_roja`,
+   `kit`, `fichas` o `catalogo`. Si además no hay `pdf_url`, el módulo 43 elige el ID con
+   `switch(42.documento; …)` y lo manda directo por `googleapis.com`. Si `documento` llega
+   vacío o con otro valor, manda la Lista Azul.
+   *Cambio del 2026-10-31:* antes solo cubría las tres listas (campo `lista_color`); ahora
+   cubre los 6 PDF. El clasificador solo elige `fichas` si el cliente pidió explícitamente ficha
+   técnica, ingredientes o modo de uso, igual que la regla del prompt.
 
 ### Los PDF que hay hoy
 
+> Verificación del 2026-10-31: los 6 IDs responden `application/pdf` por la Drive API (la misma
+> vía que usa WhatsApp). Kit, Catálogo y las tres listas tienen versión nueva subida ese día
+> (19:01–19:04 UTC). Las **Fichas técnicas** no se tocan desde el 2026-07-06. Pesos: Catálogo
+> 75 MB y Fichas 43 MB, por debajo del límite de 100 MB de WhatsApp para documentos, pero tardan
+> más en llegar.
+
 | Documento | Variable en el prompt | Nombre que ve el cliente | ID de Drive | También en módulo 43 |
 |---|---|---|---|---|
-| Kit de Distribuidor Inicial | `KIT_PDF_URL` (y en la marca de ejemplo) | `Kit-Distribuidor-Inicial-Lefranm.pdf` | `1THmrKQt7_s67amVE9ptjC_bfGXdaLkNR` | no |
-| Fichas técnicas (todas juntas) | `FICHAS_TECNICAS_PDF_URL` (y en la marca de ejemplo) | `Fichas-Tecnicas-Lefranm.pdf` | `1R8sErJz0sethdGPSlKiDjeJT-ZSTH1e0` | no |
-| Catálogo completo | `CATALOGO_PDF_URL` | `Catalogo-Lefranm.pdf` | `1bNnhW8Z_paykFNKXOLYppF8xNlT8NWp5` | no |
-| Lista Azul (público) | `LISTA_AZUL_PDF_URL` | `Lista-Precios-Azul-Lefranm.pdf` | `1T6SQKhXpbM_w05v8pCAY89nEQd1hCoxC` | **sí** (valor por defecto) |
-| Lista Verde | `LISTA_VERDE_PDF_URL` | `Lista-Precios-Verde-Lefranm.pdf` | `1g7e4AnE-EMsfbOxcC0xeadmk-lxaV8Hg` | **sí** (`verde`) |
-| Lista Roja | `LISTA_ROJA_PDF_URL` | `Lista-Precios-Roja-Lefranm.pdf` | `19XRzcbYiqsGX_szuwpQvq6guRTMv-mYu` | **sí** (`rojo`) |
+| Kit de Distribuidor Inicial | `KIT_PDF_URL` (y en la marca de ejemplo) | `Kit-Distribuidor-Inicial-Lefranm.pdf` | `1THmrKQt7_s67amVE9ptjC_bfGXdaLkNR` | **sí** (`kit`) |
+| Fichas técnicas (todas juntas) | `FICHAS_TECNICAS_PDF_URL` (y en la marca de ejemplo) | `Fichas-Tecnicas-Lefranm.pdf` | `1R8sErJz0sethdGPSlKiDjeJT-ZSTH1e0` | **sí** (`fichas`) |
+| Catálogo completo | `CATALOGO_PDF_URL` | `Catalogo-Lefranm.pdf` | `1bNnhW8Z_paykFNKXOLYppF8xNlT8NWp5` | **sí** (`catalogo`) |
+| Lista Azul (público) | `LISTA_AZUL_PDF_URL` | `Lista-Precios-Azul-Lefranm.pdf` | `1T6SQKhXpbM_w05v8pCAY89nEQd1hCoxC` | **sí** (`lista_azul` y valor por defecto) |
+| Lista Verde | `LISTA_VERDE_PDF_URL` | `Lista-Precios-Verde-Lefranm.pdf` | `1g7e4AnE-EMsfbOxcC0xeadmk-lxaV8Hg` | **sí** (`lista_verde`) |
+| Lista Roja | `LISTA_ROJA_PDF_URL` | `Lista-Precios-Roja-Lefranm.pdf` | `19XRzcbYiqsGX_szuwpQvq6guRTMv-mYu` | **sí** (`lista_roja`) |
 
 ### Checklist para cambiar un PDF
 
@@ -80,9 +91,9 @@ actualizado: 2026-10-31
      regresa 403/404 y WhatsApp no recibe nada.
   2. Cambiar el ID en el `systemPrompt` del módulo 12. El Kit y las Fichas técnicas aparecen
      **dos veces** cada uno (en la variable y en la marca de ejemplo); hay que cambiar las dos.
-  3. Si es una lista Azul/Verde/Roja, cambiar el ID también en el **módulo 43**. Aparece dos
-     veces dentro de la fórmula (en las dos ramas del `if`). Si se olvida, el respaldo sigue
-     mandando la lista vieja.
+  3. Cambiar el ID también en el **módulo 43** (aparece **una vez** dentro del `switch`). Desde
+     el 2026-10-31 esto aplica a los 6 PDF, no solo a las listas. Si se olvida, el respaldo
+     sigue mandando el archivo viejo.
   4. Respetar el formato `https://drive.google.com/uc?export=download&id=<ID>`. Un link
      `.../file/d/<ID>/view` no lo convierte el `replace` y WhatsApp recibe una página HTML.
 

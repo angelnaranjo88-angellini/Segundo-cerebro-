@@ -43,7 +43,7 @@ actualizado: 2026-10-31
 
 | Página | ID | Errores | Créditos |
 |---|---|---|---|
-| [[Make-Lefranm-Citas]] | 5645150 | 7.6% | ~20 624 |
+| [[Make-Lefranm-Citas]] | 5645150 | 7.6% (corte 09-05) | ~20 624 · promo antiacné corregida 10-31 |
 | [[Make-Lefranm-Cosmeticos-Ventas]] | 5587862 | 10.1% (corte 09-05) | ~8 315 · PDFs documentados 10-31 |
 | [[Make-Asistente-Chavarria]] | 5982362 | 7.1% | ~2 662 |
 | [[Make-Lefranm-Seguimiento-Cosmeticos]] | 5866647 | 0% | ~1 712 |
