@@ -13,7 +13,7 @@ actualizado: 2026-10-31
 
 ## Contexto del negocio
 
-- Negocio nuevo; a la fecha de corte (2026-10-28) todavía no abre. Falta la fecha de inauguración.
+- Negocio nuevo; abre el **28 de noviembre de 2026**. Sin fotos reales del local todavía (corte 2026-10-31).
 - Servicios y precios (MXN, de la lista del cliente, corte 2026-10-28):
 
 | Servicio | Precio |
@@ -38,8 +38,16 @@ una experiencia distinta a las demás barberías. La voz de marca pasa de "ofici
 
 ## Canales
 
-Por crear: Facebook, Instagram y Business Suite. **G&G Essentials vive en las mismas redes** que la
-barbería (decidido 2026-10-28). Falta definir dirección, horario y WhatsApp.
+| Canal | Dato |
+|---|---|
+| WhatsApp del negocio | 55 4786 2032 |
+| Dirección | Anaxágoras 905, Narvarte Poniente, Benito Juárez, 03020, CDMX |
+| Horario | Lunes a viernes 9:00–19:00 · sábado 9:00–17:00 |
+| Inauguración | **28 de noviembre de 2026** |
+| Facebook | Página creada (2026-10-28) desde una cuenta de Facebook separada para el negocio |
+| Instagram | En creación; usuario pendiente de confirmar |
+
+G&G Essentials vive en las mismas redes que la barbería.
 
 ## Proyectos
 

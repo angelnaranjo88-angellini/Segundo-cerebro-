@@ -6,7 +6,7 @@ plataforma: make
 id_escenario: 6077792
 clientes: [Colegio-Maria-Chavarria-Vital]
 tags: [contenido, sheets, facebook, instagram, vision]
-actualizado: 2026-09-05
+actualizado: 2026-10-31
 ---
 
 # Make · CUT - CREACION DE CONTENIDO POR FOTO (GOOGLE SHEETS)
@@ -54,3 +54,9 @@ en el mismo lugar. Ver [[Fuente-Hoja-CUT-Fotos]].
 
 Proyecto: [[CUT-Contenido-Social]]. Patrón y genealogía completa:
 [[Pipeline-de-Contenido-Social]].
+
+## Reutilización
+
+- **2026-10-31:** se usará como base para publicar la campaña de 56 posts de [[GG-Barbers]]
+  ([[GG-Barbers-Lanzamiento-Redes]]), cambiando las cuentas de Facebook e Instagram. Antes de
+  clonarlo conviene resolver el 46% de errores documentado arriba.

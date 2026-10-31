@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-31] decision | G&G Barber’s: datos del negocio y campaña de 56 posts
+
+Llegaron dirección, horario, WhatsApp y fecha de inauguración (28 nov). Se define la campaña de 2
+posts diarios del 1 al 28 de noviembre, con base en el escenario CUT de Make. Se espera ~10
+referencias de Pinterest antes de diseñar. Ver [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-10-31] decision | G&G Barber’s se posiciona como barbería VIP
 
 El dueño pidió que la bio comunique un servicio premium y exclusivo. Se reescribieron la presentación

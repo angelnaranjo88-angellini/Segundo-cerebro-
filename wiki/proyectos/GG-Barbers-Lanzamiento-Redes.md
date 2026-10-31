@@ -105,6 +105,21 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 4. Alta de FB e IG con los activos listos.
 5. Seis publicaciones, calendarizadas hacia atrás desde la fecha de inauguración.
 
+## Campaña de 56 publicaciones (en planeación, 2026-10-31)
+
+- **2 publicaciones diarias del 1 al 28 de noviembre** (inauguración el 28): una de contenido y una de
+  cuenta regresiva. El 1 de noviembre "faltan 27 días"; el 28, "hoy abrimos".
+- Mezcla por día: servicios, ubicación, precios y llenado de agenda. El dueño reparte **flyers desde
+  ~14 de noviembre**, así que la segunda mitad debe reforzar el flyer y la agenda.
+- Imágenes: el humano prefiere generarlas con ChatGPT (dice que ya no falla con textos); Claude da los
+  prompts y la dirección de arte. Referencias de Pinterest en camino (~10).
+- Estilo de referencia recibido: fotografía blanco y negro o muy oscura, herramientas sobre tapete de
+  barbero, navajas, brochas, sillón de cuero capitonado, guantes negros, luz lateral dura.
+- Publicación automática: base en el escenario de Make [[Make-CUT-Creacion-de-Contenido-Sheets]]
+  (Sheets → visión → FB/IG), con cambio de cuentas y ajustes. Hereda su riesgo de 46% de errores
+  (ver [[Riesgos-y-Deuda-Tecnica]]).
+- Promo de inauguración: pendiente de confirmar por el dueño.
+
 ## Decisiones tomadas
 
 - **Paleta** muestreada de los logos: Negro Piedra `#0B0B0B`, Grafito `#181716`,
@@ -127,7 +142,6 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 - Elegir portada de Facebook (A sin caramelo o B con caramelo).
 - Elegir frente de tarjeta (A–D).
 - Elegir logo secundario de las propuestas P01–P10.
-- **En pausa hasta que el humano los dé**: fecha de inauguración, dirección, horario, WhatsApp.
 - Qué incluye la barba premium frente a la tradicional; ¿paquete corte + barba?
 - Usuario de Instagram disponible (no admite "&" ni apóstrofo).
 - Subir los logos a Canva y armar el kit de marca allí (no hay API para crear kits).
