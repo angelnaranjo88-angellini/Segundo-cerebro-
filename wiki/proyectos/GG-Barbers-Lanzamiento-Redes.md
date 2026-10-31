@@ -119,6 +119,14 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
   (Sheets → visión → FB/IG), con cambio de cuentas y ajustes. Hereda su riesgo de 46% de errores
   (ver [[Riesgos-y-Deuda-Tecnica]]).
 - Promo de inauguración: pendiente de confirmar por el dueño.
+- **Herramienta elegida (2026-10-31): ChatGPT.** Prueba con el post 1 ("No es una barbería más"):
+  Canva generó 4 opciones y al humano no le gustó ninguna (herramientas mal dibujadas); ChatGPT
+  respetó texto, acentos, logo y estilo. Método: un proyecto de ChatGPT con instrucciones fijas de
+  marca y el logo adjunto, más un prompt corto por post.
+- **Calendario v1 publicado** (artifact privado "Calendario G&G Barber's"): 56 posts con tema, texto
+  en imagen, descripción con hashtags y prompt. Mañana 10:00 contenido, tarde 18:00 cuenta regresiva
+  (27 días el 1 nov → "hoy" el 28). Incluye tabla CSV con las columnas del escenario CUT.
+  Publicaciones 39, 43 y 49 bloqueadas hasta saber la promo y el beneficio del flyer.
 
 ## Decisiones tomadas
 

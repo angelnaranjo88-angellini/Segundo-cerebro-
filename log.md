@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-10-31] decision | G&G Barber’s: ChatGPT para las imágenes y calendario de 56 posts
+
+Comparativa del post 1: ChatGPT gana a Canva. Calendario v1 publicado con prompts por post y tabla
+para Make. Pendientes: promo de inauguración y beneficio del flyer. Ver [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-10-31] decision | G&G Barber’s: datos del negocio y campaña de 56 posts
 
 Llegaron dirección, horario, WhatsApp y fecha de inauguración (28 nov). Se define la campaña de 2
