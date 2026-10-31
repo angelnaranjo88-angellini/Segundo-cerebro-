@@ -2,13 +2,25 @@
 titulo: Bitácora
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-10-31
 ---
 
 # Bitácora
 
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
+
+## [2026-10-31] ingesta | Envío de PDFs en el agente de ventas Lefranm
+
+Revisión del blueprint del escenario 5587862, pedida por Luis Angel después de arreglar el
+envío de PDF. El agente escribe `[ENVIAR_ARCHIVO: URL | nombre]`, el módulo 60 la extrae y el 61
+convierte el link `uc?export=download` de Drive en una descarga por la Drive API antes de
+mandarlo como `document`. El módulo 43 es un respaldo para las listas de precios y tiene las URL
+escritas directamente en él. Con la tabla de IDs y el checklist de cambio, todo queda en
+[[Make-Lefranm-Cosmeticos-Ventas#Envío de PDFs por WhatsApp]]. Hallazgos: la API key de
+Google está en texto plano en las fórmulas, y la sección de persistencia contradice el blueprint
+actual (ya no hay Airtable, ahora es Data Store). Siguiente paso: cambiar los links por los
+PDF nuevos.
 
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 

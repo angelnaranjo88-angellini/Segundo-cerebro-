@@ -2,7 +2,7 @@
 titulo: Índice
 tipo: sintesis
 estado: activo
-actualizado: 2026-09-05
+actualizado: 2026-10-31
 ---
 
 # Índice
@@ -44,7 +44,7 @@ actualizado: 2026-09-05
 | Página | ID | Errores | Créditos |
 |---|---|---|---|
 | [[Make-Lefranm-Citas]] | 5645150 | 7.6% | ~20 624 |
-| [[Make-Lefranm-Cosmeticos-Ventas]] | 5587862 | 10.1% | ~8 315 |
+| [[Make-Lefranm-Cosmeticos-Ventas]] | 5587862 | 10.1% (corte 09-05) | ~8 315 · PDFs documentados 10-31 |
 | [[Make-Asistente-Chavarria]] | 5982362 | 7.1% | ~2 662 |
 | [[Make-Lefranm-Seguimiento-Cosmeticos]] | 5866647 | 0% | ~1 712 |
 | [[Make-Lefranm-Seguimiento-Citas]] | 5747451 | 0% | ~1 695 |
