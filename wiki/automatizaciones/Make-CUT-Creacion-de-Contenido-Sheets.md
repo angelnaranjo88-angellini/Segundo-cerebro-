@@ -60,3 +60,11 @@ Proyecto: [[CUT-Contenido-Social]]. Patrón y genealogía completa:
 - **2026-10-31:** se usará como base para publicar la campaña de 56 posts de [[GG-Barbers]]
   ([[GG-Barbers-Lanzamiento-Redes]]), cambiando las cuentas de Facebook e Instagram. Antes de
   clonarlo conviene resolver el 46% de errores documentado arriba.
+- **2026-11-03:** Claude construyó un escenario nuevo para G&G ([[Make-GG-Publicacion-Automatica]])
+  en vez de editar este.
+
+> [!warning] Este escenario quedó mezclado
+> Al 2026-11-03 el humano le cambió la conexión de Facebook a la de G&G y la hoja a "G&G Barbers",
+> pero conserva la página y la cuenta de Instagram del Centro Trilingüe. Está inactivo. Si
+> [[Colegio-Maria-Chavarria-Vital]] necesita volver a publicar, hay que reconectarlo; además, la
+> conexión de Facebook "LUIS CUT" de Chavarría venció el 2026-10-27.

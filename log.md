@@ -10,6 +10,13 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-03] decision | G&G Barber’s: hoja cargada y escenario de publicación
+
+Se cargaron 53 publicaciones en la hoja "G&G Barbers" y se creó el escenario de Make 6885366
+([[Make-GG-Publicacion-Automatica]]): cada 15 min publica la fila vencida en Facebook e Instagram
+con el texto ya escrito, sin OpenAI. Queda inactivo hasta que la carpeta de imágenes sea pública.
+El escenario CUT original quedó con conexiones mezcladas; ver [[Make-CUT-Creacion-de-Contenido-Sheets]].
+
 ## [2026-11-03] decision | G&G Barber’s: campaña sin promociones
 
 El dueño no definió descuento por flyer ni promo de inauguración. Las publicaciones 39, 43 y 49 se

@@ -142,6 +142,15 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
   inauguración: la 43 pasó a "Gran apertura". Ninguna publicación promete beneficios; las 56 se
   pueden generar ya (calendario v2.3).
 
+### Publicación automática (2026-11-03)
+
+- 55 imágenes en Drive (`Publi1…Publi55`); la 56 se descartó.
+- Hoja "G&G Barbers" cargada con **53 publicaciones** del 3 al 28 de noviembre. Se saltaron las
+  cuentas regresivas 2 y 4 (27 y 26 días, fechas ya pasadas) y se recorrieron los contenidos 1, 3 y 5:
+  3 nov a las 12:30, 15:00 y 18:00 (cuenta regresiva 25 días); 4 nov: 10:00, 14:00 y 18:00.
+- Escenario [[Make-GG-Publicacion-Automatica]] creado y probado sin publicar. **Inactivo** hasta que
+  el humano comparta la carpeta de imágenes con enlace público.
+
 > [!warning] Calendario atrasado
 > Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.
 > Las cuentas regresivas 2, 4 y 6 quedan sin uso; el contenido de esos días se puede recorrer.
