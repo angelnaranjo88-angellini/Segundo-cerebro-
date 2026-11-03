@@ -52,7 +52,7 @@ actualizado: 2026-10-28
 | [[Make-Lefranm-Seguimiento-Citas]] | 5747451 | 0% | ~1 695 |
 | [[Make-CUT-Seguimiento-Prospectos]] | 6055110 | 0.65% | ~595 |
 | [[Make-CUT-Creacion-de-Contenido-Sheets]] | 6077792 | **46.2%** | ~63 |
-| [[Make-GG-Publicacion-Automatica]] | 6885366 | — | nuevo |
+| [[Make-GG-Publicacion-Automatica]] | 6885366 | 0% (1 de 1) | activo |
 | [[Escenarios-Inactivos]] | — | — | los 15 apagados |
 
 ## Conceptos

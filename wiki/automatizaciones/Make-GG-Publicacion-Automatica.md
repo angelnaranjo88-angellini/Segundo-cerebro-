@@ -1,7 +1,7 @@
 ---
 titulo: G&G Barbers · Publicación automática FB + IG
 tipo: automatizacion
-estado: prototipo
+estado: activo
 clientes: [GG-Barbers]
 tags: [make, google-sheets, facebook, instagram]
 actualizado: 2026-11-03
@@ -40,18 +40,19 @@ ESTADO, ID_FACEBOOK, ID_INSTAGRAM, PUBLICADO_EL`. 53 filas (corte 2026-11-03).
 | Métrica | Valor | Corte |
 |---|---|---|
 | Ejecuciones de prueba | 1, sin publicar (nada vencido) | 2026-11-03 |
+| Primera publicación real (post 1) | OK en Facebook e Instagram, 10:59 CDMX | 2026-11-03 |
 | Operaciones estimadas | ~100/día de revisión + 5 por publicación | 2026-11-03 |
 
 ## Problemas conocidos
 
-> [!warning] Requiere carpeta pública
-> Facebook e Instagram toman la imagen por URL. La carpeta de Drive con `Publi1…Publi55` debe estar
-> compartida como "cualquiera con el enlace". Claude no tuvo permiso para compartirla; lo hace el
-> humano. Sin eso, las publicaciones fallan y Make desactiva el escenario tras 3 errores.
+- La carpeta de Drive con `Publi1…Publi55` debe seguir compartida como "cualquiera con el enlace"
+  (la compartió el humano el 2026-11-03). Si se cierra, las publicaciones fallan y Make desactiva el
+  escenario tras 3 errores.
+- El filtro tiene una excepción que deja pasar siempre la fila `N = 1` (se usó para la prueba). Es
+  inofensiva porque esa fila ya está publicada.
 
-> [!warning] Inferencia sin verificar
-> El truco `=w1080-h1350-rj` para obtener JPEG desde Drive no se pudo probar desde la sesión (red
-> bloqueada). Se valida con la primera publicación real.
+El truco `=w1080-h1350-rj` para servir JPEG desde Drive quedó **verificado** con la publicación 1
+(2026-11-03): Instagram la aceptó (ID 18091292756306676).
 
 - No hay conexión de Google Drive en Make (solo Google Sheets), por eso no se descarga el archivo
   de forma autenticada.

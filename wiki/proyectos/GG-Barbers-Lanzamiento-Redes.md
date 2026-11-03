@@ -148,8 +148,8 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 - Hoja "G&G Barbers" cargada con **53 publicaciones** del 3 al 28 de noviembre. Se saltaron las
   cuentas regresivas 2 y 4 (27 y 26 días, fechas ya pasadas) y se recorrieron los contenidos 1, 3 y 5:
   3 nov a las 12:30, 15:00 y 18:00 (cuenta regresiva 25 días); 4 nov: 10:00, 14:00 y 18:00.
-- Escenario [[Make-GG-Publicacion-Automatica]] creado y probado sin publicar. **Inactivo** hasta que
-  el humano comparta la carpeta de imágenes con enlace público.
+- Escenario [[Make-GG-Publicacion-Automatica]] **activo desde el 2026-11-03**. La publicación 1 salió
+  a las 10:59 en Facebook e Instagram como prueba (estaba programada a las 12:30).
 
 > [!warning] Calendario atrasado
 > Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.

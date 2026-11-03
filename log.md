@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-03] decision | G&G Barber’s: campaña en automático
+
+Con la carpeta ya pública, la publicación 1 salió en Facebook e Instagram a las 10:59 y el escenario
+6885366 quedó activo. Las siguientes 52 salen solas según la hoja. Ver [[Make-GG-Publicacion-Automatica]].
+
 ## [2026-11-03] decision | G&G Barber’s: hoja cargada y escenario de publicación
 
 Se cargaron 53 publicaciones en la hoja "G&G Barbers" y se creó el escenario de Make 6885366
