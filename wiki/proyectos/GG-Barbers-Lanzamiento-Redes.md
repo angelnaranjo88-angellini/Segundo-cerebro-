@@ -151,6 +151,10 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 - Escenario [[Make-GG-Publicacion-Automatica]] **activo desde el 2026-11-03**. La publicación 1 salió
   a las 10:59 en Facebook e Instagram como prueba (estaba programada a las 12:30).
 
+- **Fotos reales (2026-11-03):** el cliente mandó 6 fotos de cortes de su barbero (`Corte 1…6`,
+  JPEG 1122 × 1402, ya con logo). Reemplazaron las cuentas regresivas del 3 al 8 de noviembre a las
+  18:00 (filas `C1…C6` en la hoja). La cuenta regresiva retoma el 9 de noviembre con 19 días.
+
 > [!warning] Calendario atrasado
 > Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.
 > Las cuentas regresivas 2, 4 y 6 quedan sin uso; el contenido de esos días se puede recorrer.

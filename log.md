@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-03] decision | G&G Barber’s: fotos reales de cortes en el calendario
+
+Seis fotos de cortes del barbero sustituyen las cuentas regresivas del 3 al 8 de noviembre (18:00).
+Primeras fotos reales del negocio en la campaña. Ver [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-11-03] decision | G&G Barber’s: campaña en automático
 
 Con la carpeta ya pública, la publicación 1 salió en Facebook e Instagram a las 10:59 y el escenario
