@@ -118,7 +118,7 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 - Publicación automática: base en el escenario de Make [[Make-CUT-Creacion-de-Contenido-Sheets]]
   (Sheets → visión → FB/IG), con cambio de cuentas y ajustes. Hereda su riesgo de 46% de errores
   (ver [[Riesgos-y-Deuda-Tecnica]]).
-- Promo de inauguración: pendiente de confirmar por el dueño (publicación 43).
+- Promo de inauguración: **no habrá** (2026-11-03); la publicación 43 anuncia la apertura.
 - **Herramienta elegida (2026-10-31): ChatGPT.** Prueba con el post 1 ("No es una barbería más"):
   Canva generó 4 opciones y al humano no le gustó ninguna (herramientas mal dibujadas); ChatGPT
   respetó texto, acentos, logo y estilo. Método: un proyecto de ChatGPT con instrucciones fijas de
@@ -138,8 +138,9 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
   varias seguidas en el mismo chat.
 
 - **Flyer sin beneficio (2026-11-03):** el dueño no definió descuento para quien lleve el flyer. Las
-  publicaciones 39 y 49 lo presentan como invitación a la experiencia VIP. Solo la 43 (promo de
-  inauguración) sigue esperando dato.
+  publicaciones 39 y 49 lo presentan como invitación a la experiencia VIP. Tampoco hay promo de
+  inauguración: la 43 pasó a "Gran apertura". Ninguna publicación promete beneficios; las 56 se
+  pueden generar ya (calendario v2.3).
 
 > [!warning] Calendario atrasado
 > Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.

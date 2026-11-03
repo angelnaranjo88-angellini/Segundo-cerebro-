@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-03] decision | G&G Barber’s: campaña sin promociones
+
+El dueño no definió descuento por flyer ni promo de inauguración. Las publicaciones 39, 43 y 49 se
+reescribieron sin beneficios; las 56 quedan listas para generar. Ver [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-11-03] decision | G&G Barber’s: calendario v2 con identidad VIP
 
 El dueño insiste en el tono VIP y mandó cinco frases. Se integraron con 15 propuestas nuevas en las 56
