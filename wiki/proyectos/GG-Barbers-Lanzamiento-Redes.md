@@ -131,6 +131,12 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
   textos de imagen, descripciones y las 28 cuentas regresivas; instrucciones de ChatGPT con regla de
   tono VIP; banco de frases con botón de copiar.
 
+- **Lección de ChatGPT (2026-11-03):** con el logo solo en los archivos del proyecto, la imagen salió
+  sin logo y con otro estilo. Los archivos del proyecto se leen como texto, pero no siempre se usan
+  para dibujar. Solución (calendario v2.1): adjuntar en cada mensaje el logo y la publicación 1
+  aprobada como referencia de estilo, pedir la firma de forma explícita en el prompt y generar
+  varias seguidas en el mismo chat.
+
 > [!warning] Calendario atrasado
 > Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.
 > Las cuentas regresivas 2, 4 y 6 quedan sin uso; el contenido de esos días se puede recorrer.
