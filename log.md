@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-03] decision | G&G Barber’s: calendario v2 con identidad VIP
+
+El dueño insiste en el tono VIP y mandó cinco frases. Se integraron con 15 propuestas nuevas en las 56
+publicaciones y en las instrucciones de ChatGPT. Ver [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-10-31] decision | G&G Barber’s: ChatGPT para las imágenes y calendario de 56 posts
 
 Comparativa del post 1: ChatGPT gana a Canva. Calendario v1 publicado con prompts por post y tabla

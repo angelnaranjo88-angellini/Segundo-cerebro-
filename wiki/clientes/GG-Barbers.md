@@ -3,7 +3,7 @@ titulo: G&G Barber’s
 tipo: cliente
 estado: activo
 tags: [barberia, marca, redes-sociales]
-actualizado: 2026-10-31
+actualizado: 2026-11-03
 ---
 
 # G&G Barber’s
@@ -35,6 +35,12 @@ actualizado: 2026-10-31
 Definido por el dueño (2026-10-31): **barbería VIP**. Servicio premium, de confort y alta calidad,
 una experiencia distinta a las demás barberías. La voz de marca pasa de "oficio sereno" a
 "exclusividad con oficio": seguro y sobrio, sin gritar.
+
+Frases de marca dadas por el dueño (2026-11-03): "El arte de verte bien, el lujo de sentirte único",
+"La elegancia comienza con una experiencia", "Redefinimos el arte del cuidado masculino",
+"La excelencia no se improvisa, se trabaja con precisión", "No seguimos tendencias, creamos
+identidad". Claude agregó 15 más; todas viven en el calendario v2 de
+[[GG-Barbers-Lanzamiento-Redes]].
 
 ## Canales
 

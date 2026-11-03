@@ -5,7 +5,7 @@ estado: activo
 clientes: [GG-Barbers]
 tags: [marca, facebook, instagram, canva, diseno]
 inicio: 2026-10-28
-actualizado: 2026-10-28
+actualizado: 2026-11-03
 ---
 
 # G&G Barber’s — lanzamiento en redes
@@ -127,6 +127,13 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
   en imagen, descripción con hashtags y prompt. Mañana 10:00 contenido, tarde 18:00 cuenta regresiva
   (27 días el 1 nov → "hoy" el 28). Incluye tabla CSV con las columnas del escenario CUT.
   Publicaciones 39, 43 y 49 bloqueadas hasta saber la promo y el beneficio del flyer.
+- **Calendario v2 VIP (2026-11-03)**, mismo enlace: frases VIP del dueño + 15 nuevas integradas en
+  textos de imagen, descripciones y las 28 cuentas regresivas; instrucciones de ChatGPT con regla de
+  tono VIP; banco de frases con botón de copiar.
+
+> [!warning] Calendario atrasado
+> Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.
+> Las cuentas regresivas 2, 4 y 6 quedan sin uso; el contenido de esos días se puede recorrer.
 
 ## Decisiones tomadas
 
