@@ -38,7 +38,7 @@ Inicio programado: 2026-11-06 07:00 (CDMX). Sin fecha de fin.
 Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 - "No es una barbería más" — creativo `1585602343374761` (en ambas campañas)
 - "No es un corte, es una experiencia" — creativo `2376991489762806`
-- "Tu lugar te espera" — creativo `28947812128213075`
+- "Tu lugar te espera" — creativo `1673905231199435` (v2, sin "solo hay dos sillones"; reemplazó a `28947812128213075` el 2026-11-05)
 
 > [!warning] Pendiente de verificar
 > Los 7 objetos del borrador están VALIDATED sin errores (revisado 2026-11-05, ya con el
