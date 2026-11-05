@@ -13,7 +13,7 @@ actualizado: 2026-09-05
 ## [2026-11-05] decision | Campañas G&G publicadas
 
 Publicadas las dos campañas de [[GG-Campanas-Inauguracion]] ($300/día, 5 km). Campañas ACTIVE;
-los 4 anuncios quedaron en revisión de Meta. Arranque 2026-11-06 07:00.
+los 4 anuncios quedaron en revisión de Meta. Arranque adelantado a 2026-11-05 16:00.
 
 ## [2026-11-05] decision | Borradores de campañas G&G en Meta Ads
 

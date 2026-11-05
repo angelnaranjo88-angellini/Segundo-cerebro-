@@ -27,7 +27,7 @@ actualizado: 2026-11-05
 ## Estructura en Meta Ads (publicada 2026-11-05)
 
 Cuenta `2028240577840135`. **Publicadas el 2026-11-05**: campañas ACTIVE, anuncios en revisión de Meta;
-entrega desde el 2026-11-06 07:00.
+entrega desde el **2026-11-05 16:00** (adelantado a petición del cliente; antes 2026-11-06 07:00).
 
 > El anuncio de alcance se rechazó al primer intento por `link_title` obsoleto en el CTA
 > (objetivo Reconocimiento); se rehízo el creativo inline sin ese campo y pasó.
@@ -37,7 +37,7 @@ entrega desde el 2026-11-06 07:00.
 | G&G \| Inauguración \| Mensajes WhatsApp | `120260302413610112` | Interacción → conversaciones WhatsApp | $240/día (CBO) | `120260302418590112`: 5 km, hombres 20–50 como sugerencia, Advantage+ audiencia y ubicaciones |
 | G&G \| Inauguración \| Alcance Narvarte | `120260302525840112` | Reconocimiento → alcance | $60/día (CBO) | `120260302527970112`: 5 km, 18+, máx. 2 impresiones/7 días |
 
-Inicio programado: 2026-11-06 07:00 (CDMX). Sin fecha de fin.
+Inicio: 2026-11-05 16:00 (CDMX). Sin fecha de fin.
 
 Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 - "No es una barbería más" — creativo `1585602343374761` (en ambas campañas)
