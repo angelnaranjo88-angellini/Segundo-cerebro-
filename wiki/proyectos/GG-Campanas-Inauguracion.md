@@ -41,8 +41,8 @@ Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 - "Tu lugar te espera" — creativo `28947812128213075`
 
 > [!warning] Pendiente de verificar
-> El borrador no marcó errores, pero Meta valida el número de WhatsApp vinculado a la página
-> hasta publicar. El mensaje pre-llenado no se pudo configurar desde la API; se ajusta en
+> Los 7 objetos del borrador están VALIDATED sin errores (revisado 2026-11-05, ya con el
+> WhatsApp vinculado). La validación final ocurre al publicar. El mensaje pre-llenado no se pudo configurar desde la API; se ajusta en
 > Ads Manager.
 
 ## Capacidad estimada
@@ -55,7 +55,7 @@ Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 ## Pendientes
 
 - ~~Crear cuenta de WhatsApp Business~~ — hecha, estado Conectado (2026-11-05).
-- Vincular ese WhatsApp a la página (bloquea el botón de WhatsApp).
+- ~~Vincular WhatsApp a la página~~ — hecho 2026-11-05; el formulario de la página solo lo aceptó escrito como **1 55 4786 2032** (con el 1).
 - ~~Cuenta de anuncios en MXN dentro del portafolio~~ — `2028240577840135`, con pago e Instagram (2026-11-05).
 - Confirmar que el bot esté listo antes de encender, o asignar quien conteste.
 
