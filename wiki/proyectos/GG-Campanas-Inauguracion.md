@@ -24,9 +24,13 @@ actualizado: 2026-11-05
   si es largo).
 - No tocar segmentación a media campaña; el cambio post-apertura se hace con anuncios nuevos.
 
-## Estructura en Meta Ads (borrador, 2026-11-05)
+## Estructura en Meta Ads (publicada 2026-11-05)
 
-Cuenta `2028240577840135`. Todo en **borrador**: nada publicado ni gastado.
+Cuenta `2028240577840135`. **Publicadas el 2026-11-05**: campañas ACTIVE, anuncios en revisión de Meta;
+entrega desde el 2026-11-06 07:00.
+
+> El anuncio de alcance se rechazó al primer intento por `link_title` obsoleto en el CTA
+> (objetivo Reconocimiento); se rehízo el creativo inline sin ese campo y pasó.
 
 | Campaña | ID | Objetivo | Presupuesto | Conjunto |
 |---|---|---|---|---|

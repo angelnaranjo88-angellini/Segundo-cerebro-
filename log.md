@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-05] decision | Campañas G&G publicadas
+
+Publicadas las dos campañas de [[GG-Campanas-Inauguracion]] ($300/día, 5 km). Campañas ACTIVE;
+los 4 anuncios quedaron en revisión de Meta. Arranque 2026-11-06 07:00.
+
 ## [2026-11-05] decision | Borradores de campañas G&G en Meta Ads
 
 Creadas en borrador dos campañas (mensajes $240/día y alcance $60/día), 3 imágenes subidas y
