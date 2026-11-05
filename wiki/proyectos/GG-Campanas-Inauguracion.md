@@ -35,8 +35,7 @@ actualizado: 2026-11-05
 
 - ~~Crear cuenta de WhatsApp Business~~ — hecha, estado Conectado (2026-11-05).
 - Vincular ese WhatsApp a la página (bloquea el botón de WhatsApp).
-- La cuenta de anuncios conectada (`1645960426970922`) está en **USD** y fuera del portafolio:
-  crear una en MXN dentro de "Gabriel Barber" y conectar esa.
+- ~~Cuenta de anuncios en MXN dentro del portafolio~~ — `2028240577840135`, con pago e Instagram (2026-11-05).
 - Confirmar que el bot esté listo antes de encender, o asignar quien conteste.
 
 ## Correlaciones

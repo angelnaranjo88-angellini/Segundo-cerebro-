@@ -35,7 +35,8 @@ Fuente de precios y horario: artifacts "Kit de marca G&G Barbers" y "Calendario 
 | Domicilio | Anaxágoras 905, Narvarte Poniente, Benito Juárez, 03020 |
 | Horario | L–V 9:00–19:00 · Sáb 9:00–17:00 (desde el 28-nov) |
 | Facebook (page id) | `1451464018039847` |
-| Meta Ads | Conectada `1645960426970922`: **USD, sin portafolio, sin página ni IG, sin pago** (2026-11-05). Se recomienda crear una en MXN dentro del portafolio. |
+| Instagram | @ggbarbers.mx (`17841473644530734`), ya ligado a la página y a la cuenta de anuncios |
+| Meta Ads | `2028240577840135` "G&G Barber's – Ads" (MXN, portafolio "Gabriel Barber" `4736981739857405`, con pago, 2026-11-05). Ignorar la vieja en USD `1645960426970922`. |
 
 ## Proyectos
 
