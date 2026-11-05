@@ -17,7 +17,7 @@ actualizado: 2026-11-05
 
 - **Presupuesto aprobado: $300 MXN/día** (+ IVA), recarga prepago desde la app y método de pago.
 - Reparto 80/20: **Mensajes a WhatsApp $240/día** + **Alcance $60/día**.
-- Radio 3 km (mensajes) / 4 km (alcance) desde Anaxágoras 905. Instagram encendido.
+- Radio **5 km** en ambas campañas desde Anaxágoras 905 (ampliado de 3/4 km el 2026-11-05, aún en borrador). Instagram encendido.
 - 3 creativos en un solo conjunto: "No es una barbería más", "No es un corte. Es una
   experiencia.", "Tu lugar te espera".
 - Mensaje pre-llenado corto (lección de [[Fuente-Reporte-Cierre-Campana-CUT]]: 83% abandona
@@ -30,8 +30,8 @@ Cuenta `2028240577840135`. Todo en **borrador**: nada publicado ni gastado.
 
 | Campaña | ID | Objetivo | Presupuesto | Conjunto |
 |---|---|---|---|---|
-| G&G \| Inauguración \| Mensajes WhatsApp | `120260302413610112` | Interacción → conversaciones WhatsApp | $240/día (CBO) | `120260302418590112`: 3 km, hombres 20–50 como sugerencia, Advantage+ audiencia y ubicaciones |
-| G&G \| Inauguración \| Alcance Narvarte | `120260302525840112` | Reconocimiento → alcance | $60/día (CBO) | `120260302527970112`: 4 km, 18+, máx. 2 impresiones/7 días |
+| G&G \| Inauguración \| Mensajes WhatsApp | `120260302413610112` | Interacción → conversaciones WhatsApp | $240/día (CBO) | `120260302418590112`: 5 km, hombres 20–50 como sugerencia, Advantage+ audiencia y ubicaciones |
+| G&G \| Inauguración \| Alcance Narvarte | `120260302525840112` | Reconocimiento → alcance | $60/día (CBO) | `120260302527970112`: 5 km, 18+, máx. 2 impresiones/7 días |
 
 Inicio programado: 2026-11-06 07:00 (CDMX). Sin fecha de fin.
 
