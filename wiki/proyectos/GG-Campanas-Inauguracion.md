@@ -33,8 +33,10 @@ actualizado: 2026-11-05
 
 ## Pendientes
 
-- Vincular el WhatsApp 55 4786 2032 a la página (bloquea el botón de WhatsApp).
-- Conectar a Claude con la cuenta de anuncios.
+- ~~Crear cuenta de WhatsApp Business~~ — hecha, estado Conectado (2026-11-05).
+- Vincular ese WhatsApp a la página (bloquea el botón de WhatsApp).
+- La cuenta de anuncios conectada (`1645960426970922`) está en **USD** y fuera del portafolio:
+  crear una en MXN dentro de "Gabriel Barber" y conectar esa.
 - Confirmar que el bot esté listo antes de encender, o asignar quien conteste.
 
 ## Correlaciones
