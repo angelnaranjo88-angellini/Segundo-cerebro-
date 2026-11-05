@@ -24,6 +24,27 @@ actualizado: 2026-11-05
   si es largo).
 - No tocar segmentación a media campaña; el cambio post-apertura se hace con anuncios nuevos.
 
+## Estructura en Meta Ads (borrador, 2026-11-05)
+
+Cuenta `2028240577840135`. Todo en **borrador**: nada publicado ni gastado.
+
+| Campaña | ID | Objetivo | Presupuesto | Conjunto |
+|---|---|---|---|---|
+| G&G \| Inauguración \| Mensajes WhatsApp | `120260302413610112` | Interacción → conversaciones WhatsApp | $240/día (CBO) | `120260302418590112`: 3 km, hombres 20–50 como sugerencia, Advantage+ audiencia y ubicaciones |
+| G&G \| Inauguración \| Alcance Narvarte | `120260302525840112` | Reconocimiento → alcance | $60/día (CBO) | `120260302527970112`: 4 km, 18+, máx. 2 impresiones/7 días |
+
+Inicio programado: 2026-11-06 07:00 (CDMX). Sin fecha de fin.
+
+Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
+- "No es una barbería más" — creativo `1585602343374761` (en ambas campañas)
+- "No es un corte, es una experiencia" — creativo `2376991489762806`
+- "Tu lugar te espera" — creativo `28947812128213075`
+
+> [!warning] Pendiente de verificar
+> El borrador no marcó errores, pero Meta valida el número de WhatsApp vinculado a la página
+> hasta publicar. El mensaje pre-llenado no se pudo configurar desde la API; se ajusta en
+> Ads Manager.
+
 ## Capacidad estimada
 
 > [!warning] Inferencia sin verificar

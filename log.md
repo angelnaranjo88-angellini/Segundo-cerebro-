@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-05] decision | Borradores de campañas G&G en Meta Ads
+
+Creadas en borrador dos campañas (mensajes $240/día y alcance $60/día), 3 imágenes subidas y
+4 anuncios con botón de WhatsApp. Detalle e IDs en [[GG-Campanas-Inauguracion]].
+
 ## [2026-11-05] decision | Campañas de inauguración G&G Barber's
 
 Nuevo cliente [[GG-Barbers]] y proyecto [[GG-Campanas-Inauguracion]]. Aprobado $300 MXN/día,
