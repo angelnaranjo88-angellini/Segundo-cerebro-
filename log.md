@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-05] ingesta | Reporte de cierre de la campaña CUT 2026
+
+Ingerido [[Fuente-Reporte-Cierre-Campana-CUT]]: $1,478.43 MXN, 20,737 personas alcanzadas,
+71 conversaciones a $20.82. Actualizado [[CUT-Captacion-de-Prospectos]] con las métricas de
+Meta Ads. Sirve de referencia para las campañas de la barbería (cliente aún sin página).
+
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 
 40 páginas, 37 destinos de enlace distintos. **Cero enlaces rotos** y cero páginas huérfanas

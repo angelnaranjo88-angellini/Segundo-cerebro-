@@ -71,6 +71,7 @@ actualizado: 2026-09-05
 | [[Fuente-Inventario-Make]] | API de Make, 22 escenarios | 2026-09-05 |
 | [[Fuente-Catalogo-Lefranm]] | PDF en Drive, ~52 SKUs | 2026-09-05 |
 | [[Fuente-Hoja-CUT-Fotos]] | Hoja de Google, cola de publicación | 2026-09-05 |
+| [[Fuente-Reporte-Cierre-Campana-CUT]] | Reporte Meta Ads, campaña CUT 2026 | 2026-11-05 |
 
 ## Consultas en vivo
 
