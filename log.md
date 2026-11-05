@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-05] decision | Campañas de inauguración G&G Barber's
+
+Nuevo cliente [[GG-Barbers]] y proyecto [[GG-Campanas-Inauguracion]]. Aprobado $300 MXN/día,
+reparto 80/20 mensajes/alcance, botón directo a WhatsApp. Pendiente vincular el número.
+
 ## [2026-11-05] ingesta | Reporte de cierre de la campaña CUT 2026
 
 Ingerido [[Fuente-Reporte-Cierre-Campana-CUT]]: $1,478.43 MXN, 20,737 personas alcanzadas,

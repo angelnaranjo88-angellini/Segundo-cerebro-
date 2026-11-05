@@ -24,6 +24,7 @@ actualizado: 2026-09-05
 
 | Página | Una línea | Estado |
 |---|---|---|
+| [[GG-Barbers]] | Barbería VIP en Narvarte; inaugura 28-nov-2026 | activo |
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
 | [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
@@ -32,6 +33,7 @@ actualizado: 2026-09-05
 
 | Página | Una línea | Estado |
 |---|---|---|
+| [[GG-Campanas-Inauguracion]] | Meta Ads → WhatsApp para la apertura, $300/día | activo |
 | [[Lefranm-Agendamiento-de-Citas]] | Agente de citas con CRUD completo de Calendar + MCP | activo |
 | [[Lefranm-Agente-de-Ventas]] | Agente de catálogo por WhatsApp, 22 módulos | activo |
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
