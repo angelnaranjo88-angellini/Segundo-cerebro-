@@ -26,6 +26,7 @@ actualizado: 2026-09-05
 |---|---|---|
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
 | [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
+| [[GyG-Barbers]] | Barbería VIP en Narvarte; abre 2026-11-28 | activo |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
 
 ## Proyectos
@@ -37,6 +38,7 @@ actualizado: 2026-09-05
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
+| [[GyG-Barbers-App-y-Asistente]] | App Bolt + Supabase y asistente Dante que agenda directo en la base | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
 
 ## Automatizaciones
@@ -50,6 +52,7 @@ actualizado: 2026-09-05
 | [[Make-Lefranm-Seguimiento-Citas]] | 5747451 | 0% | ~1 695 |
 | [[Make-CUT-Seguimiento-Prospectos]] | 6055110 | 0.65% | ~595 |
 | [[Make-CUT-Creacion-de-Contenido-Sheets]] | 6077792 | **46.2%** | ~63 |
+| [[Make-GyG-Asistente-Dante]] | 6914875 | sin medir | sin medir |
 | [[Escenarios-Inactivos]] | — | — | los 15 apagados |
 
 ## Conceptos
@@ -61,6 +64,7 @@ actualizado: 2026-09-05
 | [[Pipeline-de-Contenido-Social]] | 6 generaciones en 10 meses; por qué sobrevivió la última |
 | [[Agendamiento-con-Google-Calendar]] | Calendar como base de datos de citas |
 | [[Persistencia-Airtable-vs-Data-Store]] | La contradicción arquitectónica sin resolver |
+| [[Herramientas-de-Agente-en-Make]] | Por qué las herramientas armadas por API llegan vacías |
 | [[Stack-Tecnologico]] | Todo el inventario de herramientas |
 
 ## Fuentes

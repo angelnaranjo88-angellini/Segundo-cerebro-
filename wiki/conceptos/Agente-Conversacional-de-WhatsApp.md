@@ -35,6 +35,7 @@ de 2025-2026. Menos módulos, menos puntos de fallo, decisión centralizada.
 | [[Make-Lefranm-Citas]] | 20 | 6.9 | 7.6% | El más completo |
 | [[Make-Lefranm-Cosmeticos-Ventas]] | 22 | 8.4 | 10.1% | El más largo y frágil |
 | [[Make-Asistente-Chavarria]] | 15 | 5.0 | 7.1% | El más eficiente |
+| [[Make-GyG-Asistente-Dante]] | 6 + subescenario | sin medir | sin medir | Agenda en Supabase, no en Calendar (2026-11-07) |
 
 Prototipos apagados que lo intentaron: `Agendamiento` (3678657), `air table` (3620443),
 `Integration WhatsApp Business Cloud` (4535198). Ver [[Escenarios-Inactivos]].
@@ -55,6 +56,8 @@ mismo entorno fallan entre 0% y 0.65%. **La fragilidad está en la capa de IA, n
 WhatsApp.** Ese es el hallazgo más accionable del wiki. Ver [[Riesgos-y-Deuda-Tecnica]].
 
 ## Correlaciones
+
+Si el agente se arma por API, leer antes [[Herramientas-de-Agente-en-Make]].
 
 [[Seguimiento-por-Sondeo]] es su complemento obligatorio: el agente siembra, el sondeo cosecha.
 [[Correlacion-de-Proyectos]].

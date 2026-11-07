@@ -10,6 +10,16 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-07] ingesta | G&G Barber's: app de gestión y asistente Dante
+
+Nuevo cliente [[GyG-Barbers]] y proyecto [[GyG-Barbers-App-y-Asistente]]: la app de Bolt de un
+cliente anterior se rebrandeó al kit G&G, se reclamó y vació su base de Supabase, y se agregaron
+regla de 2 barberos, horario por día, notificaciones y la Edge Function `bot-api`.
+
+El asistente [[Make-GyG-Asistente-Dante]] tardó varias iteraciones: las herramientas armadas por
+API recibían los datos vacíos. Lección documentada en [[Herramientas-de-Agente-en-Make]].
+Funcionando el 2026-11-07 (cita de prueba agendada por WhatsApp).
+
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 
 40 páginas, 37 destinos de enlace distintos. **Cero enlaces rotos** y cero páginas huérfanas
