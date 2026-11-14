@@ -35,11 +35,12 @@ actualizado: 2026-11-14
 - **Notificaciones** con triggers (cita nueva/cancelada/reprogramada, stock ≤ 3) y sonido en la app.
 - Base anterior vaciada con `TRUNCATE` tras reclamarla (datos del negocio previo).
 
-## Pendientes (2026-11-07)
+## Pendientes (2026-11-14)
+
+App publicada y mensaje prellenado de los anuncios actualizado (2026-11-14). Solo quedan los de seguridad:
 
 - Contraseñas de la app escritas en el frontend: migrar a login real de Supabase.
 - Políticas RLS abiertas a `anon` en todas las tablas: cualquiera con la llave pública puede leer.
-- Publicar la app (Bolt → Publish) para uso diario del encargado.
 
 > [!warning] Inferencia sin verificar
 > El costo en créditos de Make por conversación no se ha medido; cada consulta de agenda suma
