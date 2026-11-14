@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-14] decision | G&G: recordatorio de citas un día antes
+
+Plantilla de WhatsApp `recordatorio_cita` aprobada por Meta (validez 12 h). Escenario Make 7033720
+corre diario a las 10:00 (CDMX): pide a `bot-api` las citas de mañana, envía la plantilla y marca
+cada cita como recordada. Ver [[GyG-Barbers-App-y-Asistente]].
+
 ## [2026-11-07] ingesta | G&G Barber's: app de gestión y asistente Dante
 
 Nuevo cliente [[GyG-Barbers]] y proyecto [[GyG-Barbers-App-y-Asistente]]: la app de Bolt de un

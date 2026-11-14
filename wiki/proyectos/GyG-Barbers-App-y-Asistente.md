@@ -5,7 +5,7 @@ estado: activo
 clientes: [GyG-Barbers]
 tags: [bolt, supabase, make, whatsapp, agente-ia, citas]
 inicio: 2026-11-03
-actualizado: 2026-11-07
+actualizado: 2026-11-14
 ---
 
 # G&G Barber's — App de gestión y asistente Dante
@@ -21,6 +21,7 @@ actualizado: 2026-11-07
 | Base de datos | Supabase `kwygpjmziybxboselpcd` (reclamada desde Bolt) | Tablas services, products, sales, appointments, notifications |
 | API del bot | Edge Function `bot-api` | Protegida con `BOT_API_KEY` (vive en Secrets de Supabase y en Make; nunca en el repo) |
 | Asistente | [[Make-GyG-Asistente-Dante]] | Agente IA con 6 herramientas |
+| Recordatorios | Escenario Make 7033720 | Diario 10:00 CDMX: plantilla `recordatorio_cita` (aprobada 2026-11-13) a las citas de mañana; marca `reminder_sent_at` |
 
 ## Decisiones
 
@@ -36,8 +37,6 @@ actualizado: 2026-11-07
 
 ## Pendientes (2026-11-07)
 
-- Plantilla de Meta `recordatorio_cita` y escenario de recordatorio un día antes
-  (`bot-api` ya tiene `recordatorios_pendientes` y `marcar_recordado`).
 - Contraseñas de la app escritas en el frontend: migrar a login real de Supabase.
 - Políticas RLS abiertas a `anon` en todas las tablas: cualquiera con la llave pública puede leer.
 - Publicar la app (Bolt → Publish) para uso diario del encargado.
