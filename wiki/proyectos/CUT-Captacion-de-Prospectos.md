@@ -5,7 +5,7 @@ estado: activo
 clientes: [Colegio-Maria-Chavarria-Vital]
 tags: [prospectos, whatsapp, airtable, meta-ads]
 inicio: 2026-08-26
-actualizado: 2026-09-05
+actualizado: 2026-11-05
 ---
 
 # CUT — Captación y seguimiento de prospectos
@@ -37,6 +37,11 @@ Activo. El escenario de seguimiento corre cada 30 minutos, indefinidamente.
 | Operaciones | 595 | 2026-09-05 |
 | Errores | 3 (0.65%) | 2026-09-05 |
 | Créditos | ~595 | 2026-09-05 |
+| Inversión Meta Ads | $1,478.43 MXN | 2026-09-07 |
+| Conversaciones iniciadas | 71 ($20.82 c/u) | 2026-09-07 |
+| Alcance | 20,737 personas | 2026-09-07 |
+
+Detalle en [[Fuente-Reporte-Cierre-Campana-CUT]].
 
 ## Decisiones tomadas
 
@@ -49,8 +54,9 @@ Activo. El escenario de seguimiento corre cada 30 minutos, indefinidamente.
 
 - Cerrado el ciclo 2026, el escenario sigue corriendo cada 30 minutos: 48 ejecuciones diarias
   que ya no captan a nadie. Candidato a pausar hasta la próxima campaña.
-- No hay página que cruce **gasto publicitario contra prospectos registrados**. Es el dato que
-  falta para saber si el embudo es rentable. Ver [[Riesgos-y-Deuda-Tecnica]].
+- ~~No hay página que cruce gasto contra prospectos~~ — resuelto en
+  [[Fuente-Reporte-Cierre-Campana-CUT]]: $20.82 por conversación. Falta aún la conversión
+  conversación → inscripción.
 
 ## Correlaciones
 

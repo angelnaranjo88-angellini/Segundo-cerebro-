@@ -10,6 +10,27 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-05] decision | Campañas G&G publicadas
+
+Publicadas las dos campañas de [[GG-Campanas-Inauguracion]] ($300/día, 5 km). Campañas ACTIVE;
+los 4 anuncios quedaron en revisión de Meta. Arranque adelantado a 2026-11-05 16:00.
+
+## [2026-11-05] decision | Borradores de campañas G&G en Meta Ads
+
+Creadas en borrador dos campañas (mensajes $240/día y alcance $60/día), 3 imágenes subidas y
+4 anuncios con botón de WhatsApp. Detalle e IDs en [[GG-Campanas-Inauguracion]].
+
+## [2026-11-05] decision | Campañas de inauguración G&G Barber's
+
+Nuevo cliente [[GG-Barbers]] y proyecto [[GG-Campanas-Inauguracion]]. Aprobado $300 MXN/día,
+reparto 80/20 mensajes/alcance, botón directo a WhatsApp. Pendiente vincular el número.
+
+## [2026-11-05] ingesta | Reporte de cierre de la campaña CUT 2026
+
+Ingerido [[Fuente-Reporte-Cierre-Campana-CUT]]: $1,478.43 MXN, 20,737 personas alcanzadas,
+71 conversaciones a $20.82. Actualizado [[CUT-Captacion-de-Prospectos]] con las métricas de
+Meta Ads. Sirve de referencia para las campañas de la barbería (cliente aún sin página).
+
 ## [2026-11-03] decision | G&G Barber’s: fotos reales de cortes en el calendario
 
 Seis fotos de cortes del barbero sustituyen las cuentas regresivas del 3 al 8 de noviembre (18:00).
@@ -104,6 +125,7 @@ versiones de logo, estilo gráfico, voz y pendientes. Publicado como artifact pr
 Hallazgos: el nombre "Barber's" no coincide con el logo ("Barbers"); el logo solo existe en
 raster 3D; la plata de Essentials es más fría que la de Barbers; la cotización no tiene precio
 para las 6 publicaciones.
+
 
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 

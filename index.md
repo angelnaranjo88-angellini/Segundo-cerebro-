@@ -24,15 +24,16 @@ actualizado: 2026-10-28
 
 | Página | Una línea | Estado |
 |---|---|---|
+| [[GG-Barbers]] | Barbería VIP en Narvarte; inaugura 28-nov-2026 | activo |
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
 | [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
-| [[GG-Barbers]] | G&G Barber’s, barbería por inaugurar; submarca Essentials en las mismas redes | activo |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
 
 ## Proyectos
 
 | Página | Una línea | Estado |
 |---|---|---|
+| [[GG-Campanas-Inauguracion]] | Meta Ads → WhatsApp para la apertura, $300/día | activo |
 | [[Lefranm-Agendamiento-de-Citas]] | Agente de citas con CRUD completo de Calendar + MCP | activo |
 | [[Lefranm-Agente-de-Ventas]] | Agente de catálogo por WhatsApp, 22 módulos | activo |
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
@@ -75,6 +76,7 @@ actualizado: 2026-10-28
 | [[Fuente-Catalogo-Lefranm]] | PDF en Drive, ~52 SKUs | 2026-09-05 |
 | [[Fuente-Hoja-CUT-Fotos]] | Hoja de Google, cola de publicación | 2026-09-05 |
 | [[Fuente-Logos-y-Precios-GG]] | 3 imágenes por chat: logos y precios | 2026-10-28 |
+| [[Fuente-Reporte-Cierre-Campana-CUT]] | Reporte Meta Ads, campaña CUT 2026 | 2026-11-05 |
 
 ## Consultas en vivo
 
