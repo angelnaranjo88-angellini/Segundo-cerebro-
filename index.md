@@ -2,7 +2,7 @@
 titulo: Índice
 tipo: sintesis
 estado: activo
-actualizado: 2026-10-28
+actualizado: 2026-11-14
 ---
 
 # Índice
@@ -27,19 +27,21 @@ actualizado: 2026-10-28
 | [[GG-Barbers]] | Barbería VIP en Narvarte; inaugura 28-nov-2026 | activo |
 | [[Colegio-Maria-Chavarria-Vital]] | Bachillerato y universidad en Tláhuac; único cliente con Meta Ads | activo |
 | [[Lefranm-Cosmeticos]] | Cosmética profesional y estética en Iztapalapa; 90% del volumen | activo |
+| [[GyG-Barbers]] | Ficha duplicada; fusionada en GG-Barbers | archivado |
 | [[Sonrisas-Para-Todos-Nosotros]] | Clínica dental; solo landing, sin automatización | prototipo |
 
 ## Proyectos
 
 | Página | Una línea | Estado |
 |---|---|---|
-| [[GG-Campanas-Inauguracion]] | Meta Ads → WhatsApp para la apertura, $300/día | activo |
+| [[GG-Campanas-Inauguracion]] | Meta Ads → WhatsApp, $300/día; 93 conversaciones a $21.53 en 9 días | activo |
 | [[Lefranm-Agendamiento-de-Citas]] | Agente de citas con CRUD completo de Calendar + MCP | activo |
 | [[Lefranm-Agente-de-Ventas]] | Agente de catálogo por WhatsApp, 22 módulos | activo |
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |
 | [[CUT-Captacion-de-Prospectos]] | Embudo Meta Ads → WhatsApp → Airtable → seguimiento | activo |
 | [[CUT-Contenido-Social]] | Publicación diaria automática en FB e IG | activo |
-| [[GG-Barbers-Lanzamiento-Redes]] | Kit v0.4: V02 y V08 elegidos, portadas y toldo con caramelo; luego FB/IG y 6 posts | activo |
+| [[GG-Barbers-Lanzamiento-Redes]] | Kit de marca cerrado, FB e IG, calendario de 56 posts publicándose solo | activo |
+| [[GyG-Barbers-App-y-Asistente]] | App Bolt + Supabase y asistente Dante que agenda directo en la base | activo |
 | [[Landing-Sonrisas-Dental]] | Landing estática sin desplegar ni conectar | prototipo |
 
 ## Automatizaciones
@@ -53,7 +55,8 @@ actualizado: 2026-10-28
 | [[Make-Lefranm-Seguimiento-Citas]] | 5747451 | 0% | ~1 695 |
 | [[Make-CUT-Seguimiento-Prospectos]] | 6055110 | 0.65% | ~595 |
 | [[Make-CUT-Creacion-de-Contenido-Sheets]] | 6077792 | **46.2%** | ~63 |
-| [[Make-GG-Publicacion-Automatica]] | 6885366 | 0% (1 de 1) | activo |
+| [[Make-GG-Publicacion-Automatica]] | 6885366 | 0% (1 de 1, corte 2026-11-03) | sin medir |
+| [[Make-GyG-Asistente-Dante]] | 6914875 | sin medir | sin medir |
 | [[Escenarios-Inactivos]] | — | — | los 15 apagados |
 
 ## Conceptos
@@ -65,6 +68,7 @@ actualizado: 2026-10-28
 | [[Pipeline-de-Contenido-Social]] | 6 generaciones en 10 meses; por qué sobrevivió la última |
 | [[Agendamiento-con-Google-Calendar]] | Calendar como base de datos de citas |
 | [[Persistencia-Airtable-vs-Data-Store]] | La contradicción arquitectónica sin resolver |
+| [[Herramientas-de-Agente-en-Make]] | Por qué las herramientas armadas por API llegan vacías |
 | [[Stack-Tecnologico]] | Todo el inventario de herramientas |
 
 ## Fuentes

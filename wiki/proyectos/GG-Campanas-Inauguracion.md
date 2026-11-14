@@ -5,7 +5,7 @@ estado: activo
 clientes: [GG-Barbers]
 tags: [meta-ads, whatsapp, inauguracion]
 inicio: 2026-11-05
-actualizado: 2026-11-05
+actualizado: 2026-11-14
 ---
 
 # G&G — Campañas de inauguración en Meta Ads
@@ -49,6 +49,30 @@ Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 > WhatsApp vinculado). La validación final ocurre al publicar. El mensaje pre-llenado no se pudo configurar desde la API; se ajusta en
 > Ads Manager.
 
+## Resultados (corte 2026-11-13)
+
+Primeros 9 días, del 5 de noviembre a las 16:00 al 13 de noviembre. Fuente: Meta Ads Manager,
+atribución 7 días clic / 1 día vista. Reporte para el cliente: artifact "Campañas G&G Barber's".
+
+| Campaña | Inversión | Alcance | CTR | Costo x mil | Resultado |
+|---|---|---|---|---|---|
+| Mensajes WhatsApp | $2,002.73 | 8,213 | 4.24% | $106.97 | **93 conversaciones a $21.53** |
+| Alcance Narvarte | $491.51 | 70,772 | 0.16% | $5.28 | $6.94 por mil personas |
+| Total | $2,494.24 (99.8% de $300/día) | | | | |
+
+- Embudo de mensajes: 8,213 personas → 793 clics → 261 abrieron WhatsApp → 93 escribieron (36%)
+  → 41 con 2+ mensajes (44%). En CUT solo escribía el 17% de quienes abrían el chat.
+- Por anuncio: "No es una barbería más" 71 conv. a $19.14 (76%); "Tu lugar te espera" 21 a $25.27;
+  "No es un corte, es una experiencia" 1 a $112.96 (Meta casi no lo entrega).
+- Público: 90 de 93 conversaciones son de hombres; el mejor grupo es hombres 35–44 (34 conv. a $17.67).
+- Mejor día: 7 nov, 15 conv. a $15.06. Peores: 5 nov (arranque, $34.71) y 12 nov ($36.57).
+- El CPM es 3.5 veces el de CUT ($106.97 contra $30.25), pero el CTR más alto compensa: el costo por
+  conversación quedó casi igual ($21.53 contra $20.82).
+
+> [!warning] Inferencia sin verificar
+> A ~10 conversaciones diarias, la campaña llegaría a la inauguración con ~240 conversaciones.
+> Falta medir cuántas terminan en cita: el dato vive en la tabla `appointments` de la app.
+
 ## Capacidad estimada
 
 > [!warning] Inferencia sin verificar
@@ -61,7 +85,8 @@ Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 - ~~Crear cuenta de WhatsApp Business~~ — hecha, estado Conectado (2026-11-05).
 - ~~Vincular WhatsApp a la página~~ — hecho 2026-11-05; el formulario de la página solo lo aceptó escrito como **1 55 4786 2032** (con el 1).
 - ~~Cuenta de anuncios en MXN dentro del portafolio~~ — `2028240577840135`, con pago e Instagram (2026-11-05).
-- Confirmar que el bot esté listo antes de encender, o asignar quien conteste.
+- ~~Confirmar que el bot esté listo~~ — Dante agenda en la app desde el 2026-11-07; mensaje prellenado actualizado el 2026-11-14.
+- Sumar un anuncio con las 6 fotos reales de cortes, sin tocar la segmentación.
 
 ## Correlaciones
 

@@ -10,6 +10,45 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-14] decision | Unión de las tres ramas de G&G Barber's
+
+El trabajo de G&G vivía en tres ramas sin unir (marca y contenido, campañas, app y asistente). Se
+unieron en una sola. Había dos fichas de cliente: [[GG-Barbers]] queda como la vigente y
+[[GyG-Barbers]] se archiva. Contradicción abierta: el nombre de la página de Facebook.
+
+## [2026-11-14] ingesta | Resultados de 9 días de campañas G&G
+
+Meta Ads, 5 al 13 de noviembre: $2,494.24 invertidos, 93 conversaciones a $21.53, 70,772 personas
+alcanzadas. Se publicó el reporte para el cliente con la marca Chaos Ctrl. Ver
+[[GG-Campanas-Inauguracion#Resultados (corte 2026-11-13)]].
+
+## [2026-11-14] decision | Cotización G&G GG-2026-002
+
+Pago único de $26,100 (versión ligera), $20,000 ya pagados, saldo $6,100. Mensualidad de $3,000
+(asistente + app) desde el 1 de noviembre, primer pago el 1 de diciembre; calendario mensual
+opcional a $2,500. Ver [[GG-Barbers#Comercial]].
+
+## [2026-11-14] sintesis | Caso de éxito G&G Barber's
+
+Presentación de 10 diapositivas con la marca Chaos Ctrl para mostrar a prospectos: reto, cuatro
+piezas (marca, contenido, sistema, publicidad), resultados y cronología. Sin precios.
+
+## [2026-11-14] decision | G&G: recordatorio de citas un día antes
+
+Plantilla de WhatsApp `recordatorio_cita` aprobada por Meta (validez 12 h). Escenario Make 7033720
+corre diario a las 10:00 (CDMX): pide a `bot-api` las citas de mañana, envía la plantilla y marca
+cada cita como recordada. Ver [[GyG-Barbers-App-y-Asistente]].
+
+## [2026-11-07] ingesta | G&G Barber's: app de gestión y asistente Dante
+
+Nuevo cliente [[GyG-Barbers]] y proyecto [[GyG-Barbers-App-y-Asistente]]: la app de Bolt de un
+cliente anterior se rebrandeó al kit G&G, se reclamó y vació su base de Supabase, y se agregaron
+regla de 2 barberos, horario por día, notificaciones y la Edge Function `bot-api`.
+
+El asistente [[Make-GyG-Asistente-Dante]] tardó varias iteraciones: las herramientas armadas por
+API recibían los datos vacíos. Lección documentada en [[Herramientas-de-Agente-en-Make]].
+Funcionando el 2026-11-07 (cita de prueba agendada por WhatsApp).
+
 ## [2026-11-05] decision | Campañas G&G publicadas
 
 Publicadas las dos campañas de [[GG-Campanas-Inauguracion]] ($300/día, 5 km). Campañas ACTIVE;
