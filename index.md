@@ -34,7 +34,7 @@ actualizado: 2026-11-14
 
 | Página | Una línea | Estado |
 |---|---|---|
-| [[GG-Campanas-Inauguracion]] | Meta Ads → WhatsApp, $300/día; 93 conversaciones a $21.53 en 9 días | activo |
+| [[GG-Campanas-Inauguracion]] | Meta Ads → WhatsApp; 93 conversaciones a $21.53 en 9 días; pausada el 17-nov | pausado |
 | [[Lefranm-Agendamiento-de-Citas]] | Agente de citas con CRUD completo de Calendar + MCP | activo |
 | [[Lefranm-Agente-de-Ventas]] | Agente de catálogo por WhatsApp, 22 módulos | activo |
 | [[Asistente-Chavarria]] | Agente de inscripciones; el más eficiente por ejecución | activo |

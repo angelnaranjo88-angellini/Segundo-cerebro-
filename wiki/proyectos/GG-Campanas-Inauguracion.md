@@ -1,7 +1,7 @@
 ---
 titulo: G&G — Campañas de inauguración en Meta Ads
 tipo: proyecto
-estado: activo
+estado: pausado
 clientes: [GG-Barbers]
 tags: [meta-ads, whatsapp, inauguracion]
 inicio: 2026-11-05
@@ -55,6 +55,9 @@ Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 > cliente para anuncios (+$724.19). Se cobraba a la tarjeta del humano. El humano pidió pausar y
 > limitar a $2,500; por API no se pudo (la cuenta no admite cambios mientras tenga deuda). Al pagar
 > el saldo, los anuncios se reactivan solos si no se pausan antes en el Administrador de anuncios.
+>
+> **Actualización 2026-11-17:** el humano pagó el saldo y las dos campañas quedaron en PAUSED
+> (verificado por API, $0 de gasto ese día). Falta quitar la tarjeta del humano o poner la del dueño.
 
 ## Resultados (corte 2026-11-13)
 

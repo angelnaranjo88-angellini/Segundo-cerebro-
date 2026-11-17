@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-17] decision | G&G: campañas pausadas tras pagar el saldo
+
+El humano pagó el saldo pendiente y se pausaron las dos campañas por API; ambas en PAUSED con $0
+de gasto. Ver [[GG-Campanas-Inauguracion]].
+
 ## [2026-11-17] decision | G&G: pausar campañas y tope de $2,500
 
 El humano pidió pausar las campañas y limitar el gasto a los $2,500 que dio el cliente. La API
