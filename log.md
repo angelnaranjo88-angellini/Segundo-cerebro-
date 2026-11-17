@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-17] decision | G&G: pausar campañas y tope de $2,500
+
+El humano pidió pausar las campañas y limitar el gasto a los $2,500 que dio el cliente. La API
+rechazó la pausa porque la cuenta tiene saldo pendiente; Meta ya había detenido la entrega el 16 de
+noviembre. Gasto real: $3,224.19. Ver [[GG-Campanas-Inauguracion]].
+
 ## [2026-11-14] decision | Unión de las tres ramas de G&G Barber's
 
 El trabajo de G&G vivía en tres ramas sin unir (marca y contenido, campañas, app y asistente). Se

@@ -5,7 +5,7 @@ estado: activo
 clientes: [GG-Barbers]
 tags: [meta-ads, whatsapp, inauguracion]
 inicio: 2026-11-05
-actualizado: 2026-11-14
+actualizado: 2026-11-17
 ---
 
 # G&G — Campañas de inauguración en Meta Ads
@@ -48,6 +48,13 @@ Anuncios (todos con botón **Enviar mensaje de WhatsApp**):
 > Los 7 objetos del borrador están VALIDATED sin errores (revisado 2026-11-05, ya con el
 > WhatsApp vinculado). La validación final ocurre al publicar. El mensaje pre-llenado no se pudo configurar desde la API; se ajusta en
 > Ads Manager.
+
+> [!warning] Cuenta con saldo pendiente (2026-11-17)
+> La cuenta quedó en estado UNSETTLED (saldo sin pagar) y Meta dejó de entregar anuncios el 16 de
+> noviembre. Gasto acumulado del 5 al 16 de noviembre: **$3,224.19**, contra **$2,500** que dio el
+> cliente para anuncios (+$724.19). Se cobraba a la tarjeta del humano. El humano pidió pausar y
+> limitar a $2,500; por API no se pudo (la cuenta no admite cambios mientras tenga deuda). Al pagar
+> el saldo, los anuncios se reactivan solos si no se pausan antes en el Administrador de anuncios.
 
 ## Resultados (corte 2026-11-13)
 
