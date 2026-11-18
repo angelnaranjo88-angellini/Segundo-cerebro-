@@ -161,7 +161,8 @@ Se reutiliza la caja de luz que ya existe en el local (antes "Mangiare Pizza"). 
 proporción 3:1, fondo negro: sello G&G (P03, versión limpia sin efecto de tinta) al centro y un
 caramelo de barbería a cada lado. Se entregó un montaje sobre la foto para que lo apruebe el dueño y
 el arte en curvas (SVG y PDF) para el diseñador. Medida real de la cara: **1.90 × 0.70 m**; el arte
-se rehízo a tamaño real (1900 × 700 mm, sin sangrado).
+se rehízo a tamaño real (1900 × 700 mm, sin sangrado). A pedido del dueño, el sello creció de ~54 cm a ~62 cm
+de diámetro; los caramelos quedaron igual.
 
 > [!warning] Calendario atrasado
 > Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.
