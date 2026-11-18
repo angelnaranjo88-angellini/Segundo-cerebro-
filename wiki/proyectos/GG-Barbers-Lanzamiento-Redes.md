@@ -200,3 +200,21 @@ de diámetro; los caramelos quedaron igual.
   [[Colegio-Maria-Chavarria-Vital]], que se publica con [[CUT-Contenido-Social]].
 - Si después se automatiza la publicación, aplica [[Pipeline-de-Contenido-Social]].
 - Las citas por WhatsApp serían una copia directa de [[Lefranm-Agendamiento-de-Citas]].
+
+### Banda de fachada horizontal (2026-11-18)
+
+Además del letrero colgante, el rótulo largo sobre el toldo (hoy la banda amarilla de "Mangiare").
+Área indicada por Angel: **desde el borde izquierdo del panel amarillo** (el panel blanco
+"ANAXAGORAS" queda fuera) **hasta el extremo derecho, incluido el panel blanco "905"**.
+
+- Diseño: fondo negro, filete interior plata y el logo horizontal con caramelo
+  (G&G | BARBER'S · BARBERÍA · EST. 2026) centrado a lo ancho.
+- **El logo va en la parte alta de la banda**, no centrado en vertical: desde la banqueta el toldo
+  amarillo tapa el tercio inferior. Se probó centrado y "BARBERÍA · EST. 2026" quedaba oculto.
+- Entregables (fuera del repo): montaje sobre la foto de la fachada (completo y detalle) y curvas
+  `GG-fachada-curvas.svg` / `.pdf`, con el texto convertido a trazos.
+
+> [!warning] Inferencia sin verificar
+> La proporción de la banda (5:1) y la altura que tapa el toldo se estimaron **a ojo desde la foto**.
+> Faltan las medidas reales (ancho × alto en cm y cuánto cubre el toldo) para sacar el archivo final
+> a tamaño real. El script ya acepta `RATIO`, `MM_W`, `MM_H`, `LOGO_H` y `LOGO_CY`.
