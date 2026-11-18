@@ -10,6 +10,11 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-18] decision | G&G Barber’s: letrero de fachada
+
+Montaje del letrero (sello G&G con un caramelo a cada lado) sobre la caja de luz existente, para
+aprobación del dueño, y arte en curvas para el diseñador. Ver [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-11-03] decision | G&G Barber’s: fotos reales de cortes en el calendario
 
 Seis fotos de cortes del barbero sustituyen las cuentas regresivas del 3 al 8 de noviembre (18:00).

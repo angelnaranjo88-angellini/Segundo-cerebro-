@@ -5,7 +5,7 @@ estado: activo
 clientes: [GG-Barbers]
 tags: [marca, facebook, instagram, canva, diseno]
 inicio: 2026-10-28
-actualizado: 2026-11-03
+actualizado: 2026-11-18
 ---
 
 # G&G Barber’s — lanzamiento en redes
@@ -154,6 +154,13 @@ Le gustaron **V02** (principal plana sobre negro) y **V08** (Essentials). Cambio
 - **Fotos reales (2026-11-03):** el cliente mandó 6 fotos de cortes de su barbero (`Corte 1…6`,
   JPEG 1122 × 1402, ya con logo). Reemplazaron las cuentas regresivas del 3 al 8 de noviembre a las
   18:00 (filas `C1…C6` en la hoja). La cuenta regresiva retoma el 9 de noviembre con 19 días.
+
+### Letrero de fachada (2026-11-18)
+
+Se reutiliza la caja de luz que ya existe en el local (antes "Mangiare Pizza"). Cara nueva en
+proporción 3:1, fondo negro: sello G&G (P03, versión limpia sin efecto de tinta) al centro y un
+caramelo de barbería a cada lado. Se entregó un montaje sobre la foto para que lo apruebe el dueño y
+el arte en curvas (SVG y PDF) para el diseñador. Falta la medida real de la cara del letrero.
 
 > [!warning] Calendario atrasado
 > Al 2026-11-03 el humano aún no empezaba a publicar: los posts del 1 al 3 de noviembre ya pasaron.
