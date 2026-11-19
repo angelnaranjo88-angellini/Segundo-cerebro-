@@ -14,7 +14,8 @@ actualizado: 2026-09-05
 
 Angel pidió el fondo de mármol de la Portada B en la banda de fachada. Se rehízo con el mismo
 mármol y el recuadro negro detrás del logo. Luego se engrosaron y aclararon las vetas porque
-de lejos casi no se veían. Ver
+de lejos casi no se veían. Después el dueño pidió el recuadro negro más ancho, hasta las marcas
+que puso sobre el montaje. Ver
 [[GG-Barbers-Lanzamiento-Redes#Banda de fachada horizontal (2026-11-18)]].
 
 ## [2026-11-18] decision | G&G Barber’s: banda de fachada horizontal
