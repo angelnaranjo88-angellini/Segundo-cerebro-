@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-19] decision | G&G Barber’s: banda de fachada con mármol
+
+Angel pidió el fondo de mármol de la Portada B en la banda de fachada. Se rehízo con el mismo
+mármol y el recuadro negro detrás del logo. Ver
+[[GG-Barbers-Lanzamiento-Redes#Banda de fachada horizontal (2026-11-18)]].
+
 ## [2026-11-18] decision | G&G Barber’s: banda de fachada horizontal
 
 Montaje y curvas del logo horizontal con caramelo sobre la banda de la fachada, que va del panel

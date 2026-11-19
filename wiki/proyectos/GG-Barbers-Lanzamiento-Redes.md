@@ -207,8 +207,11 @@ Además del letrero colgante, el rótulo largo sobre el toldo (hoy la banda amar
 Área indicada por Angel: **desde el borde izquierdo del panel amarillo** (el panel blanco
 "ANAXAGORAS" queda fuera) **hasta el extremo derecho, incluido el panel blanco "905"**.
 
-- Diseño: fondo negro, filete interior plata y el logo horizontal con caramelo
-  (G&G | BARBER'S · BARBERÍA · EST. 2026) centrado a lo ancho.
+- Diseño: **fondo de mármol negro con recuadro negro detrás del logo**, igual que la Portada B
+  de Facebook (corrección de Angel el 2026-11-19: la primera versión salió en negro liso). Logo
+  horizontal con caramelo (G&G | BARBER'S · BARBERÍA · EST. 2026) centrado a lo ancho.
+- El mármol es imagen (va impreso); el logo y el recuadro van en curvas. Se entrega también el
+  mármol suelto (`GG-fachada-fondo-marmol.jpg`) por si el impresor lo pide aparte.
 - **El logo va en la parte alta de la banda**, no centrado en vertical: desde la banqueta el toldo
   amarillo tapa el tercio inferior. Se probó centrado y "BARBERÍA · EST. 2026" quedaba oculto.
 - Entregables (fuera del repo): montaje sobre la foto de la fachada (completo y detalle) y curvas
