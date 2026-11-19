@@ -212,6 +212,8 @@ Además del letrero colgante, el rótulo largo sobre el toldo (hoy la banda amar
   horizontal con caramelo (G&G | BARBER'S · BARBERÍA · EST. 2026) centrado a lo ancho.
 - El mármol es imagen (va impreso); el logo y el recuadro van en curvas. Se entrega también el
   mármol suelto (`GG-fachada-fondo-marmol.jpg`) por si el impresor lo pide aparte.
+- Mismo mármol que la portada pero **con las vetas más gruesas y marcadas**: a la distancia de la
+  calle las vetas finas de la portada desaparecían (Angel, 2026-11-19).
 - **El logo va en la parte alta de la banda**, no centrado en vertical: desde la banqueta el toldo
   amarillo tapa el tercio inferior. Se probó centrado y "BARBERÍA · EST. 2026" quedaba oculto.
 - Entregables (fuera del repo): montaje sobre la foto de la fachada (completo y detalle) y curvas
