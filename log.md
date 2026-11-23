@@ -10,6 +10,12 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-23] decision | G&G Barber’s: placa de dirección en la fachada
+
+Se añadió la placa "ANAXÁGORAS 905" a la derecha de la banda, con la forma de la P04 del kit.
+Dos opciones (clara y oscura) para que elija el dueño. Ver
+[[GG-Barbers-Lanzamiento-Redes#Banda de fachada horizontal (2026-11-18)]].
+
 ## [2026-11-19] decision | G&G Barber’s: banda de fachada con mármol
 
 Angel pidió el fondo de mármol de la Portada B en la banda de fachada. Se rehízo con el mismo

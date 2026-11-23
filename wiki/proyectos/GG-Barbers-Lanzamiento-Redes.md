@@ -217,6 +217,10 @@ Además del letrero colgante, el rótulo largo sobre el toldo (hoy la banda amar
 - **Recuadro negro ensanchado** a petición del dueño (2026-11-19): marcó en el montaje hasta dónde
   debía llegar y ahora va de ~13.8% a ~86.2% del ancho de la banda, simétrico; el logo sigue
   centrado y del mismo tamaño. El mármol solo asoma en los dos extremos.
+- **Placa de dirección "ANAXÁGORAS 905"** (2026-11-23) en el hueco de mármol a la derecha, a la
+  misma altura que el recuadro negro. Toma la forma de la placa P04 del kit (esquinas recortadas,
+  filete interior). Dos opciones para el dueño: **A clara** (hueso con letras negras, la que más
+  resalta) y **B oscura** (grafito con plata). Variable `PLACA=clara|oscura|no` en el script.
 - **El logo va en la parte alta de la banda**, no centrado en vertical: desde la banqueta el toldo
   amarillo tapa el tercio inferior. Se probó centrado y "BARBERÍA · EST. 2026" quedaba oculto.
 - Entregables (fuera del repo): montaje sobre la foto de la fachada (completo y detalle) y curvas
