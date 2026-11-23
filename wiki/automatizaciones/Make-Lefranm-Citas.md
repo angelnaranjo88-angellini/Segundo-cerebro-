@@ -96,16 +96,57 @@ fecha) no se puede ver qué hizo el agente en una conversación.
 - Hubo una cita a las 15:09: el agente no redondea a horarios cerrados.
 - `tokenLimit: "50"` en el agente: no está claro qué limita.
 
-**Siguientes pasos propuestos:**
+Aclaración: `tokenLimit: "50"` es "Maximum output length (%)", es decir 50% de la salida
+máxima. No es un problema.
 
-1. Pedir al dueño 2 o 3 casos concretos (cliente y fecha) y revisarlos en el historial del
-   escenario en Make.
-2. Validar contra la herramienta y no contra el texto: que `cita_agendada` dependa del
-   `id` del evento creado, y que el prompt prohíba confirmar sin un Event ID.
-3. Poner IDs explícitos de calendario a las promos del Buen Fin.
+## Cambios aplicados 2026-11-23
+
+Aplicados por API sobre el blueprint vigente. Después se volvió a descargar el blueprint y se
+comparó campo por campo con la versión preparada: idénticos. El escenario sigue activo.
+
+1. **Confirmar solo con Event ID** (prompt del agente, módulo 3). Nueva sección
+   "CONFIRMACIÓN DE CITA SOLO CON EVENTO CREADO":
+   - El agente no puede decir "Listo / quedó para" si en ese turno no llamó "Agendar cita"
+     y recibió su `id`.
+   - Al confirmar agrega `[EVENTO_CREADO: id]`, una marca por evento.
+   - Si la herramienta falla, no confirma y escala con `[AVISAR_HUMANO: ...]`.
+   - Lo mismo aplica al reprogramar.
+2. **Módulo 30** (limpieza de marcas):
+   - Ahora también quita `[EVENTO_CREADO: ...]` y devuelve un campo nuevo, `evento_id`.
+   - **Red de seguridad:** si el mensaje confirma una cita y no trae `EVENTO_CREADO`, activa
+     `necesita_aviso` con el motivo "El bot confirmó una cita sin evento en el calendario:
+     verificar y agendar manualmente". Eso dispara la ruta de aviso: WhatsApp a respaldo,
+     correo y pausa de 2 h.
+3. **Módulo 34:** `cita_agendada` ahora sale de `evento_id` (no vacío), no del texto. La
+   lógica que conserva el valor previo (`32.cita_agendada`) sigue igual. Este flag lo lee
+   [[Make-Lefranm-Seguimiento-Citas]], que manda reenganche a quien **no** agendó. Una
+   confirmación falsa ahora queda como "no agendó", y el cliente recibe ese reenganche
+   además del aviso a la persona de respaldo.
+4. **Promos del Buen Fin con calendario explícito:**
+
+   | Promo | Calendario | Duración |
+   |---|---|---|
+   | Conoterapia | CONOTERAPIA | 40 min por sesión; el 2x1 puede ser dos citas |
+   | Masaje de espalda con ventosas | MASAJE | 30 min |
+   | Masaje de piernas cansadas | MASAJE | 30 min |
+   | Dermapen | Dermapen | 1 h 30 min |
+
+> [!warning] Decisiones tomadas sin confirmar con el dueño
+> - Ventosas va al calendario MASAJE, como ya decía el prompt, y no al calendario
+>   "Ventosas".
+> - El 2x1 de Conoterapia puede quedar en dos citas separadas.
+> - Duración de Dermapen: la del catálogo, porque la promo no la trae.
+
+Respaldo del blueprint anterior: solo en la sesión de trabajo, no en el repo.
+
+**Pendiente:**
+- Vigilar los avisos con motivo "confirmó una cita sin evento" durante los próximos días.
+  Si aparecen, el agente sigue alucinando confirmaciones.
+- Comprobar que el bot crea eventos en las ejecuciones nuevas (ver el calendario).
+- Pedir al dueño casos concretos de citas perdidas antes del cambio.
 
 ## Correlaciones
 
 Proyecto: [[Lefranm-Agendamiento-de-Citas]]. Patrones:
 [[Agente-Conversacional-de-WhatsApp]], [[Agendamiento-con-Google-Calendar]].
-Su escenario compañero de recordatorios es [[Make-Lefranm-Seguimiento-Citas]].
+Su escenario compañero de reenganche (a quien no agendó) es [[Make-Lefranm-Seguimiento-Citas]].

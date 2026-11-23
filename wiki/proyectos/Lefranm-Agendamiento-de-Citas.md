@@ -5,7 +5,7 @@ estado: activo
 clientes: [Lefranm-Cosmeticos]
 tags: [whatsapp, agente-ia, calendar, data-store, mcp]
 inicio: 2026-07-13
-actualizado: 2026-09-05
+actualizado: 2026-11-23
 ---
 
 # Lefranm — Agendamiento de citas
@@ -28,7 +28,8 @@ que conviene portar al resto.
 ## Piezas
 
 - [[Make-Lefranm-Citas]] — el escenario (20 módulos).
-- [[Make-Lefranm-Seguimiento-Citas]] — recordatorios cada 30 min sobre el Data Store.
+- [[Make-Lefranm-Seguimiento-Citas]]: reenganche, cada 30 min, de quien platicó y no agendó.
+  No es un recordatorio de cita (corregido el 2026-11-23).
 - Google Calendar — cinco módulos distintos: `getFreeBusyInformation`, `createAnEvent`,
   `searchEvents`, `updateAnEvent`, `deleteAnEvent`. El CRUD completo.
 - Data Store de Make — estado de conversación y de cita.

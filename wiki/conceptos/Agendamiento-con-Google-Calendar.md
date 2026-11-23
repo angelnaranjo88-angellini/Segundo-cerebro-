@@ -3,7 +3,7 @@ titulo: Agendamiento con Google Calendar
 tipo: concepto
 estado: activo
 tags: [patron, calendar, citas, make]
-actualizado: 2026-09-05
+actualizado: 2026-11-23
 ---
 
 # Agendamiento con Google Calendar
@@ -46,8 +46,13 @@ herramienta MCP es la abstracción correcta y ya está hecha.
 - **Crear sin consultar.** [[Make-Asistente-Chavarria]] llama a `createAnEvent` sin
   `getFreeBusyInformation` previo: nada impide dos visitas al mismo tiempo.
 - **Recordatorios sobre Calendar vs. sobre la base propia.** Los prototipos leían Calendar
-  para recordar; la versión que sobrevivió ([[Make-Lefranm-Seguimiento-Citas]]) lee el Data
-  Store. Es más barato y no depende de la cuota de la API de Google.
+  para recordar. [[Make-Lefranm-Seguimiento-Citas]] lee el Data Store, pero no es un
+  recordatorio de cita: reengancha a quien **no** agendó.
+
+  > [!warning] Contradicción corregida 2026-11-23
+  > Antes esta página decía que el seguimiento sobre Data Store había reemplazado a los
+  > recordatorios. Revisado el blueprint, hoy no existe ningún recordatorio de cita activo.
+  > El escenario 5037096 sigue apagado.
 
 ## Correlaciones
 

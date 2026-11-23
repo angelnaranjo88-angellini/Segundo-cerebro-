@@ -10,6 +10,17 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-23] decision | LEFRANM CITASS: confirmar citas solo con Event ID
+
+Aplicados dos arreglos en [[Make-Lefranm-Citas]]:
+- El agente solo confirma una cita si "Agendar cita" devolvió un Event ID.
+- `cita_agendada` ya no se calcula leyendo el texto.
+- Si el bot confirma sin evento, se avisa a la persona de respaldo.
+- Las promos del Buen Fin tienen ID de calendario explícito.
+
+El blueprint se verificó después del cambio: idéntico al preparado. Detalle en
+[[Make-Lefranm-Citas#Cambios aplicados 2026-11-23]].
+
 ## [2026-11-23] lint | Diagnóstico LEFRANM CITASS: "contesta pero no agenda"
 
 Revisión de [[Make-Lefranm-Citas]] por queja del dueño. El escenario está sano: 3 errores en

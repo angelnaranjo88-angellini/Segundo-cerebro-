@@ -5,7 +5,7 @@ estado: archivado
 plataforma: make
 clientes: [Colegio-Maria-Chavarria-Vital, Lefranm-Cosmeticos]
 tags: [deuda-tecnica, prototipos, limpieza]
-actualizado: 2026-09-05
+actualizado: 2026-11-23
 ---
 
 # Escenarios inactivos de Make
@@ -31,7 +31,7 @@ zona `us2.make.com`.
 | CREACION DE CONTENIDO POR MENSAJE | 5056432 | 2026-08-04 | 0 | Variante por texto en vez de foto. |
 | Integration WhatsApp Business Cloud | 4535198 | 2026-03-26 | 0 | Prueba del módulo `knowledge` (RAG nativo de Make). Vía no explorada. |
 | Publicacion multi-canal (Instagram + Facebook) | 5037110 | 2026-05-12 | 0 | Ruteo a dos redes. Su idea sobrevive en [[Make-CUT-Creacion-de-Contenido-Sheets]]. |
-| Recordatorios de citas (24h y 1h antes) | 5037096 | 2026-05-12 | 0 | Recordatorios desde Calendar. Reemplazado por el sondeo sobre Data Store. |
+| Recordatorios de citas (24h y 1h antes) | 5037096 | 2026-05-12 | 0 | Recordatorios desde Calendar. **No** fue reemplazado: el sondeo sobre Data Store es reenganche de quien no agendó, no recordatorio (corregido 2026-11-23). |
 | Reporte semanal de citas | 5037104 | 2026-05-12 | 0 | Resumen semanal por WhatsApp. **Nunca se retomó y no tiene sustituto.** |
 | Reutilizacion de contenido entre redes | 5037114 | 2026-05-12 | 0 | Duplicado casi exacto de "Publicacion multi-canal". |
 | Seguimiento post-cita (pedir reseña) | 5037100 | 2026-05-12 | 0 | Pedir reseña tras la cita. **Sin sustituto.** |
