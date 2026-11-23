@@ -10,6 +10,14 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-23] lint | Diagnóstico LEFRANM CITASS: "contesta pero no agenda"
+
+Revisión de [[Make-Lefranm-Citas]] por queja del dueño. El escenario está sano: 3 errores en
+30 días, ninguno de Calendar. El bot sí crea eventos (último: 2026-11-21). Causa probable, sin
+verificar: el bot confirma por texto sin comprobar que la cita se creó. Las promos del Buen
+Fin no tienen calendario explícito. Faltan casos concretos para confirmarlo. Detalle en
+[[Make-Lefranm-Citas#Diagnóstico 2026-11-23 — "contesta pero no agenda"]].
+
 ## [2026-09-05] lint | Primer chequeo de salud del wiki
 
 40 páginas, 37 destinos de enlace distintos. **Cero enlaces rotos** y cero páginas huérfanas
