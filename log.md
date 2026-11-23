@@ -13,7 +13,7 @@ actualizado: 2026-09-05
 ## [2026-11-23] decision | G&G Barber’s: placa de dirección en la fachada
 
 Se añadió la placa "ANAXÁGORAS 905" a la derecha de la banda, con la forma de la P04 del kit.
-Dos opciones (clara y oscura) para que elija el dueño. Ver
+Dos opciones (clara y oscura): el dueño eligió la oscura y pidió el logo más grande (~30% más). Ver
 [[GG-Barbers-Lanzamiento-Redes#Banda de fachada horizontal (2026-11-18)]].
 
 ## [2026-11-19] decision | G&G Barber’s: banda de fachada con mármol

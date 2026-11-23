@@ -221,6 +221,9 @@ Además del letrero colgante, el rótulo largo sobre el toldo (hoy la banda amar
   misma altura que el recuadro negro. Toma la forma de la placa P04 del kit (esquinas recortadas,
   filete interior). Dos opciones para el dueño: **A clara** (hueso con letras negras, la que más
   resalta) y **B oscura** (grafito con plata). Variable `PLACA=clara|oscura|no` en el script.
+- **Elegida por el dueño: placa oscura** (2026-11-23). Pidió además el logo más grande: creció
+  ~30% (`LOGO_H` 0.80 → 1.04) y el recuadro negro ahora va casi del borde superior hasta la línea
+  del toldo, para que el logo completo siga visible desde la calle.
 - **El logo va en la parte alta de la banda**, no centrado en vertical: desde la banqueta el toldo
   amarillo tapa el tercio inferior. Se probó centrado y "BARBERÍA · EST. 2026" quedaba oculto.
 - Entregables (fuera del repo): montaje sobre la foto de la fachada (completo y detalle) y curvas
