@@ -3,7 +3,7 @@ titulo: Stack tecnológico
 tipo: concepto
 estado: activo
 tags: [stack, herramientas, inventario]
-actualizado: 2026-09-05
+actualizado: 2026-11-24
 ---
 
 # Stack tecnológico
@@ -21,7 +21,7 @@ no hay código de backend, todo vive aquí.
 | Módulo | Uso | Dónde |
 |---|---|---|
 | `ai-local-agent · RunLocalAIAgent` | Decisión de intención | Los 3 agentes vivos |
-| `openai-gpt-3 · transformTextToStructuredData` | Extracción de datos | Los 3 agentes vivos |
+| `openai-gpt-3 · transformTextToStructuredData` | Extracción de datos | [[Make-Asistente-Chavarria]] y [[Make-Lefranm-Cosmeticos-Ventas]]. Se quitó de [[Make-Lefranm-Citas]] el 2026-11-24 porque inventó un mensaje a un cliente. |
 | `openai-gpt-3 · analyzeImages` | Visión → copy publicitario | Pipeline de contenido |
 | `openai-gpt-3 · GenerateImage` / `editImage` | Generación de imagen | Solo prototipos apagados |
 | `knowledge · KnowledgeStandAlone` | RAG nativo de Make | Probado una vez, abandonado |

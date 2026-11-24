@@ -6,7 +6,7 @@ plataforma: make
 id_escenario: 5645150
 clientes: [Lefranm-Cosmeticos]
 tags: [whatsapp, calendar, data-store, agente-ia]
-actualizado: 2026-11-23
+actualizado: 2026-11-24
 ---
 
 # Make · LEFRANM CITASS
@@ -24,7 +24,9 @@ actualizado: 2026-11-23
 3. `ai-local-agent · RunLocalAIAgent` — el agente decide qué operación toca.
 4. Google Calendar, cinco módulos: `getFreeBusyInformation`, `createAnEvent`, `searchEvents`,
    `deleteAnEvent`, `updateAnEvent`.
-5. `openai-gpt-3 · transformTextToStructuredData` ×2 — normaliza fecha, hora y servicio.
+5. ~~`openai-gpt-3 · transformTextToStructuredData` ×2~~ — **reemplazados el 2026-11-24** por
+   `util · SetVariables` (módulo 30), que limpia las marcas con fórmulas, sin IA. Ver
+   [[#Incidente 2026-11-23 — confirmación de cita inventada]].
 6. `datastore · GetRecord` + `builtin · Resume` + `builtin · BasicRouter` — retoma y rutea.
 7. `whatsapp-business-cloud · sendMessage` ×3 — respuestas por rama.
 8. `google-email · sendAnEmail` — aviso interno.
@@ -144,6 +146,70 @@ Respaldo del blueprint anterior: solo en la sesión de trabajo, no en el repo.
   Si aparecen, el agente sigue alucinando confirmaciones.
 - Comprobar que el bot crea eventos en las ejecuciones nuevas (ver el calendario).
 - Pedir al dueño casos concretos de citas perdidas antes del cambio.
+
+## Incidente 2026-11-23 — confirmación de cita inventada
+
+**Qué pasó.** El 2026-11-23 a las 00:53 (hora CDMX) un cliente preguntó "la microdermoabrasión
+qué incluye". El bot le respondió: "Te confirmo que tu cita para el masaje relajante quedó
+agendada para el sábado a las 3 PM". Esa cita no existía. 90 minutos después le llegó el
+reenganche de [[Make-Lefranm-Seguimiento-Citas]].
+
+**Evidencia** (ejecución de las 06:53:11 UTC, 11 operaciones, o sea que se disparó la ruta
+de aviso):
+- El texto no lo escribió el agente: usa "tú" (el prompt exige "usted").
+- Menciona "masaje relajante", que no existe en el catálogo.
+- Propone el sábado a las 15:00, que es la hora de cierre y el prompt lo prohíbe.
+- El agente no llamó a ninguna herramienta.
+
+> [!warning] Inferencia sin verificar
+> Causa más probable: el módulo 30 era un LLM (gpt-4o-mini) encargado solo de "quitar
+> marcas". En vez de copiar el texto del agente, generó uno nuevo. Su prompt traía
+> ejemplos de frases de confirmación ("Tu cita para… quedó para…"). Los cambios del
+> 2026-11-23 reforzaron esas frases y probablemente hicieron más probable que inventara.
+> No se pudo leer la entrada y salida de cada módulo: la API de Make solo devuelve el
+> estado de la ejecución.
+
+**Lección.** No usar un LLM para transformaciones que deben ser deterministas, como quitar
+marcas o extraer campos. Un LLM "limpiador" puede reescribir el mensaje que recibe el
+cliente.
+
+## Cambios aplicados 2026-11-24 — limpieza sin IA
+
+Se quitaron los dos módulos de OpenAI de limpieza (30 y 17). El nuevo módulo 30 es
+`util:SetVariables`, con fórmulas de Make sobre `3.response`:
+
+| Variable | Cómo se calcula |
+|---|---|
+| `texto_final` | El texto del agente cortado en la primera marca o link de imagen. Si confirma una cita sin `[EVENTO_CREADO]`, se sustituye por "Permítame un momento, una persona del equipo le confirma su horario en breve 🙂". |
+| `link_imagen` | El link `lh3.googleusercontent.com`, si viene. |
+| `evento_id`, `cita_agendada` | Salen de la marca `[EVENTO_CREADO: id]`. |
+| `necesita_aviso`, `motivo_aviso` | Salen de la marca `[AVISAR_HUMANO: …]`, o del caso "confirmó sin evento". |
+
+Los módulos 4, 19 y 34 ahora leen de `30.*`.
+
+**Prueba previa.** Se hizo en un escenario y un Data Store temporales, ya borrados. Pasaron
+los 11 casos: cita con evento, la confirmación falsa del incidente, aviso a humano, solo
+link, marca de imagen, respuesta vacía, dos eventos, saludo normal, link con texto, solo
+marca y evento al inicio.
+
+**Fallos encontrados en la prueba antes de subir a producción:**
+- `replace()` con regex **no** quitaba las marcas.
+- `split()` descarta el fragmento vacío cuando el texto empieza con el separador.
+
+Se resolvió cortando con `indexOf` y `substring`.
+
+**Verificación.** Se volvió a descargar el blueprint de producción y se comparó: idéntico,
+salvo la posición visual de un manejador de error (cosmético). El escenario sigue activo.
+
+**Comportamiento a vigilar:**
+- Las marcas deben ir al final del mensaje: todo lo que esté después de la primera marca o
+  link se corta.
+- Si el agente responde solo con una marca, el cliente no recibe texto; el aviso a humano
+  sí sale.
+- Si el agente crea la cita pero olvida la marca, el cliente recibe "permítame un momento"
+  y se avisa a la persona de respaldo, aunque el evento exista.
+
+Respaldos de los blueprints: solo en la sesión de trabajo, no en el repo.
 
 ## Correlaciones
 

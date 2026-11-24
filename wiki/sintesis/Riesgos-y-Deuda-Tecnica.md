@@ -3,7 +3,7 @@ titulo: Riesgos y deuda técnica
 tipo: sintesis
 estado: activo
 tags: [sintesis, riesgos, costos, errores]
-actualizado: 2026-09-05
+actualizado: 2026-11-24
 ---
 
 # Riesgos y deuda técnica
@@ -93,6 +93,23 @@ Es la deuda más barata de pagar y la más cara de ignorar: exportar los JSON a
   en cita o venta.
 
 Ambas son consultas, no desarrollos. Son el siguiente contenido natural de este wiki.
+
+## 7. LLMs como "limpiadores" del mensaje al cliente
+
+Añadido el 2026-11-24 tras un incidente real en [[Make-Lefranm-Citas]]: un
+`transformTextToStructuredData` que solo debía quitar marcas internas mandó al cliente una
+cita que no existía. Ver [[Make-Lefranm-Citas#Incidente 2026-11-23 — confirmación de cita inventada]].
+
+- **Corregido en:** [[Make-Lefranm-Citas]], con fórmulas de Make (`util:SetVariables`).
+- **Mismo patrón sin corregir:** [[Make-Lefranm-Cosmeticos-Ventas]] (4 llamadas) y
+  [[Make-Asistente-Chavarria]] (1 llamada).
+
+> [!warning] Inferencia sin verificar
+> No se ha revisado si en esos dos escenarios el texto que recibe el cliente sale del LLM
+> limpiador o directamente del agente. Si sale del limpiador, el riesgo es el mismo.
+
+**Regla:** lo determinista (quitar marcas, extraer IDs, decidir rutas) se hace con fórmulas;
+el LLM solo redacta.
 
 ## Orden recomendado
 

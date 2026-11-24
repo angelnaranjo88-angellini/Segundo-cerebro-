@@ -10,6 +10,17 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-24] decision | LEFRANM CITASS: limpieza de marcas sin IA tras confirmación inventada
+
+El 2026-11-23 el bot confirmó a un cliente una cita inexistente ("masaje relajante, sábado
+3 PM"). Causa probable, sin verificar: el módulo 30 (LLM limpiador) inventó el texto; los
+cambios del 2026-11-23 probablemente lo agravaron.
+
+Se reemplazaron los módulos 30 y 17 (OpenAI) por `util:SetVariables` con fórmulas. Se
+probaron 11 casos en un escenario temporal antes de subirlo; la prueba detectó dos fallos
+de fórmulas que se corrigieron. Si el bot confirma sin Event ID, la confirmación ya no se
+envía. Detalle en [[Make-Lefranm-Citas#Incidente 2026-11-23 — confirmación de cita inventada]].
+
 ## [2026-11-23] decision | LEFRANM CITASS: confirmar citas solo con Event ID
 
 Aplicados dos arreglos en [[Make-Lefranm-Citas]]:
