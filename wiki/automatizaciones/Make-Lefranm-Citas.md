@@ -211,6 +211,35 @@ salvo la posición visual de un manejador de error (cosmético). El escenario si
 
 Respaldos de los blueprints: solo en la sesión de trabajo, no en el repo.
 
+## Simulación del agente 2026-11-24
+
+Se copió el agente con el mismo prompt a un escenario aislado. "Revisar disponibilidad" y
+"Buscar cita" consultaron Google Calendar real (solo lectura); "Agendar", "Cancelar" y
+"Reprogramar" se reemplazaron por un registro de prueba. Fueron 4 conversaciones y 8
+mensajes.
+
+| Caso | Resultado |
+|---|---|
+| Limpieza profunda el jueves 26 a las 10 | Consultó disponibilidad; agendó en FACIAL de 10:00 a 12:00; puso `[EVENTO_CREADO]` ✅ |
+| "Qué incluye la microdermoabrasión" (el caso del incidente) | Respondió solo con la imagen de la promo, como pide el prompt ✅ |
+| Masaje "relajante" en domingo | Dijo que está cerrado y ofreció masajes reales del catálogo ✅ |
+| Conoterapia 2x1, dos sesiones | Dos citas en CONOTERAPIA (11:00–11:40 y 11:40–12:20), dos marcas ✅ |
+
+**Conclusión:** el agente sí pone la marca `[EVENTO_CREADO]` en las citas que crea, así que
+la red de seguridad no bloquea citas reales.
+
+**Detalles pendientes:**
+- En el resumen del 2x1 escribió "$250" por sesión en lugar de "$300 por las dos".
+- La confirmación copia el renglón completo del catálogo ("Limpieza profunda | 2 h | $699
+  (promo)").
+- El bloque de promociones de **octubre** sigue en el prompt, aunque dice "borrar al
+  terminar el mes".
+- El bloque del Buen Fin también sigue. ¿Siguen vigentes?
+
+**Validación de Make descubierta al armar la prueba:** cada herramienta del agente debe
+tener exactamente un módulo y su `metadata.expect`. Si no, el escenario no arranca
+("Scenario validation failed").
+
 ## Correlaciones
 
 Proyecto: [[Lefranm-Agendamiento-de-Citas]]. Patrones:

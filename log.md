@@ -10,6 +10,23 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-24] decision | Ventas Lefranm sin IA limpiadora + simulación de ambos agentes
+
+- [[Make-Lefranm-Cosmeticos-Ventas]]:
+  - Se reemplazaron los módulos 60 y 70 (IAs) por fórmulas. Se probaron 9 casos antes de
+    subirlo; en producción quedó idéntico, con 0 diferencias.
+  - El módulo 41 ahora solo corre cuando hay ficha de compra.
+  - La página del wiki estaba desactualizada (decía Airtable); se corrigió.
+- Se simularon los dos agentes con su prompt real en escenarios aislados:
+  - Ventas: 10 mensajes. Citas: 8 mensajes, con calendario real en solo lectura y
+    escrituras simuladas.
+  - El agente de citas sí pone `[EVENTO_CREADO]` en las citas que crea.
+- **Pendiente del dueño:**
+  - ¿Siguen vigentes el Buen Fin y las promos de octubre?
+  - Falta un flujo de pago con tarjeta.
+  - La ficha no muestra el descuento aplicado.
+- Hay una API key de Google en texto plano en el blueprint de ventas; no está en el repo.
+
 ## [2026-11-24] decision | LEFRANM CITASS: limpieza de marcas sin IA tras confirmación inventada
 
 El 2026-11-23 el bot confirmó a un cliente una cita inexistente ("masaje relajante, sábado
