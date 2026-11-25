@@ -10,6 +10,13 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-25] decision | G&G Barber’s: inauguración se mueve al 12 de diciembre
+
+La remodelación se atrasó: la apertura pasa del sábado 28 de noviembre al **sábado 12 de diciembre**.
+Se **pausó el escenario de Make 6885366** (publicación automática) para corregir el calendario. Se
+quitan las cuentas regresivas pendientes y se rehacen las piezas con fecha. Ver
+[[Make-GG-Publicacion-Automatica]] y [[GG-Barbers-Lanzamiento-Redes]].
+
 ## [2026-11-23] decision | G&G Barber’s: placa de dirección en la fachada
 
 Se añadió la placa "ANAXÁGORAS 905" a la derecha de la banda, con la forma de la P04 del kit.

@@ -1,10 +1,10 @@
 ---
 titulo: G&G Barbers · Publicación automática FB + IG
 tipo: automatizacion
-estado: activo
+estado: pausado
 clientes: [GG-Barbers]
 tags: [make, google-sheets, facebook, instagram]
-actualizado: 2026-11-03
+actualizado: 2026-11-25
 ---
 
 # G&G Barbers · Publicación automática FB + IG
@@ -61,3 +61,9 @@ El truco `=w1080-h1350-rj` para servir JPEG desde Drive quedó **verificado** co
 
 Deriva de [[Pipeline-de-Contenido-Social]] y de [[Make-CUT-Creacion-de-Contenido-Sheets]]; quita la
 capa de IA, que concentraba casi todos los errores del entorno (ver [[Riesgos-y-Deuda-Tecnica]]).
+
+## Pausa (2026-11-25)
+
+Escenario 6885366 **desactivado** a petición de Angel: la inauguración se movió al 12 de diciembre
+y hay que corregir las publicaciones pendientes con fecha y quitar las cuentas regresivas. Se
+reactiva cuando la hoja quede corregida.
