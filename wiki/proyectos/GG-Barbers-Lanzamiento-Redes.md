@@ -250,7 +250,12 @@ una diaria del 26 nov al 12 dic**: https://claude.ai/artifact/3DUvEtf25ht1kXTMoc
 - Paquete para ChatGPT (2026-11-26): un solo `.txt` con reglas de estilo, fecha nueva y los 17
   prompts (una imagen por respuesta, avanza con "siguiente"), más dos PNG transparentes para
   adjuntar y que no los invente: el logo principal y la **firma** (línea plata + tijeras + logo).
-- Flujo de imágenes: Angel las sube a una subcarpeta **"Nueva fecha 12 dic"** dentro de la carpeta
+- **Las imágenes de ChatGPT no convencieron por el texto** (tipografía distinta, muy simple), pero
+  sí los fondos. Solución (2026-11-26): se borró el texto y la firma de ChatGPT con inpainting
+  (OpenCV) y se compuso encima el texto de marca en curvas (Cinzel Bold con degradado plata del logo,
+  subtítulos Cinzel, antetítulo Libre Franklin) + la firma oficial. La R14 (3 días) se rehízo
+  entera. Scripts: `limpiar.py` y `componer.py`. Salen JPG 1080×1350.
+- Flujo de imágenes (original): Angel las sube a una subcarpeta **"Nueva fecha 12 dic"** dentro de la carpeta
   pública de Drive (hereda el permiso de lectura), nombradas R01…R17; el LLM lee los IDs, corrige la
   hoja y reactiva Make.
 
