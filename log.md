@@ -10,6 +10,13 @@ actualizado: 2026-09-05
 > Registro cronológico, lo más nuevo arriba. Append-only: no se edita el pasado.
 > Prefijos: `ingesta` · `sintesis` · `lint` · `decision`.
 
+## [2026-11-26] decision | G&G Barber’s: hoja corregida y Make reactivado
+
+Se cargaron las 17 publicaciones R01–R17 (inauguración el 12 de diciembre) en la hoja sobre las
+pendientes con fecha vieja y se reactivó el escenario 6885366. El texto de R01 cambió a "Para darte
+la experiencia que mereces, decidimos aplazar…" a petición de Angel. Ver
+[[Make-GG-Publicacion-Automatica]].
+
 ## [2026-11-25] decision | G&G Barber’s: inauguración se mueve al 12 de diciembre
 
 La remodelación se atrasó: la apertura pasa del sábado 28 de noviembre al **sábado 12 de diciembre**.

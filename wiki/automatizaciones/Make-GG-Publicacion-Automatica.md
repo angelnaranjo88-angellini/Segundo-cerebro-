@@ -1,10 +1,10 @@
 ---
 titulo: G&G Barbers · Publicación automática FB + IG
 tipo: automatizacion
-estado: pausado
+estado: activo
 clientes: [GG-Barbers]
 tags: [make, google-sheets, facebook, instagram]
-actualizado: 2026-11-25
+actualizado: 2026-11-26
 ---
 
 # G&G Barbers · Publicación automática FB + IG
@@ -67,3 +67,11 @@ capa de IA, que concentraba casi todos los errores del entorno (ver [[Riesgos-y-
 Escenario 6885366 **desactivado** a petición de Angel: la inauguración se movió al 12 de diciembre
 y hay que corregir las publicaciones pendientes con fecha y quitar las cuentas regresivas. Se
 reactiva cuando la hoja quede corregida.
+
+## Reactivación (2026-11-26)
+
+Hoja corregida: las filas pendientes 50–55 (cuentas regresivas y piezas con fecha del 28) se
+**sobrescribieron** con las 17 publicaciones nuevas **R01–R17** (filas 49–65 de la hoja), 26 nov –
+12 dic, imágenes JPG en la subcarpeta pública "G&G Barbers, nueva fecha". Escritura con un escenario
+temporal `makeAPICall` (PUT a `Hoja 1!A49:J65`), borrado después. Escenario 6885366 **reactivado**.
+La R01 sale el 26 nov a las 18:00.
