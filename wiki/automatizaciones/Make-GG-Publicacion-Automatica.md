@@ -75,3 +75,6 @@ Hoja corregida: las filas pendientes 50–55 (cuentas regresivas y piezas con fe
 12 dic, imágenes JPG en la subcarpeta pública "G&G Barbers, nueva fecha". Escritura con un escenario
 temporal `makeAPICall` (PUT a `Hoja 1!A49:J65`), borrado después. Escenario 6885366 **reactivado**.
 La R01 sale el 26 nov a las 18:00.
+
+**Ajuste (2026-11-26):** a petición de Angel, la R01 se publicó al momento (12:38, Facebook e
+Instagram) y R02–R17 quedaron todas a las **10:00** (incluida "Hoy abrimos" del 12 dic).

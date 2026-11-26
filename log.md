@@ -14,7 +14,7 @@ actualizado: 2026-09-05
 
 Se cargaron las 17 publicaciones R01–R17 (inauguración el 12 de diciembre) en la hoja sobre las
 pendientes con fecha vieja y se reactivó el escenario 6885366. El texto de R01 cambió a "Para darte
-la experiencia que mereces, decidimos aplazar…" a petición de Angel. Ver
+la experiencia que mereces, decidimos aplazar…" a petición de Angel. La R01 se publicó al momento (12:38) y R02–R17 se movieron a las 10:00. Ver
 [[Make-GG-Publicacion-Automatica]].
 
 ## [2026-11-25] decision | G&G Barber’s: inauguración se mueve al 12 de diciembre
