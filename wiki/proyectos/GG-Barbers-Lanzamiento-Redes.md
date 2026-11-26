@@ -5,7 +5,7 @@ estado: activo
 clientes: [GG-Barbers]
 tags: [marca, facebook, instagram, canva, diseno]
 inicio: 2026-10-28
-actualizado: 2026-11-18
+actualizado: 2026-11-26
 ---
 
 # G&G Barber’s — lanzamiento en redes
@@ -233,3 +233,24 @@ Además del letrero colgante, el rótulo largo sobre el toldo (hoy la banda amar
 > La proporción de la banda (5:1) y la altura que tapa el toldo se estimaron **a ojo desde la foto**.
 > Faltan las medidas reales (ancho × alto en cm y cuánto cubre el toldo) para sacar el archivo final
 > a tamaño real. El script ya acepta `RATIO`, `MM_W`, `MM_H`, `LOGO_H` y `LOGO_CY`.
+
+### Inauguración movida al 12 de diciembre (2026-11-25)
+
+La remodelación se atrasó y la apertura pasa al **sábado 12 de diciembre** (9:00 a 17:00). Se pausó
+[[Make-GG-Publicacion-Automatica]] y se armó un calendario corregido de **17 publicaciones (R01–R17),
+una diaria del 26 nov al 12 dic**: https://claude.ai/artifact/3DUvEtf25ht1kXTMocJdWT
+
+- Salen de la hoja las cuentas regresivas pendientes (50, 52, 54, 56) y las piezas con fecha del 28
+  (51, 53, 55), que se rehacen como R15–R17.
+- R01 anuncia la nueva fecha con tono de "afinar detalles" (sin hablar de retraso) y dice que la
+  invitación impresa sigue válida. R03 sale el 28 de noviembre, el día original.
+- Contenido sin fecha en medio: detrás de cámaras (3), sillón, toalla caliente, manos expertas,
+  degradado, Essentials, pregunta a la comunidad, agenda. Solo una cuenta regresiva (3 días).
+- Sin promociones ni descuentos.
+- Flujo de imágenes: Angel las sube a una subcarpeta **"Nueva fecha 12 dic"** dentro de la carpeta
+  pública de Drive (hereda el permiso de lectura), nombradas R01…R17; el LLM lee los IDs, corrige la
+  hoja y reactiva Make.
+
+> [!warning] Pendiente
+> Las publicaciones ya publicadas (hasta ~49) y los flyers repartidos dicen 28 de noviembre. Revisar
+> también las bios de Facebook e Instagram.

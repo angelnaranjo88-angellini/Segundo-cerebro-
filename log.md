@@ -15,7 +15,8 @@ actualizado: 2026-09-05
 La remodelación se atrasó: la apertura pasa del sábado 28 de noviembre al **sábado 12 de diciembre**.
 Se **pausó el escenario de Make 6885366** (publicación automática) para corregir el calendario. Se
 quitan las cuentas regresivas pendientes y se rehacen las piezas con fecha. Ver
-[[Make-GG-Publicacion-Automatica]] y [[GG-Barbers-Lanzamiento-Redes]].
+[[Make-GG-Publicacion-Automatica]] y [[GG-Barbers-Lanzamiento-Redes]]. Calendario corregido de 17
+publicaciones (R01–R17) publicado como artifact.
 
 ## [2026-11-23] decision | G&G Barber’s: placa de dirección en la fachada
 
