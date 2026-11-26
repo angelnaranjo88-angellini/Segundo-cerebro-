@@ -247,6 +247,9 @@ una diaria del 26 nov al 12 dic**: https://claude.ai/artifact/3DUvEtf25ht1kXTMoc
 - Contenido sin fecha en medio: detrás de cámaras (3), sillón, toalla caliente, manos expertas,
   degradado, Essentials, pregunta a la comunidad, agenda. Solo una cuenta regresiva (3 días).
 - Sin promociones ni descuentos.
+- Paquete para ChatGPT (2026-11-26): un solo `.txt` con reglas de estilo, fecha nueva y los 17
+  prompts (una imagen por respuesta, avanza con "siguiente"), más dos PNG transparentes para
+  adjuntar y que no los invente: el logo principal y la **firma** (línea plata + tijeras + logo).
 - Flujo de imágenes: Angel las sube a una subcarpeta **"Nueva fecha 12 dic"** dentro de la carpeta
   pública de Drive (hereda el permiso de lectura), nombradas R01…R17; el LLM lee los IDs, corrige la
   hoja y reactiva Make.
